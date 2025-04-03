@@ -39,10 +39,10 @@ except ImportError:
             return api_base_url
 
         # Check environment variables in order of precedence
-        frontend_port = os.environ.get("FRONTEND_PORT", "3000")
+        frontend_port = os.environ.get("FRONTEND_PORT", "8888")
 
         # Default to the frontend port (for the main application)
-        return f"http://0.0.0.0:{frontend_port}" # Updated to 0.0.0.0
+        return f"http://0.0.0.0:{frontend_port}" # Updated to 0.0.0.0 and default port 8888
 
     def make_api_url(endpoint: str) -> str:
         """Create a full API URL by combining the base URL with the endpoint"""
@@ -63,7 +63,7 @@ async def test_api_connection():
         load_dotenv()
 
         # Configure connection parameters
-        frontend_port = os.environ.get("FRONTEND_PORT", "3000")
+        frontend_port = os.environ.get("FRONTEND_PORT", "8888")
         backend_port = os.environ.get("BACKEND_PORT", "5000")
 
         # Log configuration

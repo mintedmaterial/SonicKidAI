@@ -25,13 +25,13 @@ echo "Starting Python service with these environment variables:"
 echo "- FRONTEND_PORT: $FRONTEND_PORT"
 echo "- BACKEND_PORT: $BACKEND_PORT"
 echo "- BROWSER_API_PORT: $BROWSER_API_PORT"
-echo "- API_BASE_URL: http://localhost:$FRONTEND_PORT"
+echo "- API_BASE_URL: http://0.0.0.0:$FRONTEND_PORT"
 
 # Set environment variables for the Python process
 export FRONTEND_PORT=$FRONTEND_PORT
 export BACKEND_PORT=$BACKEND_PORT
 export BROWSER_API_PORT=$BROWSER_API_PORT
-export API_BASE_URL="http://localhost:$FRONTEND_PORT"
+export API_BASE_URL="http://0.0.0.0:$FRONTEND_PORT"
 
 # Check if we have a script name argument
 if [ $# -eq 0 ]; then

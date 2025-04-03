@@ -219,7 +219,7 @@ export class AgentActivityService {
         }
       };
       
-      const BASE_URL = 'http://localhost:3000';
+      const BASE_URL = 'http://0.0.0.0:8888';
       
       // Get SONIC token data
       try {

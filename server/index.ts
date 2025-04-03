@@ -33,7 +33,7 @@ const setupServer = async () => {
     // Basic middleware setup
     console.log('Setting up basic middleware...');
     app.use(cors({
-      origin: ['http://localhost:3000', 'https://*.replit.dev', 'https://*.repl.co', '*'],
+      origin: ['http://localhost:3000', 'http://0.0.0.0:3000', 'https://*.replit.dev', 'https://*.repl.co', '*'],
       credentials: true
     }));
     app.use(express.json());
@@ -49,26 +49,9 @@ const setupServer = async () => {
     registerRoutes(app);
     console.log('✅ API routes registered');
 
-    // Initialize Agent Activity Service
-    console.log('Initializing Agent Activity Service...');
-    try {
-      const { getAgentActivityService } = await import('./services/agentActivityService');
-      const agentActivityService = getAgentActivityService({
-        openaiApiKey: process.env.OPENAI_API_KEY,
-        anthropicApiKey: process.env.OPENROUTER_API_KEY, // Use Anthropic via OpenRouter
-        postIntervalMinutes: 180 // 3 hours
-      });
-
-      // Start the service
-      const success = agentActivityService.start();
-      if (success) {
-        console.log('✅ Agent Activity Service started successfully');
-      } else {
-        console.warn('⚠️ Failed to start Agent Activity Service');
-      }
-    } catch (error) {
-      console.error('❌ Error initializing Agent Activity Service:', error);
-    }
+    // We'll initialize the Agent Activity Service after the server starts
+    let agentActivityService: any = null;
+    console.log('Agent Activity Service will be initialized after server starts...');
 
     // Serve static files from the public directory and project root
     console.log('Setting up static file service from /public directory and project root...');
@@ -333,11 +316,36 @@ const setupServer = async () => {
 
     // Bind server to appropriate port based on environment variables
     console.log(`Attempting to bind server to ${HOST}:${PORT}...`);
-    server.listen(PORT, HOST, () => {
+    server.listen(PORT, HOST, async () => {
       console.log(`🚀 Main server running at http://${HOST}:${PORT}`);
+
+      // Initialize Agent Activity Service after server is running
+      console.log('Now initializing Agent Activity Service...');
+      try {
+        const { getAgentActivityService } = await import('./services/agentActivityService');
+        const agentActivityService = getAgentActivityService({
+          openaiApiKey: process.env.OPENAI_API_KEY,
+          anthropicApiKey: process.env.OPENROUTER_API_KEY, // Use Anthropic via OpenRouter
+          postIntervalMinutes: 180 // 3 hours
+        });
+
+        // Add a slight delay to ensure server is fully running
+        setTimeout(() => {
+          // Start the service
+          const success = agentActivityService.start();
+          if (success) {
+            console.log('✅ Agent Activity Service started successfully');
+          } else {
+            console.warn('⚠️ Failed to start Agent Activity Service');
+          }
+        }, 5000); // 5-second delay
+      } catch (error) {
+        console.error('❌ Error initializing Agent Activity Service:', error);
+      }
 
       // Only create secondary server in development mode if explicitly requested
       if (process.env.NODE_ENV === 'development' && process.env.ENABLE_SECONDARY_SERVER === 'true') {
+        const BACKEND_PORT = parseInt(process.env.BACKEND_PORT || '5000', 10);
         // Create a secondary server instance for BACKEND_PORT (for workflow compatibility)
         const secondaryServer = createServer(app);
         secondaryServer.listen(BACKEND_PORT, HOST, () => {

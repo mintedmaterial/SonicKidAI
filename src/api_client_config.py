@@ -18,9 +18,9 @@ def get_api_base_url() -> str:
     """
     # Check environment variables in order of precedence
     backend_port = os.environ.get("BACKEND_PORT", "5000")
-    frontend_port = os.environ.get("FRONTEND_PORT", "3000")
+    frontend_port = os.environ.get("FRONTEND_PORT", "8888")
     
-    # Determine which port to use - 3000 is the default for the main server
+    # Determine which port to use - 8888 is the default for the main server
     server_port = frontend_port
     
     # Check if a specific API endpoint is defined
@@ -28,8 +28,8 @@ def get_api_base_url() -> str:
     if api_endpoint:
         return api_endpoint
     
-    # Default to localhost with the server port
-    return f"http://localhost:{server_port}"
+    # Use 0.0.0.0 instead of localhost to allow external connections
+    return f"http://0.0.0.0:{server_port}"
 
 def get_headers() -> Dict[str, str]:
     """

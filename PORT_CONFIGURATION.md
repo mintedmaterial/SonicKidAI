@@ -1,105 +1,74 @@
 # Port Configuration Guide
 
-This document outlines the port configuration used in the application to ensure all services work together correctly without port conflicts.
+This document explains the port configuration setup for the GOAT Platform on Replit.
 
-## Overview
+## Port Overview
 
-The application uses three main ports:
+The application uses the following port configuration:
 
-| Service          | Port | Environment Variable |
-|------------------|------|---------------------|
-| Frontend         | 3000 | FRONTEND_PORT       |
-| Backend API      | 5000 | BACKEND_PORT        |
-| Browser API      | 8000 | BROWSER_API_PORT    |
+| Service | Port | Environment Variable | Notes |
+|---------|------|----------------------|-------|
+| Main Server | 8888 | FRONTEND_PORT | Primary application server |
+| Secondary Server | 5000 | SECONDARY_PORT | Proxy server that forwards to main server |
+| Browser API | 8000 | BROWSER_API_PORT | Browser integration API |
 
-## Configuration
+## Dual Server Setup
 
-### Environment Variables
+Due to Replit workflow restrictions and existing configurations, the application uses a dual server configuration:
 
-Set the following environment variables to configure the ports:
+1. **Main Server (port 8888)**: This is the primary application server that handles all actual requests.
+2. **Secondary Server (port 5000)**: This is a proxy server that forwards all requests to the main server on port 8888.
 
-```
-FRONTEND_PORT=3000
-BACKEND_PORT=5000
-BROWSER_API_PORT=8000
-```
+The secondary server exists because many existing workflows and services expect the application to be running on port 5000.
 
-These can be set in:
-- `.env` file for local development
-- Replit Secrets for deployment
+## Environment Variables
 
-### Default Values
+The following environment variables control the port configuration:
 
-If not specified, the application will use these default port values:
-- Frontend: 3000
-- Backend API: 5000
-- Browser API: 8000
+- `FRONTEND_PORT`: Controls the port for the main server (default: 8888)
+- `BACKEND_PORT`: Used for compatibility with existing code (default: 5000)
+- `SECONDARY_PORT`: Controls the port for the secondary proxy server (default: 5000)
+- `BROWSER_API_PORT`: Controls the port for the browser API server (default: 8000)
+- `API_BASE_URL`: Optional override for the base URL used in API requests
 
-## Service-Specific Configuration
+## Workflows
 
-### Node.js Server (Frontend + Backend)
+The platform includes several workflows that start the various servers:
 
-The main Node.js server handles both frontend and backend services:
+- **Start application**: Starts the main application server on port 8888
+- **Dual Server**: Starts both the main server (port 8888) and secondary proxy server (port 5000)
+- **Browser API Server**: Starts the browser API server on port 8000
 
-- Frontend is served on `FRONTEND_PORT` (3000)
-- Backend API routes are accessible at `FRONTEND_PORT/api` (3000/api)
+## API Client Configuration
 
-Configuration is in:
-- `server/index.ts`
-- `deployment.js`
+The API client configuration in `src/api_client_config.py` determines which URL to use for API requests. It follows this logic:
 
-### Python Browser API Server
+1. If `API_BASE_URL` is defined, use that value
+2. Otherwise, construct a URL using `http://0.0.0.0:{FRONTEND_PORT}`
 
-The Python-based Browser API server runs on `BROWSER_API_PORT` (8000):
+## Common Issues
 
-- This service can be skipped during initial deployment by setting `SKIP_API_SERVER=true`
-- Configuration is in `src/server/app.py`
+### Connection Refused Errors
 
-### Workflow Services
+If you're seeing connection refused errors, check:
 
-Each workflow should respect port configuration to avoid conflicts:
+1. That the appropriate server is running
+2. That you're connecting to the correct port
+3. That you're using `0.0.0.0` instead of `localhost` for URL connections
 
-- Discord Bot: Uses API client connection to Backend API port
-- Telegram Bot: Uses API client connection to Backend API port
-- Various test workflows: Should avoid using the main ports
+### Missing Services or Endpoints
 
-## Common Issues and Solutions
+If certain services or endpoints are not available:
 
-### Port Conflicts
+1. Check which workflow is running
+2. Ensure the dual server workflow is running for complete compatibility
+3. Verify that environment variables are set correctly
 
-If you experience port conflicts:
+## Making Changes
 
-1. Check if multiple services are trying to use the same port
-2. Make sure environment variables are properly set and propagated to all services
-3. Verify that no other applications on your system are using these ports
+When making changes to the port configuration:
 
-### Connection Errors
-
-If services cannot connect to each other:
-
-1. Ensure the correct host is being used (usually `localhost` or `0.0.0.0`)
-2. Check that the correct port is being used for connection
-3. Verify firewall or network configuration is not blocking connections
-
-## Best Practices
-
-1. Always use environment variables for port configuration
-2. In Python services, read port configuration:
-   ```python
-   backend_port = os.environ.get("BACKEND_PORT", "5000")
-   ```
-3. In Node.js services, read port configuration:
-   ```javascript
-   const frontendPort = process.env.FRONTEND_PORT || 3000;
-   ```
-4. When running in a workflow, ensure the service is aware of the correct ports
-
-## Deployment Considerations
-
-During deployment:
-
-1. Set all port-related environment variables as Replit Secrets
-2. Consider setting `SKIP_API_SERVER=true` for initial deployment
-3. After successful deployment of the main server, start the Browser API Server separately
-
-For more details on deployment, refer to `STAGED_DEPLOYMENT_GUIDE.md` and `REPLIT_DEPLOYMENT_GUIDE.md`.
+1. Update the relevant environment variables
+2. Restart the appropriate workflows
+3. Update any hardcoded URLs in the codebase
+4. Test connections using the test scripts

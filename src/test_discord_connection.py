@@ -41,8 +41,8 @@ except ImportError:
         # Check environment variables in order of precedence
         frontend_port = os.environ.get("FRONTEND_PORT", "3000")
         
-        # Default to the frontend port (for the main application)
-        return f"http://localhost:{frontend_port}"
+        # Default to 0.0.0.0 with the frontend port for the main application
+        return f"http://0.0.0.0:{frontend_port}"
     
     def make_api_url(endpoint: str) -> str:
         """Create a full API URL by combining the base URL with the endpoint"""
