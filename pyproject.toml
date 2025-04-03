@@ -68,6 +68,7 @@ dependencies = [
     "langchain-openai>=0.3.8",
     "dune-client>=1.7.8",
     "httpx>=0.28.1",
+    "cytoolz>=1.0.1",
 ]
 
 [project.optional-dependencies]

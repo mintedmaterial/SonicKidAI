@@ -13,10 +13,12 @@ import path from 'path';
 // Configuration
 const HOST = '0.0.0.0';
 const MAIN_PORT = process.env.PORT || 8888;
-const SECONDARY_PORT = process.env.SECONDARY_PORT || 5000;
+const SECONDARY_PORT = process.env.SECONDARY_PORT || 5001; // Use 5001 as the default secondary port
 
-// Enable secondary server by default for this script
-process.env.ENABLE_SECONDARY_SERVER = "true";
+// Always enable secondary server if not overridden
+if (process.env.ENABLE_SECONDARY_SERVER !== "false") {
+  process.env.ENABLE_SECONDARY_SERVER = "true";
+}
 
 console.log('╔════════════════════════════════════════════════════╗');
 console.log('║     Starting Dual Server Configuration...          ║');
