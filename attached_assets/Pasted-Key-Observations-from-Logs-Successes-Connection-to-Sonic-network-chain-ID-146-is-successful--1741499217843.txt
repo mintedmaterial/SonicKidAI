@@ -1,0 +1,163 @@
+Key Observations from Logs
+Successes:
+Connection to Sonic network (chain ID 146) is successful.
+
+Wallet is loaded (0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9).
+
+KyberSwap API connection is established (Successfully connected to KyberSwap API).
+
+A quote is successfully retrieved (Successfully got KyberSwap quote).
+Failure:
+The swap execution fails after getting the quote (All swap attempts failed).
+
+No specific error details are provided beyond the generic failure message.
+Missing Information:
+The logs don’t indicate why the swap failed after getting the quote.
+
+The build_swap_data method isn’t explicitly logged as being called or failing.
+Potential Issues and Solutions
+1. Problem: build_swap_data Method Failure
+The get_quote method works, but the subsequent build_swap_data call (needed to construct the transaction) might be failing silently or not being called correctly.
+
+Evidence: The logs show a successful quote but no mention of building the swap transaction.
+   Solution:
+Add detailed logging in the build_swap_data method to catch specific errors:
+python
+async def build_swap_data(self, chain_id: int, quote_data: Dict[str, Any], sender: str) -> Optional[Dict[str, Any]]:
+    try:
+        if not self._session or self._session.closed:
+            if not await self.connect():
+                logger.error("Failed to connect to KyberSwap API in build_swap_data")
+                raise Exception("Failed to connect to KyberSwap API")
+
+        if not self.is_chain_supported(chain_id):
+            logger.error(f"Chain {chain_id} not supported")
+            raise Exception(f"Chain {chain_id} not supported")
+
+        chain_path = self.CHAIN_MAP.get(chain_id, 'sonic')
+        url = f"{self.base_url}/{chain_path}/api/v1/route/build"
+
+        build_params = {
+            'sender': sender,
+            'recipient': sender,
+            'routeSummary': quote_data.get('routeSummary'),
+            'slippageTolerance': quote_data.get('slippageTolerance', 50),
+            'deadline': int(time.time()) + 1200,
+            'source': 'ZerePyBot',
+            'enableGasEstimation': True
+        }
+
+        logger.info(f"Attempting to build swap transaction for chain {chain_path}")
+        async with self._session.post(url, json=build_params) as response:
+            logger.debug(f"Response status: {response.status}")
+            response_text = await response.text()
+            logger.debug(f"Response body: {response_text}")
+            if response.status == 200:
+                data = await response.json()
+                if data.get('code') == 0:
+                    tx_data = data.get('data', {})
+                    logger.info("✅ Successfully built swap transaction")
+                    return {
+                        'router_address': self.KYBER_ROUTER,
+                        'transaction': tx_data,
+                        'value': tx_data.get('value', '0')
+                    }
+                else:
+                    logger.error(f"API error: {data.get('message')}")
+            else:
+                logger.error(f"Failed to build swap: {response.status} - {response_text}")
+            return None
+
+    except Exception as e:
+        logger.error(f"Error building swap: {str(e)}", exc_info=True)
+        return None
+Check if routeSummary is present in the quote_data. If it’s missing, the API call will fail.
+2. Problem: Incorrect or Missing Parameters
+The build_swap_data method requires routeSummary from the quote, but if the quote response doesn’t include it or it’s malformed, the swap will fail.
+
+Evidence: No logged errors about parameters, but the swap fails after the quote.
+   Solution:
+Validate the quote_data before calling build_swap_data:
+python
+quote = await super().get_quote(params)
+if quote and 'routeSummary' not in quote:
+    logger.error(f"Quote missing routeSummary: {quote}")
+    return None
+3. Problem: Rate Limiting
+The code includes basic rate limiting (self.min_interval), but if the API enforces stricter limits, subsequent requests (like build_swap_data) might fail.
+
+Evidence: Unclear from logs, but a possibility since the quote succeeds but the next step fails.
+   Solution:
+Increase the min_interval to 2-3 seconds and log rate-limiting delays:
+python
+self.min_interval = 2  # Increase to 2 seconds
+current_time = time.time()
+if current_time - self._last_request < self.min_interval:
+    sleep_time = self.min_interval - (current_time - self._last_request)
+    logger.debug(f"Rate limiting: sleeping for {sleep_time:.2f} seconds")
+    await asyncio.sleep(sleep_time)
+4. Problem: Chain or DEX ID Misconfiguration
+The DEX_IDS mapping only includes Sonic-specific DEXs, and the chain ID (146) maps to 'sonic'. If the API expects different DEX IDs or rejects the request due to misconfiguration, the swap could fail.
+
+Evidence: The connection and quote work, so this is less likely, but worth checking.
+   Solution:
+Verify the DEX IDs and chain configuration with the KyberSwap API documentation for Sonic (chain ID 146). Update DEX_IDS if needed:
+python
+DEX_IDS = {
+    'sonic': [
+        'kyberswap-elastic',
+        'kyberswap-classic',
+        # Add other supported Sonic DEXs from API docs
+    ]
+}
+5. Problem: Transaction Execution Issue
+The failure might occur after build_swap_data when the transaction is sent to the blockchain (not shown in the provided code). This could be due to insufficient gas, bad slippage settings, or wallet issues.
+
+Evidence: The logs mention "Swap execution failed" after the quote, suggesting the issue might be post-API.
+   Solution:
+Log the transaction data and ensure it’s being sent correctly:
+python
+tx_data = await self.build_swap_data(chain_id, quote_data, sender)
+if tx_data:
+    logger.info(f"Transaction data: {tx_data}")
+else:
+    logger.error("Failed to build transaction data")
+Check wallet balance and gas settings in the calling code (sonic_actions).
+Debugging Steps
+Add More Logging:
+Log the full quote response:
+python
+logger.debug(f"Quote response: {json.dumps(quote, indent=2)}")
+Log the build_swap_data request and response.
+Test with a Minimal Example:
+Create a standalone test script to isolate the issue:
+python
+async def test_kyberswap():
+    config = {'chain_id': 146}
+    router = KyberSwapRouter(config)
+    params = {
+        'tokenIn': '0x...',
+        'tokenOut': '0x...',
+        'amountIn': '100000000000000000',  # 0.1 token
+        'to': '0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9',
+        'slippageTolerance': '50'
+    }
+    quote = await router.get_quote(params)
+    if quote:
+        tx = await router.build_swap_data(146, quote, params['to'])
+        print(tx)
+    await router.close()
+
+asyncio.run(test_kyberswap())
+Replace token addresses with valid Sonic testnet tokens.
+Check API Response Codes:
+Ensure all API responses (especially /route/build) return code: 0. Non-zero codes indicate errors.
+Likely Root Cause
+The most probable issue is that build_swap_data fails due to:
+Missing or invalid routeSummary in the quote.
+
+An unlogged API error in the /route/build endpoint.
+
+A downstream issue in transaction execution (e.g., gas or slippage).
+Start by adding detailed logging to build_swap_data and verifying the quote structure. If the issue persists, share the updated logs or quote response for further analysis!
+

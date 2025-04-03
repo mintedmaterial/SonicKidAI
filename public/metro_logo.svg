@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="400" height="400" rx="80" fill="url(#paint0_radial)" />
+  
+  <!-- Metro logo design - simplified geometric symbol -->
+  <g filter="url(#filter0_d)">
+    <!-- Center hexagon -->
+    <path d="M200 130L260 165V235L200 270L140 235V165L200 130Z" fill="#FF5CAB" />
+    
+    <!-- Triangle top -->
+    <path d="M200 90L250 120L200 150L150 120L200 90Z" fill="#8B5CF6" />
+    
+    <!-- Triangle bottom -->
+    <path d="M200 250L250 280L200 310L150 280L200 250Z" fill="#8B5CF6" />
+    
+    <!-- Side triangles -->
+    <path d="M130 165L160 195L130 225L100 195L130 165Z" fill="#06B6D4" />
+    <path d="M270 165L300 195L270 225L240 195L270 165Z" fill="#06B6D4" />
+    
+    <!-- Central connection lines -->
+    <rect x="198" y="150" width="4" height="100" fill="white" opacity="0.7" />
+    <rect x="160" y="193" width="80" height="4" fill="white" opacity="0.7" />
+  </g>
+  
+  <!-- Text -->
+  <path d="M120 320H130.6L152.8 360H143.6L137.2 347.2H113.2L106.8 360H97.6L120 320ZM134 340L125.2 324L116.4 340H134Z" fill="white" />
+  <path d="M160.195 320H169.395V351.6H198.195V360H160.195V320Z" fill="white" />
+  <path d="M208.297 320H218.297V336H243.497V320H253.497V360H243.497V344H218.297V360H208.297V320Z" fill="white" />
+  <path d="M264.562 320H301.762V328.4H274.562V336H298.562V344.4H274.562V351.6H302.562V360H264.562V320Z" fill="white" />
+  
+  <!-- Definitions -->
+  <defs>
+    <!-- Radial gradient background -->
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(200 200) rotate(90) scale(200)">
+      <stop stop-color="#0F172A" />
+      <stop offset="1" stop-color="#020617" />
+    </radialGradient>
+    
+    <!-- Shadow effect -->
+    <filter id="filter0_d" x="90" y="85" width="220" height="235" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+      <feOffset dy="4" />
+      <feGaussianBlur stdDeviation="5" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+    </filter>
+  </defs>
+</svg>

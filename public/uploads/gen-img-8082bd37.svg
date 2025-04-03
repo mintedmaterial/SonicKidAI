@@ -1,0 +1,15 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="white"/>
+  <text x="10" y="20" font-family="Arial" font-size="14" fill="#333">Sonic price chart showing recent uptrend</text>
+    <path d="M 20 194.61606462620995 L 85.71428571428571 183.85958277952676 L 151.42857142857142 161.80154201834998 L 217.1428571428571 146.69608464108833 L 282.85714285714283 116.76498929855906 L 348.57142857142856 103.35662970371362 L 414.2857142857142 83.91875646441424 L 479.99999999999994 57.383671336903845" fill="none" stroke="#4CAF50" stroke-width="3"/>
+      <circle cx="20" cy="194.61606462620995" r="4" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <circle cx="85.71428571428571" cy="183.85958277952676" r="4" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <circle cx="151.42857142857142" cy="161.80154201834998" r="4" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <circle cx="217.1428571428571" cy="146.69608464108833" r="4" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <circle cx="282.85714285714283" cy="116.76498929855906" r="4" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <circle cx="348.57142857142856" cy="103.35662970371362" r="4" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <circle cx="414.2857142857142" cy="83.91875646441424" r="4" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <circle cx="479.99999999999994" cy="57.383671336903845" r="4" fill="#4CAF50" stroke="#333" stroke-width="1"/>
+    <line x1="20" y1="260" x2="480" y2="260" stroke="#333" stroke-width="2"/>
+    <line x1="20" y1="40" x2="20" y2="260" stroke="#333" stroke-width="2"/>
+</svg>

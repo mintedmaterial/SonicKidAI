@@ -1,0 +1,36 @@
+Attempting to connect to OpenOcean Pro API, chain name: sonic
+Using base URL: https://open-api-pro.openocean.finance/v4
+Source token details: {
+  "id": 2987,
+  "code": "wrapped-sonic",
+  "name": "Wrapped Sonic",
+  "address": "0x039e2fb66102314ce7b64ce5ce3e5183bc94ad38",
+  "decimals": 18,
+  "symbol": "wS",
+  "icon": "https://s3.openocean.finance/token_logos/logos/1737533796784_8642627072815834.png",
+  "chain": "sonic",
+  "createtime": "2024-12-18T23:32:34.000Z",
+  "hot": "01",
+  "sort": "2024-12-18T23:32:34.000Z",
+  "chainId": null,
+  "customSymbol": null,
+  "customAddress": null,
+  "usd": "0.607673"
+}
+HEDGY token details: {
+  "id": 3092,
+  "code": "hedgy-the-hedgehog",
+  "name": "Hedgy the hedgehog",
+  "address": "0x6fb9897896fe5d05025eb43306675727887d0b7c",
+  "decimals": 18,
+  "symbol": "HEDGY",
+  "icon": "https://s3.openocean.finance/token_logos/logos/1736912061230_48511946918681104.png",
+  "chain": "sonic",
+  "createtime": "2025-01-15T03:34:25.000Z",
+  "hot": null,
+  "sort": "2025-01-15T03:34:25.000Z",
+  "chainId": null,
+  "customSymbol": null,
+  "customAddress": null,
+  "usd": "0.007223"
+}

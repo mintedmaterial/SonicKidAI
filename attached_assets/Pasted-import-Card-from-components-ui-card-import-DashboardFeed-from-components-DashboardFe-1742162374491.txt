@@ -1,0 +1,115 @@
+import { Card } from "@/components/ui/card";
+import { DashboardFeed } from "@/components/DashboardFeed";
+import { useQuery } from "@tanstack/react-query";
+import { Activity, Newspaper, TrendingUp, TrendingDown, DollarSign } from "lucide-react";
+
+export function Dashboard() {
+  // Query for Sonic TVL data
+  const { data: sonicData, isLoading: sonicLoading } = useQuery({
+    queryKey: ['/api/market/sonic'],
+    refetchInterval: 300000 // Refresh every 5 minutes
+  });
+
+  // Query for sentiment data from our Hugging Face integration
+  const { data: sentimentData, isLoading: sentimentLoading } = useQuery({
+    queryKey: ['/api/market/sentiment'],
+    refetchInterval: 60000 // Refresh every minute
+  });
+
+  // Query for market news
+  const { data: newsData, isLoading: newsLoading } = useQuery({
+    queryKey: ['/api/market/news'],
+    refetchInterval: 60000 // Refresh every minute
+  });
+
+  return (
+    <div className="container mx-auto p-4 space-y-4">
+      <h1 className="text-2xl font-bold mb-4">ZerePy Dashboard</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        {/* Sonic TVL Card */}
+        <Card className="p-4">
+          <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+            <DollarSign className="h-5 w-5" />
+            Sonic TVL
+          </h2>
+          <div>
+            {sonicLoading ? (
+              <p>Loading TVL data...</p>
+            ) : (
+              <>
+                <p className="text-3xl font-bold">
+                  ${(sonicData?.tvl || 0).toLocaleString()}
+                </p>
+                <div className={`flex items-center gap-1 mt-2 ${
+                  (sonicData?.tvlChange24h || 0) >= 0 ? 'text-green-500' : 'text-red-500'
+                }`}>
+                  {(sonicData?.tvlChange24h || 0) >= 0 ? 
+                    <TrendingUp className="h-4 w-4" /> : 
+                    <TrendingDown className="h-4 w-4" />
+                  }
+                  <span>{(sonicData?.tvlChange24h || 0).toFixed(2)}%</span>
+                </div>
+              </>
+            )}
+          </div>
+        </Card>
+
+        {/* Market Sentiment Card */}
+        <Card className="p-4">
+          <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+            <Activity className="h-5 w-5" />
+            Market Sentiment
+          </h2>
+          <div>
+            {sentimentLoading ? (
+              <p>Analyzing market sentiment...</p>
+            ) : (
+              <>
+                <p className="text-xl font-bold mb-2">
+                  {sentimentData?.sentiment || 'Neutral'}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Confidence: {sentimentData?.confidence || 0}%
+                </p>
+                <div className="mt-4">
+                  <h3 className="text-sm font-medium mb-2">Trending Topics</h3>
+                  {sentimentData?.trending?.map((topic: any, index: number) => (
+                    <div key={index} className="text-sm flex items-center justify-between py-1">
+                      <span className="font-medium">#{index + 1} {topic.topic}</span>
+                      <span className="text-muted-foreground">
+                        {topic.volume?.toLocaleString()} mentions
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </Card>
+      </div>
+
+      {/* Market News Section */}
+      <Card className="p-4">
+        <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+          <Newspaper className="h-5 w-5" />
+          Latest Market News
+        </h2>
+        <div className="space-y-2">
+          {newsLoading ? (
+            <p>Loading news...</p>
+          ) : (
+            newsData?.articles?.slice(0, 5).map((article: any, index: number) => (
+              <div key={index} className="border-b last:border-0 pb-2">
+                <p className="font-medium">{article.title}</p>
+                <p className="text-sm text-muted-foreground">
+                  {article.source} - {article.time}
+                </p>
+              </div>
+            ))
+          )}
+        </div>
+      </Card>
+
+      {/* Agent Activity Feed */}
+      <DashboardFeed />

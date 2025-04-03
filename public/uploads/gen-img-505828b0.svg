@@ -1,0 +1,22 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="white"/>
+  <text x="10" y="20" font-family="Arial" font-size="14" fill="#333">Sonic price chart</text>
+      <rect x="30" y="130.5888400930426" width="78" height="129.4111599069574" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="118" y="91.5304642673656" width="78" height="168.4695357326344" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="206" y="116.71996872460755" width="78" height="143.28003127539245" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="294" y="187.5106890743243" width="78" height="72.48931092567571" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="382" y="108.62960569775859" width="78" height="151.3703943022414" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+    <path d="M 69 130.5888400930426 L 157 91.5304642673656 L 245 116.71996872460755 L 333 187.5106890743243 L 421 108.62960569775859" fill="none" stroke="#2196F3" stroke-width="3"/>
+      <circle cx="69" cy="130.5888400930426" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="157" cy="91.5304642673656" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="245" cy="116.71996872460755" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="333" cy="187.5106890743243" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="421" cy="108.62960569775859" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+    <line x1="20" y1="260" x2="480" y2="260" stroke="#333" stroke-width="2"/>
+    <line x1="20" y1="40" x2="20" y2="260" stroke="#333" stroke-width="2"/>
+</svg>

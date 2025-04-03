@@ -1,0 +1,22 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="white"/>
+  <text x="10" y="20" font-family="Arial" font-size="14" fill="#333">Sonic token 24hr trading volume chart</text>
+      <rect x="30" y="94.10687722926826" width="78" height="165.89312277073174" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="118" y="144.10492034777536" width="78" height="115.89507965222465" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="206" y="139.2102162926049" width="78" height="120.78978370739509" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="294" y="140.83349630927466" width="78" height="119.16650369072535" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="382" y="165.36333342307478" width="78" height="94.63666657692521" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+    <path d="M 69 94.10687722926826 L 157 144.10492034777536 L 245 139.2102162926049 L 333 140.83349630927466 L 421 165.36333342307478" fill="none" stroke="#2196F3" stroke-width="3"/>
+      <circle cx="69" cy="94.10687722926826" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="157" cy="144.10492034777536" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="245" cy="139.2102162926049" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="333" cy="140.83349630927466" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="421" cy="165.36333342307478" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+    <line x1="20" y1="260" x2="480" y2="260" stroke="#333" stroke-width="2"/>
+    <line x1="20" y1="40" x2="20" y2="260" stroke="#333" stroke-width="2"/>
+</svg>

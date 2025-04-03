@@ -1,0 +1,15 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+.env
+__pycache__/
+*.pyc
+*.pyo
+.vscode/
+.idea/
+.pytest_cache/
+*.sqlite
+*.db

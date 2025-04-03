@@ -1,0 +1,155 @@
+[project]
+name = "zerepylib-abstract"
+version = "0.25.6a1"
+description = "Abstract Protocol integration for ZerePy Framework"
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp[speedups]>=3.9.0",
+    "anthropic==0.22.0",
+    "farcaster>=0.7.11",
+    "fastapi>=0.115.8",
+    "prompt-toolkit>=3.0.50",
+    "python-dotenv>=1.0.0",
+    "requests-oauthlib>=2.0.0",
+    "requests>=2.31.0",
+    "solana>=0.36.5",
+    "uvicorn>=0.34.0",
+    "web3>=6.0.0",
+    "eth-account>=0.10.0",
+    "asyncio>=3.4.3",
+    "certifi>=2025.1.31",
+    "eth-utils>=4.1.1",
+    "numpy>=2.2.2",
+    "openai>=1.12.0",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.3",
+    "flake8>=7.1.1",
+    "pytest-cov>=6.0.0",
+    "mypy>=1.15.0",
+    "black>=25.1.0",
+    "feedparser>=6.0.11",
+    "goat-sdk-plugin-erc20>=0.1.0",
+    "goat-sdk-plugin-coingecko>=0.1.1",
+    "goat-sdk>=0.1.4",
+    "goat-sdk-plugin-dexscreener>=0.1.1",
+    "goat-sdk-plugin-jsonrpc>=0.1.1",
+    "chromadb>=0.6.3",
+    "unstructured>=0.14.8",
+    "tiktoken>=0.9.0",
+    "huggingface-hub>=0.28.1",
+    "sentence-transformers>=3.4.1",
+    "langsmith>=0.3.8",
+    "langchain>=0.0.27",
+    "pydantic>=2.10.6",
+    "supabase>=2.13.0",
+    "pandas>=2.2.3",
+    "pyarrow>=19.0.0",
+    "datasets>=3.3.0",
+    "psycopg2-binary>=2.9.10",
+    "telegram>=0.0.1",
+    "beautifulsoup4>=4.13.3",
+    "pytz>=2025.1",
+    "python-telegram-bot[all]>=20.0",
+    "accelerate>=1.4.0",
+    "pillow>=11.1.0",
+    "asyncpg>=0.30.0",
+    "websockets>=14.2",
+    "python-multipart>=0.0.20",
+    "apify-client>=1.9.2",
+    "torch>=2.6.0",
+    "transformers>=4.48.3",
+    "apscheduler>=3.11.0",
+    "tarsafe>=0.0.5",
+    "matplotlib>=3.10.1",
+    "discord-py[voice]>=2.5.0",
+    "playwright>=1.50.0",
+    "brotli>=1.1.0",
+    "browser-use>=0.1.1",
+    "langchain-openai>=0.3.8",
+    "dune-client>=1.7.8",
+    "httpx>=0.28.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.1.1",
+    "flake8>=7.0.0",
+    "pytest-cov>=4.1.0",
+    "mypy>=1.8.0",
+]
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.venv
+  | dist
+  | build
+)/
+'''
+
+[tool.flake8]
+max-line-length = 100
+exclude = [
+    ".git",
+    "__pycache__",
+    "dist",
+    "build",
+]
+extend-ignore = ["E203", "W503"]
+per-file-ignores = [
+    "__init__.py:F401",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --asyncio-mode=strict"
+testpaths = [
+    "src/tests",
+]
+python_files = ["test_*.py"]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "src/tests/*",
+    "src/**/__init__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.publish.index]
+repo = "pypi"
+
+[[tool.uv.index]]
+explicit = true
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+
+[tool.uv.sources]
+torchvision = [{ index = "pytorch-cpu", marker = "platform_system == 'Linux'" }]
+torch = [{ index = "pytorch-cpu", marker = "platform_system == 'Linux'" }]

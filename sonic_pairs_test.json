@@ -1,0 +1,402 @@
+[
+  {
+    "pairAddress": "26BQ9SdKYP6odaFeGQC3oaST724QPFLpVuWqpB7xL1US",
+    "baseToken": {
+      "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+      "name": "Sonic SVM",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": "0.2778",
+    "txCount": 1751,
+    "volume": 862114.45,
+    "priceChange": 2.52,
+    "liquidity": 1481493.94,
+    "fdv": 666764231,
+    "marketCap": 100014657
+  },
+  {
+    "pairAddress": "GTxvZwf7oGiMRTBDS7UBvEQo85zyZ6B1dt2vZQMTNLGi",
+    "baseToken": {
+      "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+      "name": "Sonic SVM",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.2780",
+    "txCount": 594,
+    "volume": 70939.71,
+    "priceChange": 2.85,
+    "liquidity": 307009.01,
+    "fdv": 667332398,
+    "marketCap": 100099882
+  },
+  {
+    "pairAddress": "8eZH6yH2oGTRBrV25SHTmLo8bpVbCQqxZdznbVzYAwT2",
+    "baseToken": {
+      "address": "3rQK45d1ojXR7vtvCmeNjKKVycnVWqaVcP3zk1G39RJR",
+      "name": "Sonic",
+      "symbol": "S"
+    },
+    "quoteToken": {
+      "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": "0.5127",
+    "txCount": 87,
+    "volume": 9149.9,
+    "priceChange": -0.35,
+    "liquidity": 127840.24,
+    "fdv": 445936,
+    "marketCap": 445936
+  },
+  {
+    "pairAddress": "HBUvTkWH2twcsFe6tqtTTGfmqrqx7XEvAj6BKLhV2UWp",
+    "baseToken": {
+      "address": "3rQK45d1ojXR7vtvCmeNjKKVycnVWqaVcP3zk1G39RJR",
+      "name": "Sonic",
+      "symbol": "S"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.5002",
+    "txCount": 72,
+    "volume": 6401.99,
+    "priceChange": -1.91,
+    "liquidity": 101681.76,
+    "fdv": 435095,
+    "marketCap": 435095
+  },
+  {
+    "pairAddress": "0xe268658282564826cC5A39EA0476A150514F3a75",
+    "baseToken": {
+      "address": "0x446649F0727621BDbB76644B1910be2163b62a11",
+      "name": "Sonic",
+      "symbol": "Sonic"
+    },
+    "quoteToken": {
+      "address": "0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38",
+      "name": "Wrapped Sonic",
+      "symbol": "wS"
+    },
+    "priceUsd": "0.0002429",
+    "txCount": 30,
+    "volume": 1731.37,
+    "priceChange": 2,
+    "liquidity": 55715.99,
+    "fdv": 123840,
+    "marketCap": 123840
+  },
+  {
+    "pairAddress": "2juvRCPaKCZ85S7vs2tFa1JDqyz3dfWrK2Jrj2RdzZEF",
+    "baseToken": {
+      "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+      "name": "Sonic SVM",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.2793",
+    "txCount": 27,
+    "volume": 140.95,
+    "priceChange": 2.1,
+    "liquidity": 23991.33,
+    "fdv": 670362448,
+    "marketCap": 100554390
+  },
+  {
+    "pairAddress": "ATZfinM3NpctK7bQAzRvBnyC4xUte9CAbhTZ7A3LiXgh",
+    "baseToken": {
+      "address": "72h2cpj8YU7aUJW3NFMjxfqGTh6hXnUrovMC4gKqyFPM",
+      "name": "Sonic",
+      "symbol": "Sonic"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.00003490",
+    "txCount": 4,
+    "volume": 22.25,
+    "priceChange": 0.13,
+    "liquidity": 23595.81,
+    "fdv": 34896,
+    "marketCap": 34896
+  },
+  {
+    "pairAddress": "6HxpGyytNcuVARzVDut789aYKSxpAoxirD5VrAx6CuAF",
+    "baseToken": {
+      "address": "sonickAJFiVLcYXx25X9vpF293udaWqDMUCiGtk7dg2",
+      "name": "Sonic",
+      "symbol": "sonicSOL"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "138.078",
+    "txCount": 136,
+    "volume": 20678.41,
+    "priceChange": 0.4,
+    "liquidity": 21043.61,
+    "fdv": 41749475,
+    "marketCap": 41749475
+  },
+  {
+    "pairAddress": "3u3UHHTibZDpSZcdAvRTXwJ7zZTs76UnPfmNEoZNJoJP",
+    "baseToken": {
+      "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+      "name": "Sonic SVM",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.2764",
+    "txCount": 2,
+    "volume": 88.04,
+    "priceChange": -0.14,
+    "liquidity": 8961.28,
+    "fdv": 663538832,
+    "marketCap": 99530847
+  },
+  {
+    "pairAddress": "7BPgLYboCMoVFQkAPzrWhbKLDXEssz2BrCSzsv3xt6ty",
+    "baseToken": {
+      "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+      "name": "Sonic SVM",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.2777",
+    "txCount": 242,
+    "volume": 2037.49,
+    "priceChange": 2.63,
+    "liquidity": 7223.42,
+    "fdv": 666698840,
+    "marketCap": 100004849
+  },
+  {
+    "pairAddress": "AmxrGWxsiDYg9fQB3vNbGuXgzF8yVtEwCoaEd3i4ZSPs",
+    "baseToken": {
+      "address": "FqMXiCJH5D93PZmjuQj69s84nGsC9pG4G9jUefUKpump",
+      "name": "SONIC",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.000002335",
+    "txCount": 1,
+    "volume": 1.18,
+    "priceChange": 0,
+    "liquidity": 4539.89,
+    "fdv": 2334,
+    "marketCap": 2334
+  },
+  {
+    "pairAddress": "5LhUQbRDTzgL6RJd3ecgu62wsve71LnWY59seXxBrMqw",
+    "baseToken": {
+      "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+      "name": "Sonic SVM",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": "0.2779",
+    "txCount": 83,
+    "volume": 395.45,
+    "priceChange": 2.87,
+    "liquidity": 3499.24,
+    "fdv": 667042001,
+    "marketCap": 100056323
+  },
+  {
+    "pairAddress": "ygxKj5asETvmamoKqQPPuocJYHRmbTbM5RYX1MVT6dd",
+    "baseToken": {
+      "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+      "name": "Sonic SVM",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.2685",
+    "txCount": 2,
+    "volume": 0,
+    "priceChange": 0.05,
+    "liquidity": 2618.34,
+    "fdv": 644621589,
+    "marketCap": 96693260
+  },
+  {
+    "pairAddress": "8kGF8SwQWtivfaNbRsQgs5NgViPp9n9VaczdKVtoxLCp",
+    "baseToken": {
+      "address": "sonickAJFiVLcYXx25X9vpF293udaWqDMUCiGtk7dg2",
+      "name": "Sonic",
+      "symbol": "sonicSOL"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "137.61",
+    "txCount": 4,
+    "volume": 41.53,
+    "priceChange": 0.11,
+    "liquidity": 2196.16,
+    "fdv": 41610325,
+    "marketCap": 41610325
+  },
+  {
+    "pairAddress": "BZRPAvD7AveFYWEFBoNAqCqs2RwLjagf7hcJHxPmxvY2",
+    "baseToken": {
+      "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+      "name": "Sonic SVM",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.2782",
+    "txCount": 129,
+    "volume": 342.06,
+    "priceChange": 2.49,
+    "liquidity": 1636.84,
+    "fdv": 667839235,
+    "marketCap": 100175908
+  },
+  {
+    "pairAddress": "A41nzduaGNn23v9BmLwDuNZZGSU68GV5kD91ZzBKfh6E",
+    "baseToken": {
+      "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+      "name": "Sonic SVM",
+      "symbol": "SONIC"
+    },
+    "quoteToken": {
+      "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": "0.2787",
+    "txCount": 21,
+    "volume": 12.23,
+    "priceChange": 3.2,
+    "liquidity": 1438.01,
+    "fdv": 669047982,
+    "marketCap": 100357220
+  },
+  {
+    "pairAddress": "0x6028dA28D6dC53f17C47Fde881Ee39813e5cbc72",
+    "baseToken": {
+      "address": "0x446649F0727621BDbB76644B1910be2163b62a11",
+      "name": "Sonic",
+      "symbol": "Sonic"
+    },
+    "quoteToken": {
+      "address": "0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38",
+      "name": "Wrapped Sonic",
+      "symbol": "wS"
+    },
+    "priceUsd": "0.0002406",
+    "txCount": 6,
+    "volume": 20.09,
+    "priceChange": -1.91,
+    "liquidity": 1413.74,
+    "fdv": 122650,
+    "marketCap": 122650
+  },
+  {
+    "pairAddress": "ZiQskeww2u66xoPME11YUgVvCFuTb9ZeJPqoi4snR1m",
+    "baseToken": {
+      "address": "3rQK45d1ojXR7vtvCmeNjKKVycnVWqaVcP3zk1G39RJR",
+      "name": "Sonic",
+      "symbol": "S"
+    },
+    "quoteToken": {
+      "address": "So11111111111111111111111111111111111111112",
+      "name": "Wrapped SOL",
+      "symbol": "SOL"
+    },
+    "priceUsd": "0.5078",
+    "txCount": 1,
+    "volume": 3.95,
+    "priceChange": 0,
+    "liquidity": 1169.64,
+    "fdv": 400184,
+    "marketCap": 400184
+  },
+  {
+    "pairAddress": "0xfB67bb31b841AE644D567E3eCe819900150fFe2e",
+    "baseToken": {
+      "address": "0x446649F0727621BDbB76644B1910be2163b62a11",
+      "name": "Sonic",
+      "symbol": "Sonic"
+    },
+    "quoteToken": {
+      "address": "0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38",
+      "name": "Wrapped Sonic",
+      "symbol": "wS"
+    },
+    "priceUsd": "0.0002422",
+    "txCount": 5,
+    "volume": 8.79,
+    "priceChange": -1.53,
+    "liquidity": 686.53,
+    "fdv": 123468,
+    "marketCap": 123468
+  },
+  {
+    "pairAddress": "0xd455bc762Cd8606788516ab11f3116F8712DB2D5",
+    "baseToken": {
+      "address": "0x446649F0727621BDbB76644B1910be2163b62a11",
+      "name": "Sonic",
+      "symbol": "Sonic"
+    },
+    "quoteToken": {
+      "address": "0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38",
+      "name": "Wrapped Sonic",
+      "symbol": "wS"
+    },
+    "priceUsd": "0.0002360",
+    "txCount": 3,
+    "volume": 0.92,
+    "priceChange": -1.53,
+    "liquidity": 657.58,
+    "fdv": 120311,
+    "marketCap": 120311
+  }
+]

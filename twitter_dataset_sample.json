@@ -1,0 +1,522 @@
+[
+  {
+    "url": "https://www.shadow.so/liquidity",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity",
+      "loadedTime": "2025-03-25T01:23:32.939Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 0,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity",
+      "title": "Liquidity - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "31043",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:23:16 GMT",
+        "etag": "W/\"99744b4a06c5020237c4ee425d35344d\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-matched-path": "/liquidity",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "cle1::8pzdw-1742865796174-9c1a257f99d4",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Liquidity - Shadow Exchange\nscETH/WETH\nThis pool is optimized with dynamic fees.\n0.004%\nCL\nscETH\n$10,982,221\nWETH\n$4,600,570\n$15,582,790\nxSHADOW\n11.45%\n11.5%\n334.1\n\t\nxSHADOW\n\t$29,911\t\n$29,911\nUSDC.e/scUSD\nThis pool is optimized with dynamic fees.\n0.0023%\nCL\nUSDC.e\n$4,297,774\nscUSD\n$5,386,544\n$9,684,318\nxSHADOW\n16.11%\n16.2%\n281.4\n\t\nxSHADOW\n\t$25,193\t\n$25,193\nS/USDC.e\nThis pool is optimized with dynamic fees.\n0.1351%\nCL\nwS\n$4,195,966\nUSDC.e\n$4,226,308\n$8,422,273\nxSHADOW\n3,417.56%\nSHADOW\n0.01%\n3,417.6%\n11470\n\t\nxSHADOW\n\t$1,026,915\t\n0.0001033\n\t\nSHADOW\n\t< $1\t\n$1,026,915\nwS\n$3,366,912\nSHADOW\n$3,366,912\n$6,733,823\nxSHADOW\n407.59%\nx33\n0.01%\n407.6%\n5402\n\t\nxSHADOW\n\t$483,671\t\n0.01906\n\t\nx33\n\t$2\t\n$483,672\nUSDC.e/USDT\nThis pool is optimized with dynamic fees.\n0.0057%\nCL\nUSDC.e\n$4,063,663\nUSDT\n$865,703\n$4,929,365\nxSHADOW\n54.78%\n54.8%\n101.6\n\t\nxSHADOW\n\t$9,097\t\n$9,097\nS/WETH\nThis pool is optimized with dynamic fees.\n0.2197%\nCL\nwS\n$2,498,884\nWETH\n$2,304,461\n$4,803,344\nxSHADOW\n418.08%\n418.1%\n2703\n\t\nxSHADOW\n\t$242,006\t\n$242,006\nS/stS\nThis pool is optimized with dynamic fees.\n0.0035%\nCL\nwS\n$2,682,924\nstS\n$1,920,123\n$4,603,047\nxSHADOW\n103.19%\n103.2%\n325.5\n\t\nxSHADOW\n\t$29,147\t\n$29,147\nUSDC.e\n$874,909\nx33\n$866,152\n$1,741,060\nxSHADOW\n377.16%\n377.2%\n1377\n\t\nxSHADOW\n\t$123,255\t\n$123,255\nwS\n$510,197\nSNAKE\n$792,381\n$1,302,577\nxSHADOW\n13.14%\n13.2%\n36.19\n\t\nxSHADOW\n\t$3,241\t\n$3,241\nUSDC.e\n$54,470\nxUSD\n$1,236,022\n$1,290,491\nxSHADOW\n0.01%\n0.1%\n0.1141\n\t\nxSHADOW\n\t$11\t\n$11\nwS\n$620,436\nFA\n$613,928\n$1,234,363\nxSHADOW\n112.82%\n112.9%\n285.9\n\t\nxSHADOW\n\t$25,603\t\n$25,603\nUSDC.e/WETH\nThis pool is optimized with dynamic fees.\n0.1305%\nCL\nUSDC.e\n$613,004\nWETH\n$607,107\n$1,220,110\nxSHADOW\n436.69%\n436.7%\n882.6\n\t\nxSHADOW\n\t$79,025\t\n$79,025",
+    "markdown": "# Liquidity - Shadow Exchange\n\n![scETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x3bcE5CB273F0F148010BbEa2470e7b5df84C7812/logo.png)![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nscETH/WETH\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.004%\n\nCL\n\n![scETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x3bcE5CB273F0F148010BbEa2470e7b5df84C7812/logo.png)\n\nscETH\n\n$10,982,221\n\n![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nWETH\n\n$4,600,570\n\n$15,582,790\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n11.45%\n\n11.5%\n\n|     |     |     |\n| --- | --- | --- |\n| 334.1 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $29,911 |\n\n$29,911\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)![scUSD](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0xd3DCe716f3eF535C5Ff8d041c1A41C3bd89b97aE/logo.png)\n\nUSDC.e/scUSD\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.0023%\n\nCL\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$4,297,774\n\n![scUSD](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0xd3DCe716f3eF535C5Ff8d041c1A41C3bd89b97aE/logo.png)\n\nscUSD\n\n$5,386,544\n\n$9,684,318\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n16.11%\n\n16.2%\n\n|     |     |     |\n| --- | --- | --- |\n| 281.4 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $25,193 |\n\n$25,193\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nS/USDC.e\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.1351%\n\nCL\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$4,195,966\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$4,226,308\n\n$8,422,273\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n3,417.56%\n\n![SHADOW](https://www.shadow.so/shadow.svg)\n\nSHADOW\n\n0.01%\n\n3,417.6%\n\n|     |     |     |\n| --- | --- | --- |\n| 11470 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $1,026,915 |\n| 0.0001033 | ![SHADOW](https://www.shadow.so/shadow.svg)<br><br>SHADOW | < $1 |\n\n$1,026,915\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)![SHADOW](https://www.shadow.so/shadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![SHADOW](https://www.shadow.so/shadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$3,366,912\n\n![SHADOW](https://www.shadow.so/shadow.svg)\n\nSHADOW\n\n$3,366,912\n\n$6,733,823\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n407.59%\n\n![x33](https://www.shadow.so/x33.svg)\n\nx33\n\n0.01%\n\n407.6%\n\n|     |     |     |\n| --- | --- | --- |\n| 5402 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $483,671 |\n| 0.01906 | ![x33](https://www.shadow.so/x33.svg)<br><br>x33 | $2  |\n\n$483,672\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)![x33](https://www.shadow.so/x33.svg)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)![USDT](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x6047828dc181963ba44974801FF68e538dA5eaF9/logo.png)\n\nUSDC.e/USDT\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.0057%\n\nCL\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$4,063,663\n\n![USDT](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x6047828dc181963ba44974801FF68e538dA5eaF9/logo.png)\n\nUSDT\n\n$865,703\n\n$4,929,365\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n54.78%\n\n54.8%\n\n|     |     |     |\n| --- | --- | --- |\n| 101.6 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $9,097 |\n\n$9,097\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nS/WETH\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.2197%\n\nCL\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$2,498,884\n\n![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nWETH\n\n$2,304,461\n\n$4,803,344\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n418.08%\n\n418.1%\n\n|     |     |     |\n| --- | --- | --- |\n| 2703 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $242,006 |\n\n$242,006\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![stS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0xE5DA20F15420aD15DE0fa650600aFc998bbE3955/logo.png)\n\nS/stS\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.0035%\n\nCL\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$2,682,924\n\n![stS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0xE5DA20F15420aD15DE0fa650600aFc998bbE3955/logo.png)\n\nstS\n\n$1,920,123\n\n$4,603,047\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n103.19%\n\n103.2%\n\n|     |     |     |\n| --- | --- | --- |\n| 325.5 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $29,147 |\n\n$29,147\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$874,909\n\n![x33](https://www.shadow.so/x33.svg)\n\nx33\n\n$866,152\n\n$1,741,060\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n377.16%\n\n377.2%\n\n|     |     |     |\n| --- | --- | --- |\n| 1377 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $123,255 |\n\n$123,255\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![SNAKE](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x3a516e01f82c1e18916ED69a81Dd498eF64bB157/logo.png)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$510,197\n\n![SNAKE](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x3a516e01f82c1e18916ED69a81Dd498eF64bB157/logo.png)\n\nSNAKE\n\n$792,381\n\n$1,302,577\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n13.14%\n\n13.2%\n\n|     |     |     |\n| --- | --- | --- |\n| 36.19 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $3,241 |\n\n$3,241\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)![xUSD](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x6202B9f02E30E5e1c62Cc01E4305450E5d83b926/logo.png)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$54,470\n\n![xUSD](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x6202B9f02E30E5e1c62Cc01E4305450E5d83b926/logo.png)\n\nxUSD\n\n$1,236,022\n\n$1,290,491\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n0.01%\n\n0.1%\n\n|     |     |     |\n| --- | --- | --- |\n| 0.1141 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $11 |\n\n$11\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![FA](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x8ad39144B37741573F85aa03D6c3E817A0054161/logo.png)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$620,436\n\n![FA](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x8ad39144B37741573F85aa03D6c3E817A0054161/logo.png)\n\nFA\n\n$613,928\n\n$1,234,363\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n112.82%\n\n112.9%\n\n|     |     |     |\n| --- | --- | --- |\n| 285.9 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $25,603 |\n\n$25,603\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nUSDC.e/WETH\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.1305%\n\nCL\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$613,004\n\n![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nWETH\n\n$607,107\n\n$1,220,110\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n436.69%\n\n436.7%\n\n|     |     |     |\n| --- | --- | --- |\n| 882.6 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $79,025 |\n\n$79,025\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)"
+  },
+  {
+    "url": "https://www.shadow.so/liquidity/0xc291ca0a0a0e793dc6a0442a34e1607ce1905389",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity/0xc291ca0a0a0e793dc6a0442a34e1607ce1905389",
+      "loadedTime": "2025-03-25T01:23:42.661Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity/0xc291ca0a0a0e793dc6a0442a34e1607ce1905389",
+      "title": "Mint scETH/WETH Position - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:23:38 GMT",
+        "link": "</_next/static/media/22ee5c1efb5e5f9f-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\", </_next/static/media/867bce6efedfde96-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/liquidity/[...params]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::mjt9b-1742865818739-ac6148564a20",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Mint scETH/WETH Position - Shadow Exchange\nNew CL Position\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool.",
+    "markdown": "# Mint scETH/WETH Position - Shadow Exchange\n\n## New CL Position\n\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool."
+  },
+  {
+    "url": "https://www.shadow.so/liquidity/0x324963c267c354c7660ce8ca3f5f167e05649970",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity/0x324963c267c354c7660ce8ca3f5f167e05649970",
+      "loadedTime": "2025-03-25T01:23:43.358Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity/0x324963c267c354c7660ce8ca3f5f167e05649970",
+      "title": "Mint S/USDC.e Position - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:23:38 GMT",
+        "link": "</_next/static/media/22ee5c1efb5e5f9f-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\", </_next/static/media/867bce6efedfde96-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/liquidity/[...params]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::mjt9b-1742865818940-5adfb8e5713c",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Mint S/USDC.e Position - Shadow Exchange\nNew CL Position\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool.\nInput Amounts\nShadow max requires $50K or more active liquidity\nVisualize range\nView your range against the price and liquidity distribution.\nS price in USDC.e\nTotal reward this epoch\n$1,026,915",
+    "markdown": "# Mint S/USDC.e Position - Shadow Exchange\n\n## New CL Position\n\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool.\n\nInput Amounts\n\nShadow max requires $50K or more active liquidity\n\n## Visualize range\n\nView your range against the price and liquidity distribution.\n\nS\u2002price in\u2002USDC.e\n\nTotal reward this epoch\n\n$1,026,915"
+  },
+  {
+    "url": "https://www.shadow.so/liquidity/0x2c13383855377faf5a562f1aef47e4be7a0f12ac",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity/0x2c13383855377faf5a562f1aef47e4be7a0f12ac",
+      "loadedTime": "2025-03-25T01:23:43.664Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity/0x2c13383855377faf5a562f1aef47e4be7a0f12ac",
+      "title": "Mint USDC.e/scUSD Position - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:23:39 GMT",
+        "link": "</_next/static/media/22ee5c1efb5e5f9f-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\", </_next/static/media/867bce6efedfde96-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/liquidity/[...params]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::mjt9b-1742865819588-68746ece23e9",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Mint USDC.e/scUSD Position - Shadow Exchange\nNew CL Position\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool.\nUSDC.e/scUSD\n5 bps\nSelect Range\nMin scUSD per USDC.e price\nMax scUSD per USDC.e price",
+    "markdown": "# Mint USDC.e/scUSD Position - Shadow Exchange\n\n## New CL Position\n\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool.\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)![scUSD](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0xd3DCe716f3eF535C5Ff8d041c1A41C3bd89b97aE/logo.png)\n\nUSDC.e/scUSD\n\n5 bps\n\nSelect Range\n\nMin scUSD per USDC.e price\n\nMax scUSD per USDC.e price"
+  },
+  {
+    "url": "https://www.shadow.so/liquidity/0xf19748a0e269c6965a84f8c98ca8c47a064d4dd0",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity/0xf19748a0e269c6965a84f8c98ca8c47a064d4dd0",
+      "loadedTime": "2025-03-25T01:23:57.660Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity/0xf19748a0e269c6965a84f8c98ca8c47a064d4dd0",
+      "title": "Mint S/SHADOW Position - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:23:52 GMT",
+        "link": "</_next/static/media/22ee5c1efb5e5f9f-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\", </_next/static/media/867bce6efedfde96-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/liquidity/[...params]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::sstbs-1742865832813-cc3c63ccca94",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Mint S/SHADOW Position - Shadow Exchange\nAdd Liquidity\nCreate a position by selecting tokens, adding balances, and choosing your pool type - volatile or correlated.\nVolatile",
+    "markdown": "# Mint S/SHADOW Position - Shadow Exchange\n\n## Add Liquidity\n\nCreate a position by selecting tokens, adding balances, and choosing your pool type - volatile or correlated.\n\nVolatile"
+  },
+  {
+    "url": "https://www.shadow.so/liquidity/0x9053fe060f412ad5677f934f89e07524343ee8e7",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity/0x9053fe060f412ad5677f934f89e07524343ee8e7",
+      "loadedTime": "2025-03-25T01:23:57.870Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity/0x9053fe060f412ad5677f934f89e07524343ee8e7",
+      "title": "Mint USDC.e/USDT Position - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:23:52 GMT",
+        "link": "</_next/static/media/22ee5c1efb5e5f9f-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\", </_next/static/media/867bce6efedfde96-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/liquidity/[...params]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::2ngt9-1742865832930-1f0b390b25d4",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Mint USDC.e/USDT Position - Shadow Exchange\nNew CL Position\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool.\nUSDC.e/USDT\n1 bps\nSelect Range\nMin USDT per USDC.e price\nMax USDT per USDC.e price",
+    "markdown": "# Mint USDC.e/USDT Position - Shadow Exchange\n\n## New CL Position\n\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool.\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)![USDT](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x6047828dc181963ba44974801FF68e538dA5eaF9/logo.png)\n\nUSDC.e/USDT\n\n1 bps\n\nSelect Range\n\nMin USDT per USDC.e price\n\nMax USDT per USDC.e price"
+  },
+  {
+    "url": "https://www.shadow.so/liquidity/0xb6d9b069f6b96a507243d501d1a23b3fccfc85d3",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity/0xb6d9b069f6b96a507243d501d1a23b3fccfc85d3",
+      "loadedTime": "2025-03-25T01:24:00.061Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity/0xb6d9b069f6b96a507243d501d1a23b3fccfc85d3",
+      "title": "Mint S/WETH Position - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:23:56 GMT",
+        "link": "</_next/static/media/22ee5c1efb5e5f9f-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\", </_next/static/media/867bce6efedfde96-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/liquidity/[...params]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::4n2c2-1742865836118-88fd942460c8",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Mint S/WETH Position - Shadow Exchange\nNew CL Position\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool.",
+    "markdown": "# Mint S/WETH Position - Shadow Exchange\n\n## New CL Position\n\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool."
+  },
+  {
+    "url": "https://www.shadow.so/liquidity/0xde861c8fc9ab78fe00490c5a38813d26e2d09c95",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity/0xde861c8fc9ab78fe00490c5a38813d26e2d09c95",
+      "loadedTime": "2025-03-25T01:24:14.763Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity/0xde861c8fc9ab78fe00490c5a38813d26e2d09c95",
+      "title": "Mint S/stS Position - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:24:11 GMT",
+        "link": "</_next/static/media/22ee5c1efb5e5f9f-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\", </_next/static/media/867bce6efedfde96-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/liquidity/[...params]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::vzjkm-1742865850999-686189fec38e",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Mint S/stS Position - Shadow Exchange\nNew CL Position\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool.",
+    "markdown": "# Mint S/stS Position - Shadow Exchange\n\n## New CL Position\n\nTo create a liquidity position, add a balance to tokens you select. Then configure the fees and pricing of the new pool."
+  },
+  {
+    "url": "https://www.shadow.so/liquidity/0x287c6882de298665977787e268f3dba052a6e251",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity/0x287c6882de298665977787e268f3dba052a6e251",
+      "loadedTime": "2025-03-25T01:24:17.375Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity/0x287c6882de298665977787e268f3dba052a6e251",
+      "title": "Mint S/SNAKE Position - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:24:13 GMT",
+        "link": "</_next/static/media/22ee5c1efb5e5f9f-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\", </_next/static/media/867bce6efedfde96-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/liquidity/[...params]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::vzjkm-1742865853118-4781adcbb39b",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Mint S/SNAKE Position - Shadow Exchange\nAdd Liquidity\nCreate a position by selecting tokens, adding balances, and choosing your pool type - volatile or correlated.\nStable",
+    "markdown": "# Mint S/SNAKE Position - Shadow Exchange\n\n## Add Liquidity\n\nCreate a position by selecting tokens, adding balances, and choosing your pool type - volatile or correlated.\n\nStable"
+  },
+  {
+    "url": "https://www.shadow.so/liquidity/0xe8b696fb500c2a3b1faa5e0fce4d53d6ad26765f",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity/0xe8b696fb500c2a3b1faa5e0fce4d53d6ad26765f",
+      "loadedTime": "2025-03-25T01:24:16.964Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity/0xe8b696fb500c2a3b1faa5e0fce4d53d6ad26765f",
+      "title": "Mint USDC.e/x33 Position - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 25 Mar 2025 01:24:11 GMT",
+        "link": "</_next/static/media/22ee5c1efb5e5f9f-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\", </_next/static/media/867bce6efedfde96-s.p.ttf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/ttf\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/liquidity/[...params]",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::g7kdm-1742865851592-e2fc85d43cc8",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Mint USDC.e/x33 Position - Shadow Exchange\nAdd Liquidity\nCreate a position by selecting tokens, adding balances, and choosing your pool type - volatile or correlated.\nVolatile",
+    "markdown": "# Mint USDC.e/x33 Position - Shadow Exchange\n\n## Add Liquidity\n\nCreate a position by selecting tokens, adding balances, and choosing your pool type - volatile or correlated.\n\nVolatile"
+  }
+]

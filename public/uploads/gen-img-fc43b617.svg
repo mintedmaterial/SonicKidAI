@@ -1,0 +1,49 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="white"/>
+  <text x="10" y="20" font-family="Arial" font-size="14" fill="#333">candlestick chart showing $METRO price mooning over past 30 days</text>
+      <line x1="20" y1="205" x2="480" y2="205" stroke="#ddd" stroke-width="1" stroke-dasharray="4"/>
+      <line x1="20" y1="150" x2="480" y2="150" stroke="#ddd" stroke-width="1" stroke-dasharray="4"/>
+      <line x1="20" y1="95" x2="480" y2="95" stroke="#ddd" stroke-width="1" stroke-dasharray="4"/>
+      <line x1="20" y1="40" x2="480" y2="40" stroke="#ddd" stroke-width="1" stroke-dasharray="4"/>
+      <line x1="40" y1="150" x2="40" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="20" y="179.5" width="40" height="51" 
+        fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <line x1="86" y1="258" x2="86" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="66" y="258" width="40" height="2" 
+        fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <line x1="132" y1="175" x2="132" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="112" y="200" width="40" height="35" 
+        fill="#F44336" stroke="#333" stroke-width="1"/>
+      <line x1="178" y1="213" x2="178" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="158" y="213" width="40" height="47" 
+        fill="#F44336" stroke="#333" stroke-width="1"/>
+      <line x1="224" y1="224" x2="224" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="204" y="224" width="40" height="36" 
+        fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <line x1="270" y1="210" x2="270" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="250" y="210" width="40" height="50" 
+        fill="#F44336" stroke="#333" stroke-width="1"/>
+      <line x1="316" y1="205" x2="316" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="296" y="214.5" width="40" height="36" 
+        fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <line x1="362" y1="203" x2="362" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="342" y="220.5" width="40" height="22" 
+        fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <line x1="408" y1="227" x2="408" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="388" y="227" width="40" height="33" 
+        fill="#4CAF50" stroke="#333" stroke-width="1"/>
+      <line x1="454" y1="228" x2="454" y2="260" 
+        stroke="#333" stroke-width="1"/>
+      <rect x="434" y="228" width="40" height="32" 
+        fill="#4CAF50" stroke="#333" stroke-width="1"/>
+    <line x1="20" y1="260" x2="480" y2="260" stroke="#333" stroke-width="2"/>
+</svg>

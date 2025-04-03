@@ -1,0 +1,312 @@
+Cross
+
+
+GET
+/cross_chain/v1/cross/quote
+
+
+POST
+/cross_chain/v1/cross/swap
+
+Parameters
+Cancel
+Name	Description
+account *
+string
+(query)
+users wallet address, such as 0x000...
+
+0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9
+route *
+object
+(query)
+route from quote interface
+
+{
+  "isApprovalRequired": false,
+  "allowanceTarget": null,
+  "middlewareRoute": [
+    {
+      "137": {
+        "middlewareId": 7,
+        "middlewareName": "OpenOcean",
+        "middlewareInfo": {
+          "displayName": "OpenOcean",
+          "icon": "https://s3.openocean.finance/token_logos/logos/bsc/0x9029fdfae9a03135846381c7ce16595c3554e10a.png"
+        },
+        "fromAsset": {
+          "ids": "matic-network",
+          "name": "Matic Token",
+          "address": "0x0000000000000000000000000000000000001010",
+          "decimals": 18,
+          "icon": "https://s3.openocean.finance/token_logos/logos/1637561049975_1903381661429342.png",
+          "symbol": "MATIC",
+          "chain": "polygon",
+          "chainId": "137"
+        },
+        "toAsset": {
+          "ids": "usd-coin",
+          "name": "USDC",
+          "address": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "decimals": 6,
+          "icon": "https://s3.openocean.finance/token_logos/logos/1710141465519_2940486690496251.png",
+          "symbol": "USDC",
+          "chain": "polygon",
+          "chainId": "137"
+        },
+        "inputAmount": "15000000000000000000",
+        "outputAmount": "15004655",
+        "value": "15000000000000000000"
+      }
+    }
+  ],
+  "bridgeRoute": {
+    "toChainId": "42161",
+    "inputAmount": "15004655",
+    "bridgeId": 21,
+    "fromAsset": {
+      "ids": "usd-coin",
+      "name": "USDC",
+      "address": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+      "decimals": 6,
+      "icon": "https://s3.openocean.finance/token_logos/logos/1710141465519_2940486690496251.png",
+      "symbol": "USDC",
+      "chain": "polygon",
+      "chainId": "137"
+    },
+    "tokenReceiver": "0xe424AA414dfEe7D29B3b17e74C766a3368Fe5B75",
+    "value": "15000000000000000000",
+    "fromChainId": "137",
+    "toAsset": {
+      "ids": "usd-coin",
+      "name": "USD Coin",
+      "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+      "decimals": 6,
+      "icon": "https://s3.openocean.finance/token_logos/logos/1686302171055_4277678355359844.png",
+      "symbol": "USDC",
+      "chain": "arbitrum",
+      "chainId": "42161"
+    },
+    "bridgeInfo": {
+      "serviceTime": 600000,
+      "displayName": "CCIP",
+      "icon": "https://s3.openocean.finance/static/ccip.svg",
+      "code": "ccip"
+    },
+    "outputAmount": "15004655"
+  },
+  "fees": {
+    "gasLimit": [
+      {
+        "decimals": 18,
+        "assetAddress": "0x0000000000000000000000000000000000001010",
+        "name": "Matic",
+        "value": 0.025852925940269684,
+        "address": "0x0000000000000000000000000000000000001010",
+        "amount": 324448,
+        "symbol": "MATIC",
+        "ids": "matic-network",
+        "icon": "https://s3.openocean.finance/images/1637561049975_1903381661429342.png",
+        "chainId": 137
+      }
+    ],
+    "middlewareFee": {
+      "decimals": 18,
+      "assetAddress": "0x0000000000000000000000000000000000001010",
+      "name": "Matic",
+      "address": "0x0000000000000000000000000000000000001010",
+      "amount": "260540666155617225",
+      "symbol": "MATIC",
+      "ids": "matic-network",
+      "icon": "https://s3.openocean.finance/images/1637561049975_1903381661429342.png",
+      "chainId": 137
+    },
+    "bridgeFee": {
+      "chain": "polygon",
+      "decimals": 6,
+      "assetAddress": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+      "name": "USDC",
+      "address": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+      "amount": 0,
+      "symbol": "USDC",
+      "ids": "usd-coin",
+      "icon": "https://s3.openocean.finance/token_logos/logos/1710141465519_2940486690496251.png",
+      "chainId": "137"
+    }
+  },
+  "type": 0
+}
+Execute
+Responses
+Code	Description	Links
+201	
+No links
+
+GET
+/cross_chain/v1/cross/getCrossTransaction
+
+
+GET
+/cross_chain/v1/cross/getCrossStatus
+
+
+GET
+/cross_chain/v1/cross/getMinSend
+
+Limit order
+
+
+GET
+/v1/limit-order/{chain}/address/{address}
+
+
+GET
+/v1/limit-order/{chain}/all
+
+GMX
+
+
+GET
+/v3/{chain}/gmx_quote
+
+
+GET
+/v3/{chain}/gmx_swap_quote
+
+
+GET
+/v3/{chain}/gmx_transaction
+
+DCA
+
+
+POST
+/v1/{chain}/dca/swap
+
+Parameters
+Cancel
+Name	Description
+chain *
+string
+(path)
+chain code or chain id
+
+
+sonic
+Request body
+
+application/json
+{
+  "route": {
+    "makerAmount": "20000000",
+    "takerAmount": "19983700",
+    "signature": "0x37e6...",
+    "orderHash": "0x8e89...",
+    "orderMaker": "0xB3cb...",
+    "remainingMakerAmount": "20000000",
+    "data": {
+      "salt": "",
+      "makerAsset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "takerAsset": "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
+      "maker": "0xB3cb...",
+      "receiver": "0x0000000000000000000000000000000000000000",
+      "allowedSender": "0x0000000000000000000000000000000000000000",
+      "makingAmount": "20000000",
+      "takingAmount": "19983700",
+      "makerAssetData": "0x",
+      "takerAssetData": "0x",
+      "getMakerAmount": "0x",
+      "getTakerAmount": "0x",
+      "predicate": "0x",
+      "permit": "0x",
+      "interaction": "0x"
+    },
+    "isActive": true,
+    "chainId": 8453,
+    "expireTime": 600,
+    "amountRate": "1.000816",
+    "interaction": "0x",
+    "time": 300,
+    "times": 2,
+    "minPrice": "0.9",
+    "maxPrice": "1.1"
+  }
+}
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'POST' \
+  'https://open-api.openocean.finance/v1/sonic/dca/swap' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "route": {
+    "makerAmount": "20000000",
+    "takerAmount": "19983700",
+    "signature": "0x37e6...",
+    "orderHash": "0x8e89...",
+    "orderMaker": "0xB3cb...",
+    "remainingMakerAmount": "20000000",
+    "data": {
+      "salt": "",
+      "makerAsset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "takerAsset": "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
+      "maker": "0xB3cb...",
+      "receiver": "0x0000000000000000000000000000000000000000",
+      "allowedSender": "0x0000000000000000000000000000000000000000",
+      "makingAmount": "20000000",
+      "takingAmount": "19983700",
+      "makerAssetData": "0x",
+      "takerAssetData": "0x",
+      "getMakerAmount": "0x",
+      "getTakerAmount": "0x",
+      "predicate": "0x",
+      "permit": "0x",
+      "interaction": "0x"
+    },
+    "isActive": true,
+    "chainId": 8453,
+    "expireTime": 600,
+    "amountRate": "1.000816",
+    "interaction": "0x",
+    "time": 300,
+    "times": 2,
+    "minPrice": "0.9",
+    "maxPrice": "1.1"
+  }
+}'
+Request URL
+https://open-api.openocean.finance/v1/sonic/dca/swap
+Server response
+Code	Details
+200
+Undocumented
+Response body
+Download
+{
+  "code": -200,
+  "message": {}
+}
+Response headers
+ access-control-allow-origin: * 
+ cf-cache-status: DYNAMIC 
+ cf-ray: 9273cdb90f94f07e-DFW 
+ content-length: 26 
+ content-type: application/json; charset=utf-8 
+ date: Fri,28 Mar 2025 02:47:34 GMT 
+ nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800} 
+ report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=zA2leWlA5ieOkucZi%2BVLB8JYy6YEfhGUtrTsQ4L8xGDT2REY9gut6QE%2BLauNX2mlmfN4G7MiKLHh1clFbz1W0Ozp%2FsJpP1467wxuo8cKg3VaVN2kqtAmuaplmuBGp7mVdc8kAs0u237BJ1cdHSMb7PINdncGOo0V"}],"group":"cf-nel","max_age":604800} 
+ server: cloudflare 
+ server-timing: cfL4;desc="?proto=TCP&rtt=71072&min_rtt=32943&rtt_var=36086&sent=564&recv=343&lost=0&retrans=106&sent_bytes=658916&recv_bytes=24087&delivery_rate=1156514&cwnd=104&unsent_bytes=0&cid=5343b4402367986a&ts=361485&x=0" 
+ strict-transport-security: max-age=31536000; includeSubdomains; 
+ vary: Origin 
+ x-content-type-options: nosniff,nosniff 
+ x-download-options: noopen 
+ x-frame-options: SAMEORIGIN,SAMEORIGIN 
+ x-readtime: 70 
+ x-xss-protection: 1; mode=block,1; mode=block 
+Responses
+Code	Description	Links
+201	

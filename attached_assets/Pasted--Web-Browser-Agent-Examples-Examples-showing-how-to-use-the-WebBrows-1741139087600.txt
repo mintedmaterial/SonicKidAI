@@ -1,0 +1,119 @@
+"""
+Web Browser Agent Examples
+-------------------------
+Examples showing how to use the WebBrowserAgent for different use cases.
+"""
+
+import asyncio
+import os
+from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
+from web_browser_agent import WebBrowserAgent, BrowserTask
+from browser_tools import take_screenshot, extract_structured_data, save_cookies
+
+# Load environment variables
+load_dotenv()
+
+async def basic_example():
+    """Basic example of using the WebBrowserAgent."""
+    print("\n=== Basic Example ===")
+    
+    # Initialize the agent with OpenAI
+    agent = WebBrowserAgent(
+        llm=ChatOpenAI(model="gpt-4o"),
+        headless=False,  # Show the browser
+        verbose=True
+    )
+    
+    # Execute a simple task
+    task = "Find the current price of Bitcoin and summarize recent trends"
+    result = await agent.execute_task(task)
+    
+    # Print the result
+    print(f"Success: {result.success}")
+    print(f"Message: {result.message}")
+    print(f"Data: {result.data}")
+    
+    if result.success:
+        print("\nSteps taken:")
+        for i, step in enumerate(result.steps):
+            print(f"Step {i+1}: {step['role']} - {step['content'][:100]}...")
+    
+    await agent.close()
+
+async def advanced_example():
+    """Advanced example with custom tools and structured tasks."""
+    print("\n=== Advanced Example ===")
+    
+    # Initialize the agent with Anthropic
+    agent = WebBrowserAgent(
+        llm=ChatAnthropic(model="claude-3-opus-20240229"),
+        headless=True,
+        custom_tools=[take_screenshot, extract_structured_data, save_cookies],
+        verbose=True
+    )
+    
+    # Create a structured task
+    task = BrowserTask(
+        description="Compare prices and features of the latest iPhone and Samsung Galaxy models",
+        timeout=600,  # 10 minutes
+        max_steps=30
+    )
+    
+    # Execute the task
+    result = await agent.execute_task(task)
+    
+    # Print the result
+    print(f"Success: {result.success}")
+    print(f"Message: {result.message}")
+    
+    if result.success:
+        # Extract the comparison data
+        if "comparison" in result.data:
+            print("\nComparison Results:")
+            print(result.data["comparison"])
+    
+    await agent.close()
+
+async def integration_example():
+    """Example showing how to integrate with another framework."""
+    print("\n=== Integration Example ===")
+    
+    # Initialize the agent
+    browser_agent = WebBrowserAgent(
+        llm=ChatOpenAI(model="gpt-4o"),
+        headless=True,
+        verbose=False
+    )
+    
+    # Simulate integration with another framework
+    class SimulatedAgentFramework:
+        async def delegate_task(self, agent, task):
+            print(f"Delegating task to specialized agent: {task}")
+            result = await agent.execute_task(task)
+            return result
+    
+    framework = SimulatedAgentFramework()
+    
+    # Delegate a task to our browser agent
+    result = await framework.delegate_task(
+        browser_agent,
+        "Research the top 3 AI frameworks for natural language processing and compare their features"
+    )
+    
+    # Process the result in the framework
+    print(f"Task succeeded: {result.success}")
+    print(f"Framework processing result: {result.data.get('final_answer', '')[:200]}...")
+    
+    await browser_agent.close()
+
+async def main():
+    """Run all examples."""
+    await basic_example()
+    await advanced_example()
+    await integration_example()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+

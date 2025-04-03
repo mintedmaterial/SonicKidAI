@@ -1,0 +1,53 @@
+Common Error Messages
+An API call that encounters an error ⚠️ will return 0 as its status code and display the cause of the error under the result field.
+
+Copy
+{
+   "status":"0",
+   "message":"NOTOK",
+   "result":"Max rate limit reached, please use API Key for higher rate limit"
+}
+Invalid API Key
+"Invalid API Key"
+
+This error occurs when you specify an invalid API Key, or use a key from an explorer on a different chain.
+
+To resolve, ensure that you have copy pasted the right key from the right explorer.
+
+New API Keys may also take a moment to be fully activated, so if your fresh key is throwing an error consider waiting for a few minutes.
+
+Max rate limit
+"Max rate limit reached, please use API Key for higher rate limit"
+
+This error occurs when you exceed the rate limit assigned to your specific API key.
+
+To resolve, adhere to the rate limits of your available plan by waiting for a certain amount of time before each request. If you are using a script or application, apply throttling to limit the frequency of calls.
+
+Missing or invalid action
+"Error! Missing Or invalid Action name"
+
+This error occurs when you do not specify, or specify an invalid module and action name.
+
+To resolve, double check your API query to use a valid module and action name.
+
+If you require some help getting started, try copying the sample queries provided in the API Endpoints and pasting them into your browser.
+
+Endpoint-specific errors
+"Error! Block number already pass"
+
+"Error! Invalid address format"
+
+"Contract source code not verified"
+
+These error messages returned are specific to certain endpoints and their related parameters.
+
+To resolve, kindly refer to the specific endpoint's documentation, and check for the correct format or values to be specified as parameters.
+
+Query Timeout
+"Query Timeout occured. Please select a smaller result dataset"
+
+"Unexpected err, timeout occurred or server too busy. Please try again later"
+
+This error occurs when you have sent a particularly large query that did not manage to be completed in time.
+
+To resolve, consider selecting a smaller date/block range, though you may ping us if you think the issue may be performance related.

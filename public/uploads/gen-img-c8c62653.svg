@@ -1,0 +1,22 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="white"/>
+  <text x="10" y="20" font-family="Arial" font-size="14" fill="#333">Sonic price chart with support/resistance levels highlighted</text>
+      <rect x="30" y="103.16531677148723" width="78" height="156.83468322851277" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="118" y="125.95316283148074" width="78" height="134.04683716851926" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="206" y="165.8724494831275" width="78" height="94.1275505168725" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="294" y="147.34473762143588" width="78" height="112.65526237856412" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+      <rect x="382" y="144.41648619002598" width="78" height="115.58351380997404" 
+        fill="#f16196" opacity="0.7" stroke="#333" stroke-width="1" rx="2"/>
+    <path d="M 69 103.16531677148723 L 157 125.95316283148074 L 245 165.8724494831275 L 333 147.34473762143588 L 421 144.41648619002598" fill="none" stroke="#2196F3" stroke-width="3"/>
+      <circle cx="69" cy="103.16531677148723" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="157" cy="125.95316283148074" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="245" cy="165.8724494831275" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="333" cy="147.34473762143588" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+      <circle cx="421" cy="144.41648619002598" r="4" fill="#2196F3" stroke="#333" stroke-width="1"/>
+    <line x1="20" y1="260" x2="480" y2="260" stroke="#333" stroke-width="2"/>
+    <line x1="20" y1="40" x2="20" y2="260" stroke="#333" stroke-width="2"/>
+</svg>

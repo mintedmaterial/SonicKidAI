@@ -1,0 +1,4 @@
+run = "python run_apify_scraping.py"
+language = "python3"
+onBoot = "python run_apify_scraping.py scheduler"
+name = "Content Scraper"

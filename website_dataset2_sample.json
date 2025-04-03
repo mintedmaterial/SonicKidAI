@@ -1,0 +1,668 @@
+[
+  {
+    "url": "https://docs.kyberswap.com/",
+    "crawl": {
+      "loadedUrl": "https://docs.kyberswap.com/",
+      "loadedTime": "2025-03-24T21:16:21.687Z",
+      "referrerUrl": "https://docs.kyberswap.com/",
+      "depth": 0,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://docs.kyberswap.com/",
+      "title": "Introduction to KyberSwap | KyberSwap Docs",
+      "description": "DeFi's Open and Permissionless Liquidity Backbone",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Introduction to KyberSwap | KyberSwap Docs"
+        },
+        {
+          "property": "og:description",
+          "content": "DeFi's Open and Permissionless Liquidity Backbone"
+        },
+        {
+          "property": "og:image",
+          "content": "https://docs.kyberswap.com/~gitbook/image?url=https%3A%2F%2F1368568567-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fw1XgQJc40kVeGUIxgI7c%252Fsocialpreview%252FKZZYjJn8jXVCVwMA2Eyt%252Fkyber-logo-mark.png%3Falt%3Dmedia%26token%3D62b08d01-f16a-4a78-be2f-12695ceb67fa&width=1200&height=630&sign=4304f385&sv=2"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "date": "Mon, 24 Mar 2025 21:16:19 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cf-ray": "9259305b4c0368c2-DFW",
+        "cf-cache-status": "HIT",
+        "age": "5544",
+        "cache-control": "public, max-age=0, s-maxage=82059, stale-if-error=0",
+        "last-modified": "Mon, 24 Mar 2025 19:43:55 GMT",
+        "link": "<https://static.gitbook.com>; rel=preconnect; crossorigin=\"\"",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "cf-placement": "local-DFW",
+        "content-security-policy": "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * 'self' blob: data:; connect-src *; font-src *; frame-src *; object-src 'none'; base-uri 'self' https://static.gitbook.com; form-action 'self' https://static.gitbook.com *; frame-ancestors https: ;",
+        "nel": "{\"success_fraction\":0, \"report_to\":\"cf-nel\", \"max_age\":604800}",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=iDpLCC2cxTZzj3eyW1rklTQ8OOaAoKfBsnVgVy8q3PEHjwgFlu7uVGK1By6k%2BiRDItstBHs2n3MWgOSCvxgaah9dI073aAyx4EcHFA5xT9Y1P2U5OrFIQ9EVkQrzZtolzqrlqWxwPazd1ZhFiAX2\"}], \"group\":\"cf-nel\", \"max_age\":604800}",
+        "x-content-type-options": "nosniff",
+        "x-edge-runtime": "1",
+        "x-gitbook-cache": "hit",
+        "x-gitbook-cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "x-gitbook-target": "default",
+        "x-gitbook-version": "d7aa5fa",
+        "x-http-method": "GET",
+        "x-matched-path": "/middleware/[[...pathname]]",
+        "server": "cloudflare",
+        "content-encoding": "br",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Introduction to KyberSwap | KyberSwap Docs\nKyber Network is building a world where anyone can freely, reliably and effortlessly trade their funds on their own terms. Founded on decentralized finance (DeFi) principles of open access, KyberSwap is a multichain aggregator and DeFi hub that empowers users with the insights and tools to trade without intermediaries. All the above while being fast, secure, and easy-to-use. Whichever your path to financial autonomy, KyberSwap has got you covered.\nThe KyberSwap Ecosystem\nWith more than 100+ projects building on top of KyberSwap, our solutions have facilitated over US$20B in transactions for thousands of traders since its inception. KyberSwap's development is governed by the KyberDAO, a community platform that empowers KNC (Kyber Network Crystal) token holders to vote on or create proposals which will go on to influence KyberSwap's roadmap. As DeFi's open and permissionless liquidity backbone, KyberSwap continues to generate synergies across its ever expanding ecosystem which now comprises of more than 100 connected projects across 17 chains.\nFor more information on Kyber Network, the organization, please visit the official Kyber Network page.\nKyberSwap Solutions\nKyberSwap Aggregator: Instantly swap at superior rates with our intelligent trade route scanner. Connected to over 100+ liquidity sources across 16 chains, the KyberSwap Aggregator splits and reroutes trades via capitally efficient sources thereby ensuring favourable swap rates while encouraging greater market stability.\nLimit Order: Set your preferred swap rates and enjoy gasless, slippage-free, and zero-fee trades powered by our wide network of takers. Stay in control of your assets as orders are automatically settled on-chain only when the market moves in your favor.\nKyberSwap Widget: Plug and play superior rates directly from your app with just a few lines of code. Our endlessly customizable widget enables integrators to seamlessly blend superior rates into their dApps with easily configure trade routes, fees, and themes.\nKyberSwap Zap as a Service (ZaaS): Introducing Zap as a Service (ZaaS) API, streamlining decentralized liquidity provision. Effortlessly adding liquidity with a single token for enhanced DeFi engagement, powered by KyberSwap DEX Aggregator to minimize price impact. Zap also employs fallback logic to execute additional swaps if necessary, ensuring maximal usage of capital during liquidity provision even during volatile market and reducing the failure rates.\nKyberSwap Liquidity Widget: We make it even simpler to integrate with KyberSwap ZaaS. Simply plug-and-play the Zap Widget directly to your dapps with just a few lines of code, allowing users to provide liquidity effortlessly in a more efficient way.\nKyberSwap Cross-Chain Swaps: Swap between tokens on any chain with a single transaction. KyberSwap has integrated with the Squid swap and liquidity routing protocol thereby enabling users to perform cross-chain swaps straight from the KyberSwap Interface.\nKyberAI (deprecated): Discover your next big opportunity with AI-powered trading insights for over 4000+ tokens across 7 chains. In addition to conveniently surfacing multiple on-chain and technical indicators, KyberAI leverages the power of machine learning to assign each token a KyberScore, a single number indicating the extent of a token's bullishness or bearishness over the next 24 hours. This service was discontinued on 28 December 2023.\nLiquidity Solutions (deprecated)\nKyberSwap Elastic Security Incident\nOn 22 Nov 2023, the Elastic protocol experienced a security incident. More details can be found via our official channels.\nAll other KyberSwap products (Aggregator & Limit Order) continue to be fully operational.\nKyberSwap Classic (deprecated): Amplify your returns through programmable pricing curves as well as dynamic auto-adjusting fees which responds to market conditions. Deposit your tokens into capitally efficient pools and let the protocol optimize trading spreads (i.e. fees) based on the market volatility. This service was discontinued on 26 March 2024.\nElastic Static Farms (deprecated): Continue earning concentrated liquidity farming rewards no matter the market conditions by adding liquidity towards an operator-configured price range. This service was discontinued on 23 November 2023.\nElastic Dynamic Farms (deprecated): Add liquidity into customized price ranges and get additional farming rewards when the market trades within your selected range. This service was discontinued on 23 November 2023.",
+    "markdown": "# Introduction to KyberSwap | KyberSwap Docs\n\nKyber Network is building a world where anyone can freely, reliably and effortlessly trade their funds on their own terms. Founded on [decentralized finance](https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance) (DeFi) principles of open access, KyberSwap is a multichain [aggregator](https://docs.kyberswap.com/getting-started/foundational-topics/decentralized-finance/dex-aggregator) and DeFi hub that empowers users with the insights and tools to trade without intermediaries. All the above while being fast, secure, and easy-to-use. Whichever your path to financial autonomy, KyberSwap has got you covered.\n\n![](https://docs.kyberswap.com/~gitbook/image?url=https%3A%2F%2F1368568567-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fw1XgQJc40kVeGUIxgI7c%252Fuploads%252Fgit-blob-d0bfb9cf55adb93556bdeaf3076ae1bdf1dee4af%252F231013_ecosystem-stats.png%3Falt%3Dmedia&width=768&dpr=4&quality=100&sign=8d4b7688&sv=2)\n\nThe KyberSwap Ecosystem\n\nWith more than 100+ projects building on top of KyberSwap, our solutions have facilitated over US$20B in transactions for thousands of traders since its inception. KyberSwap's development is governed by the [KyberDAO](https://docs.kyberswap.com/governance/kyberdao), a community platform that empowers [KNC](https://docs.kyberswap.com/governance/knc-token) (Kyber Network Crystal) token holders to [vote](https://kyberswap.com/kyberdao/vote) on or [create](https://kyberswap.canny.io/feature-request) proposals which will go on to influence KyberSwap's roadmap. As DeFi's open and permissionless liquidity backbone, KyberSwap continues to generate synergies across its ever expanding ecosystem which now comprises of more than [100 connected projects across 17 chains](https://docs.kyberswap.com/getting-started/supported-exchanges-and-networks).\n\nFor more information on Kyber Network, the organization, please visit the official [Kyber Network page](https://kyber.network/).\n\n### \n\nKyberSwap Solutions\n\n*   [**KyberSwap Aggregator**](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-aggregator): Instantly swap at superior rates with our intelligent trade route scanner. Connected to over 100+ liquidity sources across 16 chains, the KyberSwap Aggregator [splits and reroutes trades](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-aggregator/concepts/dynamic-trade-routing) via capitally efficient sources thereby ensuring favourable swap rates while encouraging greater market stability.\n    \n*   [**Limit Order**](https://docs.kyberswap.com/kyberswap-solutions/limit-order): Set your preferred swap rates and enjoy gasless, slippage-free, and zero-fee trades powered by our wide network of takers. Stay in control of your assets as orders are [automatically settled on-chain](https://docs.kyberswap.com/kyberswap-solutions/limit-order/concepts/off-chain-relay) only when the market moves in your favor.\n    \n\n*   [**KyberSwap Widget**](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-widget): Plug and play superior rates directly from your app with just a few lines of code. Our [endlessly customizable widget](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-widget/developer-guides/customizing-the-kyberswap-widget) enables integrators to seamlessly blend superior rates into their dApps with easily configure trade routes, fees, and themes.\n    \n*   [**KyberSwap Zap as a Service (ZaaS)**](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-zap-as-a-service): Introducing Zap as a Service (ZaaS) API, streamlining decentralized liquidity provision. Effortlessly adding liquidity with a single token for enhanced DeFi engagement, powered by [KyberSwap DEX Aggregator](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-aggregator) to minimize price impact. Zap also employs fallback logic to execute additional swaps if necessary, ensuring maximal usage of capital during liquidity provision even during volatile market and reducing the failure rates.\n    \n*   [**KyberSwap Liquidity Widget**](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-liquidity-widget): We make it even simpler to integrate with KyberSwap ZaaS. Simply plug-and-play the [Zap Widget](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-liquidity-widget) directly to your dapps with just a few lines of code, allowing users to provide liquidity effortlessly in a more efficient way.\n    \n*   [**KyberSwap Cross-Chain Swaps**](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-interface/user-guides/swap-between-different-tokens-across-chains): Swap between tokens on any chain with a single transaction. KyberSwap has integrated with the [Squid](https://docs.squidrouter.com/) swap and liquidity routing protocol thereby enabling users to perform cross-chain swaps straight from the [KyberSwap Interface](https://kyberswap.com/cross-chain).\n    \n*   [**KyberAI**](https://docs.kyberswap.com/reference/legacy/kyberai) **(deprecated)**: Discover your next big opportunity with AI-powered trading insights for over 4000+ tokens across [7 chains](https://docs.kyberswap.com/reference/legacy/kyberai#supported-chains). In addition to conveniently surfacing multiple [on-chain](https://docs.kyberswap.com/reference/legacy/kyberai/on-chain-indicators) and [technical indicators](https://docs.kyberswap.com/reference/legacy/kyberai/technical-indicators), KyberAI leverages the power of machine learning to assign each token a [KyberScore](https://docs.kyberswap.com/reference/legacy/kyberai/kyberscore), a single number indicating the extent of a token's bullishness or bearishness over the next 24 hours. This service was **discontinued on 28 December 2023.**\n    \n\n### \n\nLiquidity Solutions **(deprecated)**\n\n**KyberSwap Elastic Security Incident**\n\nOn 22 Nov 2023, the Elastic protocol experienced a security incident. More details can be found via our [official channels](https://x.com/KyberNetwork?s=20).\n\nAll other KyberSwap products ([Aggregator](https://docs.kyberswap.com/kyberswap-solutions/kyberswap-aggregator) & [Limit Order](https://docs.kyberswap.com/kyberswap-solutions/limit-order)) continue to be fully operational.\n\n*   **KyberSwap Classic (deprecated)**: Amplify your returns through programmable pricing curves as well as dynamic auto-adjusting fees which responds to market conditions. Deposit your tokens into capitally efficient pools and let the protocol optimize trading spreads (i.e. fees) based on the market volatility. This service was **discontinued on 26 March 2024.**\n    \n\n*   **Elastic Static Farms (deprecated)**: Continue earning concentrated liquidity farming rewards no matter the market conditions by [adding liquidity towards an operator-configured price range](https://github.com/KyberNetwork/kyberswap-documentation/blob/main/broken-reference/README.md). This service was **discontinued on 23 November 2023.**\n    \n*   **Elastic Dynamic Farms (deprecated)**: [Add liquidity into customized price ranges](https://docs.kyberswap.com/reference/legacy/kyberswap-elastic/concepts/tick-based-farming) and get additional farming rewards when the market trades within your selected range. This service was **discontinued on 23 November 2023.**",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  },
+  {
+    "url": "https://paintswap.io/",
+    "crawl": {
+      "loadedUrl": "https://paintswap.io/",
+      "loadedTime": "2025-03-24T21:16:27.659Z",
+      "referrerUrl": "https://paintswap.io/",
+      "depth": 0,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://paintswap.io/",
+      "title": "Paintswap - The Most Advanced Decentralized NFT Marketplace",
+      "description": "Paintswap is the ultimate open decentralized NFT Marketplace to buy and sell NFTs utilising the latest NFT technology.",
+      "author": null,
+      "keywords": "sonic nft marketplace, $S, S, sonic nft, sonic marketplace, nft sonic marketplace, nft marketplace on sonic, nfts, nft marketplace",
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:url",
+          "content": "https://paintswap.io"
+        },
+        {
+          "property": "og:url",
+          "content": "/"
+        },
+        {
+          "property": "og:type",
+          "content": "website"
+        },
+        {
+          "property": "og:title",
+          "content": "Paintswap - The Most Advanced Decentralized NFT Marketplace"
+        },
+        {
+          "property": "og:description",
+          "content": "Paintswap is the ultimate open decentralized NFT Marketplace to buy and sell NFTs utilising the latest NFT technology."
+        },
+        {
+          "property": "og:image",
+          "content": "https://paintswap.io/images/meta-image_v4.png"
+        },
+        {
+          "property": "og:title",
+          "content": "Paintswap - The Most Advanced Decentralized NFT Marketplace"
+        },
+        {
+          "property": "og:description",
+          "content": "Paintswap is the ultimate open decentralized NFT Marketplace to buy and sell NFTs utilising the latest NFT technology."
+        },
+        {
+          "property": "og:image",
+          "content": "https://paintswap.io/images/meta-image_v4.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "cross-origin-opener-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "cache-control": "no-store",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"1348-cPEPYS2hEOg75ChyELuYHmcst1c\"",
+        "vary": "Accept-Encoding",
+        "content-encoding": "br",
+        "date": "Mon, 24 Mar 2025 21:16:19 GMT",
+        "server": "Google Frontend",
+        "via": "1.1 google",
+        "alt-svc": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "The Most Advanced Decentralized NFT Marketplace\nDiscover, Collect, and Sell Extraordinary NFTs\nPaintswap is an open NFT marketplace on multiple chains. Supporting: Image, video, music, interactive and financial NFTs.\nExplore, Trade or Hold Financial NFTs\nPaintswap is the number one resource to buy, sell, and discover fNFTs. \nWith low trading fees, you get the highest value possible from your transactions.",
+    "markdown": "# The Most Advanced Decentralized NFT Marketplace\n\n[![PS](https://paintswap.io/images/icons/v2/topBar/logo_paintswap.svg)](https://paintswap.io/)\n\nDiscover, Collect, and Sell Extraordinary NFTs\n\nPaintswap is an open NFT marketplace on multiple chains. Supporting: Image, video, music, interactive and financial NFTs.\n\nExplore, Trade or Hold Financial NFTs\n\nPaintswap is the number one resource to buy, sell, and discover fNFTs.  \nWith low trading fees, you get the highest value possible from your transactions.",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  },
+  {
+    "url": "https://docs.kyberswap.com/governance/knc-token/knc-contract-addresses",
+    "crawl": {
+      "loadedUrl": "https://docs.kyberswap.com/governance/knc-token/knc-contract-addresses",
+      "loadedTime": "2025-03-24T21:16:47.983Z",
+      "referrerUrl": "https://docs.kyberswap.com/",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://docs.kyberswap.com/governance/knc-token/knc-contract-addresses",
+      "title": "KNC Contract Addresses | KyberSwap Docs",
+      "description": "Trade KNC On Multiple Chains",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "KNC Contract Addresses | KyberSwap Docs"
+        },
+        {
+          "property": "og:description",
+          "content": "Trade KNC On Multiple Chains"
+        },
+        {
+          "property": "og:image",
+          "content": "https://docs.kyberswap.com/~gitbook/image?url=https%3A%2F%2F1368568567-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fw1XgQJc40kVeGUIxgI7c%252Fsocialpreview%252FKZZYjJn8jXVCVwMA2Eyt%252Fkyber-logo-mark.png%3Falt%3Dmedia%26token%3D62b08d01-f16a-4a78-be2f-12695ceb67fa&width=1200&height=630&sign=4304f385&sv=2"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "date": "Mon, 24 Mar 2025 21:16:46 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cf-ray": "925931043b7c68c2-DFW",
+        "cf-cache-status": "DYNAMIC",
+        "cache-control": "public, max-age=0, s-maxage=71462, stale-if-error=0",
+        "content-encoding": "br",
+        "link": "<https://static.gitbook.com>; rel=preconnect; crossorigin=\"\"",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "cf-placement": "local-DFW",
+        "content-security-policy": "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * 'self' blob: data:; connect-src *; font-src *; frame-src *; object-src 'none'; base-uri 'self' https://static.gitbook.com; form-action 'self' https://static.gitbook.com *; frame-ancestors https: ;",
+        "nel": "{\"success_fraction\":0, \"report_to\":\"cf-nel\", \"max_age\":604800}",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=F3%2FosxvGSvnVndlq2ZICmSlMcIOtZsby%2BZUT10KSNfrmYBw6%2BnhgUr7NrFk7L3p%2BPWqkOaPNlQ25zB6CfBBrr7Nq8kXlnTMLiAsHSy85sqofEjRWnKenbMJg%2FOzsq8k0X7WfkLZcCsdM9RklZhSJ\"}], \"group\":\"cf-nel\", \"max_age\":604800}",
+        "x-content-type-options": "nosniff",
+        "x-edge-runtime": "1",
+        "x-gitbook-cache": "miss",
+        "x-gitbook-cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "x-gitbook-target": "default",
+        "x-gitbook-version": "d7aa5fa",
+        "x-http-method": "GET",
+        "x-matched-path": "/middleware/[[...pathname]]",
+        "server": "cloudflare",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "KNC Contract Addresses | KyberSwap Docs\nAn upgraded Kyber Network Crystal token\nKNC was launched on Ethereum in 2017 and based on the ERC-20 standard. All vested tokens for founders and advisors have been unlocked and distributed since September 2019.\nIn 2021, KNC was upgraded with additional functionality and flexibility, and the old token version was renamed KNCL (KNC Legacy). Old KNCL holders can migrate to the current KNC version here.\nFor avoidance of doubt, KNC refers to the current version of the token while KNCL refers to the token version prior to the upgrade.\nMultichain ceasing of operations\nAs of 14 July 2023, the Multichain team has ceased all operations. Wrapped KNC token contracts on the following chains are owned and deployed by the Multichain team. Due to the nature of public blockchains (where contracts are immutable unless written with a specific selfdestruct function), these contracts remain callable but users are highly discouraged from interacting with said contracts.\nYou can view their official announcement here.",
+    "markdown": "# KNC Contract Addresses | KyberSwap Docs\n\n**An upgraded Kyber Network Crystal token**\n\nKNC was launched on Ethereum in 2017 and based on the ERC-20 standard. All vested tokens for founders and advisors have been unlocked and distributed since September 2019.\n\nIn 2021, [KNC was upgraded](https://blog.kyber.network/knc-token-migration-guide-fda08bfe62c2) with additional functionality and flexibility, and the old token version was renamed KNCL (KNC Legacy). Old KNCL holders can migrate to the current KNC version [here](https://kyberswap.com/kyberdao/stake-knc).\n\nFor avoidance of doubt, KNC refers to the current version of the token while KNCL refers to the token version prior to the upgrade.\n\n**Multichain ceasing of operations**\n\nAs of 14 July 2023, the Multichain team has ceased all operations. Wrapped KNC token contracts on the following chains are owned and deployed by the Multichain team. Due to the nature of public blockchains (where contracts are immutable unless written with a specific `selfdestruct` function), these contracts remain callable but users are highly discouraged from interacting with said contracts.\n\nYou can view their official announcement [here](https://twitter.com/MultichainOrg/status/1679768407628185600?s=20).",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  },
+  {
+    "url": "https://www.shadow.so/liquidity",
+    "crawl": {
+      "loadedUrl": "https://www.shadow.so/liquidity",
+      "loadedTime": "2025-03-24T21:16:56.465Z",
+      "referrerUrl": "https://www.shadow.so/liquidity",
+      "depth": 0,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://www.shadow.so/liquidity",
+      "title": "Liquidity - Shadow Exchange",
+      "description": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic.",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Shadow Exchange"
+        },
+        {
+          "property": "og:description",
+          "content": "A Sonic-native concentrated liquidity exchange. The ultimate trading hub on Sonic."
+        },
+        {
+          "property": "og:image",
+          "content": "https://www.shadow.so/websiteembed.png"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "16235",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 24 Mar 2025 21:16:27 GMT",
+        "etag": "W/\"99744b4a06c5020237c4ee425d35344d\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-matched-path": "/liquidity",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "cle1::kkdm6-1742850987703-1a184b9472a6",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Liquidity - Shadow Exchange\nscETH/WETH\nThis pool is optimized with dynamic fees.\n0.004%\nCL\nscETH\n$10,973,105\nWETH\n$4,646,985\n$15,620,090\nxSHADOW\n11.41%\n11.5%\n334.1\n\t\nxSHADOW\n\t$29,911\t\n$29,911\nUSDC.e/scUSD\nThis pool is optimized with dynamic fees.\n0.0023%\nCL\nUSDC.e\n$4,156,845\nscUSD\n$5,535,759\n$9,692,603\nxSHADOW\n16.09%\n16.1%\n281.4\n\t\nxSHADOW\n\t$25,192\t\n$25,192\nS/USDC.e\nThis pool is optimized with dynamic fees.\n0.2609%\nCL\nwS\n$4,029,482\nUSDC.e\n$4,318,907\n$8,348,389\nxSHADOW\n3,484.33%\nSHADOW\n0.01%\n3,484.4%\n11470\n\t\nxSHADOW\n\t$1,026,909\t\n0.0001033\n\t\nSHADOW\n\t< $1\t\n$1,026,909\nwS\n$3,446,694\nSHADOW\n$3,413,066\n$6,859,760\nxSHADOW\n398.23%\nx33\n0.01%\n398.3%\n5402\n\t\nxSHADOW\n\t$483,668\t\n0.01906\n\t\nx33\n\t$2\t\n$483,669\nS/WETH\nThis pool is optimized with dynamic fees.\n0.1696%\nCL\nwS\n$2,361,719\nWETH\n$2,477,115\n$4,838,834\nxSHADOW\n393.91%\n394.0%\n2703\n\t\nxSHADOW\n\t$242,005\t\n$242,005\nUSDC.e/USDT\nThis pool is optimized with dynamic fees.\n0.006%\nCL\nUSDC.e\n$3,987,168\nUSDT\n$725,130\n$4,712,298\nxSHADOW\n99.43%\n99.5%\n101.6\n\t\nxSHADOW\n\t$9,097\t\n$9,097\nS/stS\nThis pool is optimized with dynamic fees.\n0.0042%\nCL\nwS\n$2,658,952\nstS\n$1,968,726\n$4,627,677\nxSHADOW\n260.48%\n260.5%\n325.5\n\t\nxSHADOW\n\t$29,147\t\n$29,147\nUSDC.e\n$862,618\nx33\n$871,044\n$1,733,662\nxSHADOW\n379.19%\n379.2%\n1377\n\t\nxSHADOW\n\t$123,254\t\n$123,254\nUSDC.e\n$54,470\nxUSD\n$1,353,033\n$1,407,503\nxSHADOW\n0.01%\n0.1%\n0.1141\n\t\nxSHADOW\n\t$11\t\n$11\nwS\n$516,947\nSNAKE\n$794,459\n$1,311,405\nxSHADOW\n13.04%\n13.1%\n36.19\n\t\nxSHADOW\n\t$3,241\t\n$3,241\nwS\n$627,850\nFA\n$621,974\n$1,249,824\nxSHADOW\n111.23%\n111.3%\n285.9\n\t\nxSHADOW\n\t$25,603\t\n$25,603\nwS\n$548,470\nGOGLZ\n$548,518\n$1,096,987\nxSHADOW\n294.39%\n294.4%\n671.9\n\t\nxSHADOW\n\t$60,161\t\n$60,161",
+    "markdown": "# Liquidity - Shadow Exchange\n\n![scETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x3bcE5CB273F0F148010BbEa2470e7b5df84C7812/logo.png)![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nscETH/WETH\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.004%\n\nCL\n\n![scETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x3bcE5CB273F0F148010BbEa2470e7b5df84C7812/logo.png)\n\nscETH\n\n$10,973,105\n\n![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nWETH\n\n$4,646,985\n\n$15,620,090\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n11.41%\n\n11.5%\n\n|     |     |     |\n| --- | --- | --- |\n| 334.1 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $29,911 |\n\n$29,911\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)![scUSD](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0xd3DCe716f3eF535C5Ff8d041c1A41C3bd89b97aE/logo.png)\n\nUSDC.e/scUSD\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.0023%\n\nCL\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$4,156,845\n\n![scUSD](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0xd3DCe716f3eF535C5Ff8d041c1A41C3bd89b97aE/logo.png)\n\nscUSD\n\n$5,535,759\n\n$9,692,603\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n16.09%\n\n16.1%\n\n|     |     |     |\n| --- | --- | --- |\n| 281.4 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $25,192 |\n\n$25,192\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nS/USDC.e\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.2609%\n\nCL\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$4,029,482\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$4,318,907\n\n$8,348,389\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n3,484.33%\n\n![SHADOW](https://www.shadow.so/shadow.svg)\n\nSHADOW\n\n0.01%\n\n3,484.4%\n\n|     |     |     |\n| --- | --- | --- |\n| 11470 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $1,026,909 |\n| 0.0001033 | ![SHADOW](https://www.shadow.so/shadow.svg)<br><br>SHADOW | < $1 |\n\n$1,026,909\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)![SHADOW](https://www.shadow.so/shadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![SHADOW](https://www.shadow.so/shadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$3,446,694\n\n![SHADOW](https://www.shadow.so/shadow.svg)\n\nSHADOW\n\n$3,413,066\n\n$6,859,760\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n398.23%\n\n![x33](https://www.shadow.so/x33.svg)\n\nx33\n\n0.01%\n\n398.3%\n\n|     |     |     |\n| --- | --- | --- |\n| 5402 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $483,668 |\n| 0.01906 | ![x33](https://www.shadow.so/x33.svg)<br><br>x33 | $2  |\n\n$483,669\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)![x33](https://www.shadow.so/x33.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nS/WETH\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.1696%\n\nCL\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$2,361,719\n\n![WETH](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x50c42dEAcD8Fc9773493ED674b675bE577f2634b/logo.png)\n\nWETH\n\n$2,477,115\n\n$4,838,834\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n393.91%\n\n394.0%\n\n|     |     |     |\n| --- | --- | --- |\n| 2703 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $242,005 |\n\n$242,005\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)![USDT](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x6047828dc181963ba44974801FF68e538dA5eaF9/logo.png)\n\nUSDC.e/USDT\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.006%\n\nCL\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$3,987,168\n\n![USDT](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x6047828dc181963ba44974801FF68e538dA5eaF9/logo.png)\n\nUSDT\n\n$725,130\n\n$4,712,298\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n99.43%\n\n99.5%\n\n|     |     |     |\n| --- | --- | --- |\n| 101.6 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $9,097 |\n\n$9,097\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![stS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0xE5DA20F15420aD15DE0fa650600aFc998bbE3955/logo.png)\n\nS/stS\n\n![Sonic Boosted](https://www.shadow.so/liquidity/boosted.svg)\n\nThis pool is optimized with dynamic fees.\n\n0.0042%\n\nCL\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$2,658,952\n\n![stS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0xE5DA20F15420aD15DE0fa650600aFc998bbE3955/logo.png)\n\nstS\n\n$1,968,726\n\n$4,627,677\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n260.48%\n\n260.5%\n\n|     |     |     |\n| --- | --- | --- |\n| 325.5 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $29,147 |\n\n$29,147\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$862,618\n\n![x33](https://www.shadow.so/x33.svg)\n\nx33\n\n$871,044\n\n$1,733,662\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n379.19%\n\n379.2%\n\n|     |     |     |\n| --- | --- | --- |\n| 1377 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $123,254 |\n\n$123,254\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)![xUSD](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x6202B9f02E30E5e1c62Cc01E4305450E5d83b926/logo.png)\n\n![USDC.e](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x29219dd400f2Bf60E5a23d13Be72B486D4038894/logo.png)\n\nUSDC.e\n\n$54,470\n\n![xUSD](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x6202B9f02E30E5e1c62Cc01E4305450E5d83b926/logo.png)\n\nxUSD\n\n$1,353,033\n\n$1,407,503\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n0.01%\n\n0.1%\n\n|     |     |     |\n| --- | --- | --- |\n| 0.1141 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $11 |\n\n$11\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![SNAKE](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x3a516e01f82c1e18916ED69a81Dd498eF64bB157/logo.png)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$516,947\n\n![SNAKE](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x3a516e01f82c1e18916ED69a81Dd498eF64bB157/logo.png)\n\nSNAKE\n\n$794,459\n\n$1,311,405\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n13.04%\n\n13.1%\n\n|     |     |     |\n| --- | --- | --- |\n| 36.19 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $3,241 |\n\n$3,241\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![FA](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x8ad39144B37741573F85aa03D6c3E817A0054161/logo.png)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$627,850\n\n![FA](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x8ad39144B37741573F85aa03D6c3E817A0054161/logo.png)\n\nFA\n\n$621,974\n\n$1,249,824\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n111.23%\n\n111.3%\n\n|     |     |     |\n| --- | --- | --- |\n| 285.9 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $25,603 |\n\n$25,603\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)![GOGLZ](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x9fDbC3f8Abc05Fa8f3Ad3C17D2F806c1230c4564/logo.png)\n\n![wS](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38/logo.png)\n\nwS\n\n$548,470\n\n![GOGLZ](https://raw.githubusercontent.com/Shadow-Exchange/shadow-assets/main/blockchains/sonic/assets/0x9fDbC3f8Abc05Fa8f3Ad3C17D2F806c1230c4564/logo.png)\n\nGOGLZ\n\n$548,518\n\n$1,096,987\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)\n\nxSHADOW\n\n294.39%\n\n294.4%\n\n|     |     |     |\n| --- | --- | --- |\n| 671.9 | ![xSHADOW](https://www.shadow.so/xshadow.svg)<br><br>xSHADOW | $60,161 |\n\n$60,161\n\n![xSHADOW](https://www.shadow.so/xshadow.svg)",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  },
+  {
+    "url": "https://docs.kyberswap.com/security/audits",
+    "crawl": {
+      "loadedUrl": "https://docs.kyberswap.com/security/audits",
+      "loadedTime": "2025-03-24T21:17:07.666Z",
+      "referrerUrl": "https://docs.kyberswap.com/",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://docs.kyberswap.com/security/audits",
+      "title": "Audits | KyberSwap Docs",
+      "description": "Committed To Security",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Audits | KyberSwap Docs"
+        },
+        {
+          "property": "og:description",
+          "content": "Committed To Security"
+        },
+        {
+          "property": "og:image",
+          "content": "https://docs.kyberswap.com/~gitbook/image?url=https%3A%2F%2F1368568567-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fw1XgQJc40kVeGUIxgI7c%252Fsocialpreview%252FKZZYjJn8jXVCVwMA2Eyt%252Fkyber-logo-mark.png%3Falt%3Dmedia%26token%3D62b08d01-f16a-4a78-be2f-12695ceb67fa&width=1200&height=630&sign=4304f385&sv=2"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "date": "Mon, 24 Mar 2025 21:17:06 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cf-ray": "925931807db96c1a-DFW",
+        "cf-cache-status": "DYNAMIC",
+        "cache-control": "public, max-age=0, s-maxage=71462, stale-if-error=0",
+        "content-encoding": "br",
+        "link": "<https://static.gitbook.com>; rel=preconnect; crossorigin=\"\"",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "cf-placement": "local-DFW",
+        "content-security-policy": "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * 'self' blob: data:; connect-src *; font-src *; frame-src *; object-src 'none'; base-uri 'self' https://static.gitbook.com; form-action 'self' https://static.gitbook.com *; frame-ancestors https: ;",
+        "nel": "{\"success_fraction\":0, \"report_to\":\"cf-nel\", \"max_age\":604800}",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=LFPLijAizuPxHib8WbCCVUOVj5793kefBbc5Cq%2Fw9%2FC%2BZBcoljf03ZPkUvyao9eoBzZrClc5S3zDuRZXqO8f%2F2baFkBBK0ImIR5jL9Uo4cJSo4rCCVA%2B91EMfKLvLci7TnvKmassHRWHtmWi8oLP\"}], \"group\":\"cf-nel\", \"max_age\":604800}",
+        "x-content-type-options": "nosniff",
+        "x-edge-runtime": "1",
+        "x-gitbook-cache": "miss",
+        "x-gitbook-cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "x-gitbook-target": "default",
+        "x-gitbook-version": "d7aa5fa",
+        "x-http-method": "GET",
+        "x-matched-path": "/middleware/[[...pathname]]",
+        "server": "cloudflare",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Audits | KyberSwap Docs\nOverview\nBeing open and permissionless, KyberSwap understands the importance of security in a hostile on-chain environment where smart contract code ultimately controls the flow of digital assets. As such, KyberSwap has proactively implemented multiple security measures in an effort to harden our governance contracts. This includes third-party audits, audit contests involving independent security experts from the wider community, as well as a consistently evolving bug bounty program.\nKyberDAO & KNC\nThird-party Audit\nHacken was engaged to conduct an audit of the KNC token contract. There were no issues detected as part of the 18 May 2021 audit with the contract being rated as \"Well-secured\".\nLast updated 11 months ago",
+    "markdown": "# Audits | KyberSwap Docs\n\n## \n\nOverview\n\nBeing open and permissionless, KyberSwap understands the importance of security in a hostile on-chain environment where smart contract code ultimately controls the flow of digital assets. As such, KyberSwap has proactively implemented multiple security measures in an effort to harden our governance contracts. This includes third-party audits, audit contests involving independent security experts from the wider community, as well as a consistently evolving bug bounty program.\n\n* * *\n\n## \n\nKyberDAO & KNC\n\n### \n\nThird-party Audit\n\n[\n\n![Cover](https://docs.kyberswap.com/~gitbook/image?url=https%3A%2F%2F1368568567-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fw1XgQJc40kVeGUIxgI7c%252Fuploads%252Fgit-blob-30413581f286d08084a093c7040c23f1c23849d0%252FScreenshot%25202023-03-07%2520at%25209.12.22%2520AM.png%3Falt%3Dmedia&width=245&dpr=4&quality=100&sign=969944ef&sv=2)\n\n\n\n](https://hacken.io/audits/kyber-network/)\n\nHacken was engaged to conduct an audit of the KNC token contract. There were no issues detected as part of the 18 May 2021 audit with the contract being rated as \"Well-secured\".\n\nLast updated 11 months ago",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  },
+  {
+    "url": "https://beets.fi/pools?networks=SONIC",
+    "crawl": {
+      "loadedUrl": "https://beets.fi/pools?networks=SONIC",
+      "loadedTime": "2025-03-24T21:17:01.398Z",
+      "referrerUrl": "https://beets.fi/pools?networks=SONIC",
+      "depth": 0,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://beets.fi/pools?networks=SONIC",
+      "title": "Beets DeFi Liquidity Pools",
+      "description": "\n    Fuel your liquidity.\n    Earn yield from swap fees, incentives, and more.\n    Create and customize pools tailored to your strategy.\n  ",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Beets DeFi Liquidity Pools"
+        },
+        {
+          "property": "og:description",
+          "content": "\n    Fuel your liquidity.\n    Earn yield from swap fees, incentives, and more.\n    Create and customize pools tailored to your strategy.\n  "
+        },
+        {
+          "property": "og:image:type",
+          "content": "image/png"
+        },
+        {
+          "property": "og:image:width",
+          "content": "1920"
+        },
+        {
+          "property": "og:image:height",
+          "content": "1080"
+        },
+        {
+          "property": "og:image",
+          "content": "https://beets.fi/opengraph-image.png?f1c6c8475028ca64"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 24 Mar 2025 21:16:36 GMT",
+        "link": "</_next/static/media/0d87c97aae65b4fc-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/12084922609e6532-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/17afee50ac86a1b9-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/22539d17f3707926-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/3eb4bb530f30483c-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch",
+        "x-matched-path": "/pools",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::jq762-1742850996668-61c24fcb1f89",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Beets DeFi Liquidity Pools\nBEETS 2.0:\nThe Sonic Revolution\nSimpler. Sleeker. Smarter.\n(213)\nsonic\nCreate a pool\nPool name\nDetails\nBoosted Angular Symphony\nv3\nBoosted\n$21.30m\n$444.94k\nLombard's Orbit: The Elliptic Dance\nv2\nGyro E-CLP\n$18.10m\n$118.55k\nBoosted Stable Rings\nv3\nBoosted\n$16.25m\n$1.41m\nBitcoin Treble\nv3\nBoosted\n$14.78m\n$0.00\nStaked Sonic Symphony\nv2\nStable\n$13.43m\n$289.28k\nEchoes of Ether\nv2\nStable\n$5.28m\n$287.82k\nFresh Beets\nv2\nWeighted\n$5.25m\n$74.21k\nFrax Interlude, Silo Opus No. 2\nv3\nBoosted\n$2.58m\n$147.40\nPut A Ring On It\nv2\nWeighted\n$2.35m\n$255.34k\nRinging Stable Beets\nv2\nStable\n$2.28m\n$920.70k\nSonic Quartet Audition - Act II\nv2\nWeighted\n$1.75m\n$83.67k\nConcentrated Ringing Notes 1400-3000\nv2\nGyro E-CLP\n$1.23m\n$208.68k\nStaked and Volatile Ringing Melodies 0.4-1.1\nv2\nGyro E-CLP\n$276.67k\n$180.68k\nRinging of Painted Melodies\nv2\nWeighted\n$261.71k\n$19.60k\nStaked Sonic & Circle Concerto\nv2\nWeighted\n$164.79k\n$27.62k\nSilo Super Sonic\nv2\nWeighted\n$164.09k\n$7.12k\nSmooth Eth Sailing 1400-3000\nv2\nGyro E-CLP\n$157.51k\n$100.72k\nVolatile Sonic Melodies\nv2\nGyro E-CLP\n$137.05k\n$118.18k\nHigh Speed Perfect Beets\nv2\nWeighted\n$117.17k\n$9.14k\nSonic Fugue: Staked & Staked\nv2\nStable\n$107.43k\n$14.29k\nPage 1 of 11",
+    "markdown": "# Beets DeFi Liquidity Pools\n\n## BEETS 2.0:\n\n## The Sonic Revolution\n\n## Simpler. Sleeker. Smarter.\n\n## (213)\n\nsonic\n\n[Create a pool](https://ma.beets.fi/compose/)\n\nPool name\n\nDetails\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![wS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/Logomark_Sonic_Black.png)\n\n![anS](https://raw.githubusercontent.com/balancer/tokenlists/main/src/assets/images/tokens/anS.png)\n\nBoosted Angular Symphony\n\nv3\n\nBoosted\n\n![Silo Boosted](https://raw.githubusercontent.com/balancer/metadata/main/erc4626/icons/silo_boosted.svg)\n\n$21.30m\n\n$444.94k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v3/0x944d4ae892de4bfd38742cc8295d6d5164c5593c)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![scBTC](https://i.ibb.co/F4CXYdL4/scBTC-32.png)\n\n![LBTC](https://sonicscan.org/token/images/lbtc_64.png)\n\nLombard's Orbit: The Elliptic Dance\n\nv2\n\nGyro E-CLP\n\n$18.10m\n\n$118.55k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0x83952912178aa33c3853ee5d942c96254b235dcc0002000000000000000000ab)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![USDC.e](https://assets.coingecko.com/coins/images/6319/large/usdc.png?1696506694)\n\n![scUSD](https://i.ibb.co/PFw2zkx/scUSD64.png)\n\nBoosted Stable Rings\n\nv3\n\nBoosted\n\n![Beefy Boosted](https://raw.githubusercontent.com/balancer/metadata/main/erc4626/icons/beefy_boosted.svg)\n\n$16.25m\n\n$1.41m\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v3/0x43026d483f42fb35efe03c20b251142d022783f2)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![SolvBTC.BBN](https://assets.coingecko.com/coins/images/39384/standard/unnamed.png?1721961640)\n\n![SolvBTC](https://assets.coingecko.com/coins/images/36800/standard/solvBTC.png?1719810684)\n\nBitcoin Treble\n\nv3\n\nBoosted\n\n![Avalon Boosted](https://raw.githubusercontent.com/balancer/metadata/main/erc4626/icons/avalon_boosted.svg)\n\n$14.78m\n\n$0.00\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v3/0xd5ab187442998f1a62ea58133a03050691a0c280)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![wS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/Logomark_Sonic_Black.png)\n\n![stS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-beets-staked-sonic.png)\n\nStaked Sonic Symphony\n\nv2\n\nStable\n\n$13.43m\n\n$289.28k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0x374641076b68371e69d03c417dac3e5f236c32fa000000000000000000000006)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![scETH](https://i.ibb.co/fMTYnj2/scETH64.png)\n\n![WETH](https://raw.githubusercontent.com/balancer/tokenlists/main/src/assets/images/tokens/0x4200000000000000000000000000000000000006.png)\n\nEchoes of Ether\n\nv2\n\nStable\n\n$5.28m\n\n$287.82k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0xe54dd58a6d4e04687f2034dd4ddab49da55f8aff00000000000000000000007c)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![BEETS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-BEETS-sonic.png)\n\n![stS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-beets-staked-sonic.png)\n\nFresh Beets\n\nv2\n\nWeighted\n\n$5.25m\n\n$74.21k\n\n\n\n](https://beets.fi/pools/sonic/v2/0x10ac2f9dae6539e77e372adb14b1bf8fbd16b3e8000200000000000000000005)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![USDC.e](https://assets.coingecko.com/coins/images/6319/large/usdc.png?1696506694)\n\n![frxUSD](https://static.frax.com/images/tokens/frxusd.png)\n\nFrax Interlude, Silo Opus No. 2\n\nv3\n\nBoosted\n\n![Silo Boosted](https://raw.githubusercontent.com/balancer/metadata/main/erc4626/icons/silo_boosted.svg)\n\n$2.58m\n\n$147.40\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v3/0x3b57c58440ebb220d4d11db087d884a387259cf0)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![scUSD](https://i.ibb.co/PFw2zkx/scUSD64.png)\n\n![stS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-beets-staked-sonic.png)\n\nPut A Ring On It\n\nv2\n\nWeighted\n\n$2.35m\n\n$255.34k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0x25ca5451cd5a50ab1d324b5e64f32c0799661891000200000000000000000018)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![USDC.e](https://assets.coingecko.com/coins/images/6319/large/usdc.png?1696506694)\n\n![scUSD](https://i.ibb.co/PFw2zkx/scUSD64.png)\n\nRinging Stable Beets\n\nv2\n\nStable\n\n$2.28m\n\n$920.70k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0xcd4d2b142235d5650ffa6a38787ed0b7d7a51c0c000000000000000000000037)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![scETH](https://i.ibb.co/fMTYnj2/scETH64.png)\n\n![scBTC](https://i.ibb.co/F4CXYdL4/scBTC-32.png)\n\n![scUSD](https://i.ibb.co/PFw2zkx/scUSD64.png)\n\n![stS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-beets-staked-sonic.png)\n\nSonic Quartet Audition - Act II\n\nv2\n\nWeighted\n\n$1.75m\n\n$83.67k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0xbd4a2ecdcd7acb0d2b20744ac4cc1368dd8fdc410001000000000000000000a8)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![scETH](https://i.ibb.co/fMTYnj2/scETH64.png)\n\n![scUSD](https://i.ibb.co/PFw2zkx/scUSD64.png)\n\nConcentrated Ringing Notes 1400-3000\n\nv2\n\nGyro E-CLP\n\n$1.23m\n\n$208.68k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0xe7734b495a552ab6f4c78406e672cca7175181e10002000000000000000000c5)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![scUSD](https://i.ibb.co/PFw2zkx/scUSD64.png)\n\n![stS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-beets-staked-sonic.png)\n\nStaked and Volatile Ringing Melodies 0.4-1.1\n\nv2\n\nGyro E-CLP\n\n$276.67k\n\n$180.68k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0xcf5d1864ab01b50c6e94adde80d5ec264c93f4910002000000000000000000bb)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![scUSD](https://i.ibb.co/PFw2zkx/scUSD64.png)\n\n![BRUSH](https://coin-images.coingecko.com/coins/images/18579/large/ps-cmc-200x200.png?1707862125)\n\nRinging of Painted Melodies\n\nv2\n\nWeighted\n\n$261.71k\n\n$19.60k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0xc5ab8d98f959453e416b2f15848a02cc99bc695e000200000000000000000022)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![USDC.e](https://assets.coingecko.com/coins/images/6319/large/usdc.png?1696506694)\n\n![stS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-beets-staked-sonic.png)\n\nStaked Sonic & Circle Concerto\n\nv2\n\nWeighted\n\n$164.79k\n\n$27.62k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0x713fb5036dc70012588d77a5b066f1dd05c712d7000200000000000000000041)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![wS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/Logomark_Sonic_Black.png)\n\n![Silo](https://beethoven-assets.s3.eu-central-1.amazonaws.com/silo-token.png)\n\nSilo Super Sonic\n\nv2\n\nWeighted\n\n$164.09k\n\n$7.12k\n\n\n\n](https://beets.fi/pools/sonic/v2/0xc5954b1b9df8a0c0b7788d2cc2bc18d4bae9b0c2000200000000000000000099)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![USDC.e](https://assets.coingecko.com/coins/images/6319/large/usdc.png?1696506694)\n\n![WETH](https://raw.githubusercontent.com/balancer/tokenlists/main/src/assets/images/tokens/0x4200000000000000000000000000000000000006.png)\n\nSmooth Eth Sailing 1400-3000\n\nv2\n\nGyro E-CLP\n\n$157.51k\n\n$100.72k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0x5485c26921e28830fbd7469442c0edad0e27e01c0002000000000000000000c7)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![wS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/Logomark_Sonic_Black.png)\n\n![USDC.e](https://assets.coingecko.com/coins/images/6319/large/usdc.png?1696506694)\n\nVolatile Sonic Melodies\n\nv2\n\nGyro E-CLP\n\n$137.05k\n\n$118.18k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0xfc127dfc32b7739a7cfff7ed19e4c4ab3221953a0002000000000000000000a4)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![BEETS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-BEETS-sonic.png)\n\n![stS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-beets-staked-sonic.png)\n\n![LUDWIG](https://bafybeiehzznjxownjllrbjij7rliuyiqn6nlfaer7izctgjk5la3ldhpq4.ipfs.dweb.link/)\n\nHigh Speed Perfect Beets\n\nv2\n\nWeighted\n\n$117.17k\n\n$9.14k\n\n\n\n](https://beets.fi/pools/sonic/v2/0x21fed4063bf8ebf4f51f4adf4ecfc9717aa4ca9d000100000000000000000044)\n\n[\n\n![Sonic](https://beets.fi/images/chains/SONIC.svg)\n\n![wOS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/wos-256x256.png)\n\n![stS](https://beethoven-assets.s3.eu-central-1.amazonaws.com/token-beets-staked-sonic.png)\n\nSonic Fugue: Staked & Staked\n\nv2\n\nStable\n\n$107.43k\n\n$14.29k\n\n![points](https://beets.fi/images/icons/pool-points.svg)\n\n\n\n\n\n](https://beets.fi/pools/sonic/v2/0xd2efc016650695c56b514d6a2133ad85afb86d8a00000000000000000000009e)\n\nPage 1 of 11",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  },
+  {
+    "url": "https://docs.kyberswap.com/reference/legacy",
+    "crawl": {
+      "loadedUrl": "https://docs.kyberswap.com/reference/legacy",
+      "loadedTime": "2025-03-24T21:17:15.572Z",
+      "referrerUrl": "https://docs.kyberswap.com/",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://docs.kyberswap.com/reference/legacy",
+      "title": "Legacy | KyberSwap Docs",
+      "description": "Restless Innovation",
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Legacy | KyberSwap Docs"
+        },
+        {
+          "property": "og:description",
+          "content": "Restless Innovation"
+        },
+        {
+          "property": "og:image",
+          "content": "https://docs.kyberswap.com/~gitbook/image?url=https%3A%2F%2F1368568567-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fw1XgQJc40kVeGUIxgI7c%252Fsocialpreview%252FKZZYjJn8jXVCVwMA2Eyt%252Fkyber-logo-mark.png%3Falt%3Dmedia%26token%3D62b08d01-f16a-4a78-be2f-12695ceb67fa&width=1200&height=630&sign=4304f385&sv=2"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "date": "Mon, 24 Mar 2025 21:17:14 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cf-ray": "925931b77eef6c1a-DFW",
+        "cf-cache-status": "HIT",
+        "age": "5608",
+        "cache-control": "public, max-age=0, s-maxage=82059, stale-if-error=0",
+        "last-modified": "Mon, 24 Mar 2025 19:43:46 GMT",
+        "link": "<https://static.gitbook.com>; rel=preconnect; crossorigin=\"\"",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "cf-placement": "local-DFW",
+        "content-security-policy": "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * 'self' blob: data:; connect-src *; font-src *; frame-src *; object-src 'none'; base-uri 'self' https://static.gitbook.com; form-action 'self' https://static.gitbook.com *; frame-ancestors https: ;",
+        "nel": "{\"success_fraction\":0, \"report_to\":\"cf-nel\", \"max_age\":604800}",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=thB9KFFd8B11uPaAx%2B3nTtxqTSeR%2FATkR6LJKgM5amkDcZxfcSr9UYmWD5DscxR3SuQWlvZ5MghWfG3XD0khWB5u0663wuNhBSl3K5ipm7Tye3rg%2BXaxPtUiXgWF2aFXCeBNpsa8lgCjIZyowJXK\"}], \"group\":\"cf-nel\", \"max_age\":604800}",
+        "x-content-type-options": "nosniff",
+        "x-edge-runtime": "1",
+        "x-gitbook-cache": "hit",
+        "x-gitbook-cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "x-gitbook-target": "default",
+        "x-gitbook-version": "d7aa5fa",
+        "x-http-method": "GET",
+        "x-matched-path": "/middleware/[[...pathname]]",
+        "server": "cloudflare",
+        "content-encoding": "br",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Legacy | KyberSwap Docs\nKyberSwap has continuously strived to improve our solution suite. This includes completely revamping our once core products based on what we think would best serve our users.\nThe documentation for our legacy products are maintained in the following section.\nLast updated 11 months ago",
+    "markdown": "# Legacy | KyberSwap Docs\n\nKyberSwap has continuously strived to improve our solution suite. This includes completely revamping our once core products based on what we think would best serve our users.\n\nThe documentation for our legacy products are maintained in the following section.\n\nLast updated 11 months ago",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  },
+  {
+    "url": "https://docs.kyberswap.com/reference/legacy/kyberswap-classic",
+    "crawl": {
+      "loadedUrl": "https://docs.kyberswap.com/reference/legacy/kyberswap-classic",
+      "loadedTime": "2025-03-24T21:17:21.219Z",
+      "referrerUrl": "https://docs.kyberswap.com/",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://docs.kyberswap.com/reference/legacy/kyberswap-classic",
+      "title": "KyberSwap Classic | KyberSwap Docs",
+      "description": null,
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "KyberSwap Classic | KyberSwap Docs"
+        },
+        {
+          "property": "og:image",
+          "content": "https://docs.kyberswap.com/~gitbook/image?url=https%3A%2F%2F1368568567-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fw1XgQJc40kVeGUIxgI7c%252Fsocialpreview%252FKZZYjJn8jXVCVwMA2Eyt%252Fkyber-logo-mark.png%3Falt%3Dmedia%26token%3D62b08d01-f16a-4a78-be2f-12695ceb67fa&width=1200&height=630&sign=4304f385&sv=2"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "date": "Mon, 24 Mar 2025 21:17:20 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cf-ray": "925931d94efa6c1a-DFW",
+        "cf-cache-status": "DYNAMIC",
+        "cache-control": "public, max-age=0, s-maxage=71462, stale-if-error=0",
+        "content-encoding": "br",
+        "link": "<https://static.gitbook.com>; rel=preconnect; crossorigin=\"\"",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "cf-placement": "local-DFW",
+        "content-security-policy": "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * 'self' blob: data:; connect-src *; font-src *; frame-src *; object-src 'none'; base-uri 'self' https://static.gitbook.com; form-action 'self' https://static.gitbook.com *; frame-ancestors https: ;",
+        "nel": "{\"success_fraction\":0, \"report_to\":\"cf-nel\", \"max_age\":604800}",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Nj2cOCsFmBM%2BiNIJmMwQazMZYwrugnLVEI75D51EVJNnqhl2lZ1w2ocUJ62%2BeAF4jeYJczuE9MrOwVstK%2Bdtsn%2FOTxrpJB57jzstHbC37MakNV9ha1vCPhrRDgzr%2FdLKemKT5p%2BLHb6KQfQgeDPf\"}], \"group\":\"cf-nel\", \"max_age\":604800}",
+        "x-content-type-options": "nosniff",
+        "x-edge-runtime": "1",
+        "x-gitbook-cache": "miss",
+        "x-gitbook-cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "x-gitbook-target": "default",
+        "x-gitbook-version": "d7aa5fa",
+        "x-http-method": "GET",
+        "x-matched-path": "/middleware/[[...pathname]]",
+        "server": "cloudflare",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "KyberSwap Classic | KyberSwap Docs\nKyberSwap Classic Discontinuation\nOn 26 March 2024, the Classic protocol was discontinued. More details can be found here\nOverview\nKyberSwap Classic was conceived based on the observation that the standard AMM model was inadequate when it came to optimizing capital efficiency and price spreads. A one-size-fits-all pricing curve meant that capital was deployed across all prices regardless of the price correlation between unique token pairs. Moreover, AMM price spreads were market neutral as the same fees were charged regardless of market volatility. Collectively, this lowered LP incentives as the majority of their funds were left unutilized while they were unable to charge a premium for market making during more volatile periods where the risks of impermanent loss is greatly magnified.\nIn order to maximize yields and encourage deeper market liquidity, KyberSwap Classic amplifies capital utilisation as well as self-adjusts trading fees to take advantage of the existing market conditions. Consequently, KyberSwap Classic is able to achieve much better risk-adjusted returns for providers while simultaneously reducing slippage for traders.\nNext Steps\nLiquidity ProvidersTradersDevelopers\nLast updated 10 months ago",
+    "markdown": "# KyberSwap Classic | KyberSwap Docs\n\n**KyberSwap Classic Discontinuation**\n\nOn 26 March 2024, the Classic protocol was discontinued. More details can be found here\n\n## \n\nOverview\n\nKyberSwap Classic was conceived based on the observation that the standard AMM model was inadequate when it came to optimizing capital efficiency and price spreads. A one-size-fits-all pricing curve meant that capital was deployed across all prices regardless of the price correlation between unique token pairs. Moreover, AMM price spreads were market neutral as the same fees were charged regardless of market volatility. Collectively, this lowered LP incentives as the majority of their funds were left unutilized while they were unable to charge a premium for market making during more volatile periods where the risks of impermanent loss is greatly magnified.\n\nIn order to maximize yields and encourage deeper market liquidity, KyberSwap Classic amplifies capital utilisation as well as self-adjusts trading fees to take advantage of the existing market conditions. Consequently, KyberSwap Classic is able to achieve much better risk-adjusted returns for providers while simultaneously reducing slippage for traders.\n\n## \n\nNext Steps\n\nLiquidity Providers[](#liquidity-providers)Traders[](#traders)Developers[](#developers)\n\nLast updated 10 months ago",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  },
+  {
+    "url": "https://docs.kyberswap.com/reference/legacy/kyberswap-classic/concepts",
+    "crawl": {
+      "loadedUrl": "https://docs.kyberswap.com/reference/legacy/kyberswap-classic/concepts",
+      "loadedTime": "2025-03-24T21:17:26.898Z",
+      "referrerUrl": "https://docs.kyberswap.com/",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://docs.kyberswap.com/reference/legacy/kyberswap-classic/concepts",
+      "title": "Concepts | KyberSwap Docs",
+      "description": null,
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Concepts | KyberSwap Docs"
+        },
+        {
+          "property": "og:image",
+          "content": "https://docs.kyberswap.com/~gitbook/image?url=https%3A%2F%2F1368568567-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fw1XgQJc40kVeGUIxgI7c%252Fsocialpreview%252FKZZYjJn8jXVCVwMA2Eyt%252Fkyber-logo-mark.png%3Falt%3Dmedia%26token%3D62b08d01-f16a-4a78-be2f-12695ceb67fa&width=1200&height=630&sign=4304f385&sv=2"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "date": "Mon, 24 Mar 2025 21:17:26 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cf-ray": "925931fceec06c1a-DFW",
+        "cf-cache-status": "DYNAMIC",
+        "cache-control": "public, max-age=0, s-maxage=71462, stale-if-error=0",
+        "content-encoding": "br",
+        "link": "<https://static.gitbook.com>; rel=preconnect; crossorigin=\"\"",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "cf-placement": "local-DFW",
+        "content-security-policy": "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * 'self' blob: data:; connect-src *; font-src *; frame-src *; object-src 'none'; base-uri 'self' https://static.gitbook.com; form-action 'self' https://static.gitbook.com *; frame-ancestors https: ;",
+        "nel": "{\"success_fraction\":0, \"report_to\":\"cf-nel\", \"max_age\":604800}",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=SNhWnj7fwzhpW5cRdVKTiI3IL0AwUE0xpiB26A1zydCrXztxsCPpAVwwVzdNy32ZDJmaS4LHYGmafBrkGp22VTS5BsIDHU5TsXBuot7MFZwy8wQU23PfzRo48qRuoME%2Bm9kLm7NOTOhRSYjWYPJp\"}], \"group\":\"cf-nel\", \"max_age\":604800}",
+        "x-content-type-options": "nosniff",
+        "x-edge-runtime": "1",
+        "x-gitbook-cache": "miss",
+        "x-gitbook-cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "x-gitbook-target": "default",
+        "x-gitbook-version": "d7aa5fa",
+        "x-http-method": "GET",
+        "x-matched-path": "/middleware/[[...pathname]]",
+        "server": "cloudflare",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Concepts | KyberSwap Docs\nKyberSwap Classic's core contributions towards liquidity flow optimization are its amplified liquidity pools as well as the introduction of a flexible fee model which adjusts according to market conditions.\nCollectively, these concepts form the Dynamic Automated Market Making (DMM) protocol invented by the KyberSwap research team. You can refer to the Dynamic Automated Market Making whitepaper for a deeper dive into the protocol.\nThe following sections outline these concepts at a high level:\nLast updated 11 months ago",
+    "markdown": "# Concepts | KyberSwap Docs\n\nKyberSwap Classic's core contributions towards liquidity flow optimization are its amplified liquidity pools as well as the introduction of a flexible fee model which adjusts according to market conditions.\n\nCollectively, these concepts form the Dynamic Automated Market Making (DMM) protocol invented by the KyberSwap research team. You can refer to the [Dynamic Automated Market Making whitepaper](https://github.com/KyberNetwork/kyberswap-documentation/blob/main/reference/legacy/kyberswap-classic/concepts/broken-reference/README.md) for a deeper dive into the protocol.\n\nThe following sections outline these concepts at a high level:\n\nLast updated 11 months ago",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  },
+  {
+    "url": "https://docs.kyberswap.com/reference/legacy/kyberswap-classic/concepts/programmable-pricing-curves",
+    "crawl": {
+      "loadedUrl": "https://docs.kyberswap.com/reference/legacy/kyberswap-classic/concepts/programmable-pricing-curves",
+      "loadedTime": "2025-03-24T21:17:33.100Z",
+      "referrerUrl": "https://docs.kyberswap.com/",
+      "depth": 1,
+      "httpStatusCode": 200
+    },
+    "metadata": {
+      "canonicalUrl": "https://docs.kyberswap.com/reference/legacy/kyberswap-classic/concepts/programmable-pricing-curves",
+      "title": "Programmable Pricing Curves | KyberSwap Docs",
+      "description": null,
+      "author": null,
+      "keywords": null,
+      "languageCode": "en",
+      "openGraph": [
+        {
+          "property": "og:title",
+          "content": "Programmable Pricing Curves | KyberSwap Docs"
+        },
+        {
+          "property": "og:image",
+          "content": "https://docs.kyberswap.com/~gitbook/image?url=https%3A%2F%2F1368568567-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fw1XgQJc40kVeGUIxgI7c%252Fsocialpreview%252FKZZYjJn8jXVCVwMA2Eyt%252Fkyber-logo-mark.png%3Falt%3Dmedia%26token%3D62b08d01-f16a-4a78-be2f-12695ceb67fa&width=1200&height=630&sign=4304f385&sv=2"
+        }
+      ],
+      "jsonLd": null,
+      "headers": {
+        "date": "Mon, 24 Mar 2025 21:17:31 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "cf-ray": "92593220cd4b6c1a-DFW",
+        "cf-cache-status": "DYNAMIC",
+        "cache-control": "public, max-age=0, s-maxage=71462, stale-if-error=0",
+        "content-encoding": "br",
+        "link": "<https://static.gitbook.com>; rel=preconnect; crossorigin=\"\"",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "cf-placement": "local-DFW",
+        "content-security-policy": "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * 'self' blob: data:; connect-src *; font-src *; frame-src *; object-src 'none'; base-uri 'self' https://static.gitbook.com; form-action 'self' https://static.gitbook.com *; frame-ancestors https: ;",
+        "nel": "{\"success_fraction\":0, \"report_to\":\"cf-nel\", \"max_age\":604800}",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=JGggU6pH43kTYn%2FZHGmz%2BqDKTMK7ySLiYz3XGvVA6zv8YoSlJEYmaSVs%2FaoMoMWN3GSG8WqLr5aeJZrsg%2BP%2BCLD3aywkWwNLFgly7hiImcjzPk1fkaufHVS2nQyL2BgdWjvgGRLRyq%2FxIjPRSEzr\"}], \"group\":\"cf-nel\", \"max_age\":604800}",
+        "x-content-type-options": "nosniff",
+        "x-edge-runtime": "1",
+        "x-gitbook-cache": "miss",
+        "x-gitbook-cache-tag": "url:docs.kyberswap.com, release-10.9.1116, site:site_J1mDA, space:w1XgQJc40kVeGUIxgI7c",
+        "x-gitbook-target": "default",
+        "x-gitbook-version": "d7aa5fa",
+        "x-http-method": "GET",
+        "x-matched-path": "/middleware/[[...pathname]]",
+        "server": "cloudflare",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-firefox-spdy": "h2"
+      }
+    },
+    "screenshotUrl": null,
+    "text": "Programmable Pricing Curves | KyberSwap Docs\nIntroduction\nProgrammable pricing curves enable more of a LP's position to be utilized in the market making process therefore increasing potential yields while simultaneously reducing slippage. To put it more formally, dynamic pricing curve setups improves upon the capital efficiency of earlier constant product AMMs through amplifying liquidity based on the price correlation between assets in the pool.\nAs these programmable pricing curves are tailored for each pair, it enables the amplification of liquidity for more stable pairs which results in higher capital efficiency and lower slippage. The higher the asset correlation, the more opportunities for capital efficiency as liquidity can be concentrated within a narrower price range with less risk of the price going out of range.\nAmplification Factor (AMP)\nEach pool implements a constant product curve of virtual balances which is modified by an amplification factor that is specified by the user on initial pool setup. This amplification factor enables more capital to be utilized within an increasingly narrow price range (as opposed to 0 and \u221e for classic AMMs). The higher the amplification factor, the higher the potential yields withthe accompanying out of range risks (i.e. liquidity position goes out of range and is not earning fees). Consequently, higher amplification factors are recommended for more stable pairs and vice versa.\nAn amplification factor of 100 means that a pool of 1M USDC and 1M USDT will be able to achieve a spread and slippage equal to a standard pool of 100M USDC and 100M USDT, assuming the pool was started at the mean. This is a capital efficiency gain of 100X but it of course comes with a narrower price range within which fees are captured.\nFor each token pair, there are possibly many multiple pools with different configurations for the pricing curve. Pools are ready to accept one token for the other as long as KyberSwap's formula is preserved. A good approach to arrive at a suitable AMP is to look at the historical price correlation between the token pairs. This can be approximately quantified via 3 factors:\nRatio: The price of token X in terms of token Y at a given point in time\nAmplitude: The max ratio divided by the min ratio across a given time period\nStandard Deviation from Mean (\u03c3): The standard deviation of the mean of the ratios\nApplying the above framework to our market observations, KyberSwap Classic defines 4 price correlation categories:\nAsset Pairs Price Stability\nSample Pairs\nRecommended Amplification Factor\nUSDT/USDC DAI/USDC WBTC/renBTC\nFor recently-launched tokens which are not stablecoins, we recommend starting with an AMP of 1.1-1.25 for the pool.\nLast updated 11 months ago",
+    "markdown": "# Programmable Pricing Curves | KyberSwap Docs\n\n## \n\nIntroduction\n\nProgrammable pricing curves enable more of a LP's position to be utilized in the market making process therefore increasing potential yields while simultaneously reducing slippage. To put it more formally, dynamic pricing curve setups improves upon the capital efficiency of earlier constant product AMMs through amplifying liquidity based on the price correlation between assets in the pool.\n\nAs these programmable pricing curves are tailored for each pair, it enables the amplification of liquidity for more stable pairs which results in higher capital efficiency and lower slippage. The higher the asset correlation, the more opportunities for capital efficiency as liquidity can be concentrated within a narrower price range with less risk of the price going out of range.\n\n## \n\nAmplification Factor (AMP)\n\nEach pool implements a constant product curve of [virtual balances](https://github.com/KyberNetwork/kyberswap-documentation/blob/main/reference/legacy/kyberswap-classic/concepts/broken-reference/README.md) which is modified by an amplification factor that is specified by the user on initial [pool setup](https://github.com/KyberNetwork/kyberswap-documentation/blob/main/reference/legacy/kyberswap-classic/concepts/broken-reference/README.md). This amplification factor enables more capital to be utilized within an increasingly narrow price range (as opposed to 0 and \u221e for classic AMMs). The higher the amplification factor, the higher the potential yields withthe accompanying out of range risks (i.e. liquidity position goes out of range and is not earning fees). Consequently, higher amplification factors are recommended for more stable pairs and vice versa.\n\nAn amplification factor of 100 means that a pool of 1M USDC and 1M USDT will be able to achieve a spread and slippage equal to a standard pool of 100M USDC and 100M USDT, assuming the pool was started at the mean. This is a capital efficiency gain of 100X but it of course comes with a narrower price range within which fees are captured.\n\nFor each token pair, there are possibly many multiple pools with different configurations for the pricing curve. Pools are ready to accept one token for the other as long as KyberSwap's formula is preserved. A good approach to arrive at a suitable AMP is to look at the historical price correlation between the token pairs. This can be approximately quantified via 3 factors:\n\n*   **Ratio:** The price of token X in terms of token Y at a given point in time\n    \n*   **Amplitude:** The max ratio divided by the min ratio across a given time period\n    \n*   **Standard Deviation from Mean (\u03c3):** The standard deviation of the mean of the ratios\n    \n\nApplying the above framework to our market observations, KyberSwap Classic defines 4 price correlation categories:\n\nAsset Pairs Price Stability\n\nSample Pairs\n\nRecommended Amplification Factor\n\nUSDT/USDC DAI/USDC WBTC/renBTC\n\nFor recently-launched tokens which are not stablecoins, we recommend starting with an AMP of 1.1-1.25 for the pool.\n\nLast updated 11 months ago",
+    "debug": {
+      "requestHandlerMode": "browser"
+    }
+  }
+]

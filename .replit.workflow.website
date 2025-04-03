@@ -1,0 +1,9 @@
+[nix]
+channel = "stable-23_05"
+
+[deployment]
+run = ["python", "test_website_crawler.py"]
+deploymentTarget = "cloudrun"
+
+[env]
+PYTHONPATH = "."

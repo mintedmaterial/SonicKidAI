@@ -1,0 +1,48 @@
+4 builds failed
+Your deployment attempt had the following errors:
+Image size is over the limit of 8 GiB
+Project contains large model files or unnecessary data
+Multiple server instances are being configured to run simultaneously
+Assistant suggestions
+N/A
+# Execute the cleanup script
+./clean-for-deployment.sh
+    // Bind server to a single port in production, dual ports in development
+    console.log(`Attempting to bind server to ${HOST}:${PORT}...`);
+    server.listen(PORT, HOST, () => {
+      console.log(`🚀 Main server running at http://${HOST}:${PORT}`);
+      
+      // Only create secondary server instance in development mode
+      if (process.env.NODE_ENV === 'development') {
+        // Create a secondary server instance for port 5000 (for workflow compatibility)
+        const secondaryPort = 5000;
+        const secondaryServer = createServer(app);
+        secondaryServer.listen(secondaryPort, HOST, () => {
+          console.log(`🔄 Secondary server running at http://${HOST}:${secondaryPort} (for workflow compatibility)`);
+        });
+        
+        // Error handler for secondary server
+        secondaryServer.on('error', (error: Error & { code?: string }) => {
+          console.error(`❌ Secondary server startup error (port ${secondaryPort}):`);
+          console.error('Error code:', error.code);
+          console.error('Error message:', error.message);
+          // Don't exit process if secondary server fails, just log it
+          if (error.code === 'EADDRINUSE') {
+            console.error(`Port ${secondaryPort} already in use, secondary server not started`);
+          }
+        });
+      }
+    });
+    // Bind server to a single port
+    console.log(`Attempting to bind server to ${HOST}:${PORT}...`);
+    server.listen(PORT, HOST, () => {
+      console.log(`🚀 Server running at http://${HOST}:${PORT}`);
+    });
+{
+  "name": "rest-express",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "start": "PORT=3000 NODE_ENV=production node dist/index.js"
+  }
+}

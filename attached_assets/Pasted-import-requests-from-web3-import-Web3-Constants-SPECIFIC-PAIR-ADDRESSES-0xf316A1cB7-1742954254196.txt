@@ -1,0 +1,111 @@
+import requests
+from web3 import Web3
+
+# Constants
+SPECIFIC_PAIR_ADDRESSES = [
+    "0xf316A1cB7376021ad52705c1403DF86C7A7A18d0",
+    "0xe920d1DA9A4D59126dC35996Ea242d60EFca1304",
+    "0xC046dCb16592FBb3F9fA0C629b8D93090dD4cB76",
+    "0xf4F9C50455C698834Bb645089DbAa89093b93838",
+    "0x690d956D97d3EEe18AB68ED1A28a89d531734F3d",
+    "0x6fB9897896Fe5D05025Eb43306675727887D0B7c",
+    "0x4EEC869d847A6d13b0F6D1733C5DEC0d1E741B4f",
+    "0x79bbF4508B1391af3A0F4B30bb5FC4aa9ab0E07C",
+    "0x71E99522EaD5E21CF57F1f542Dc4ad2E841F7321",
+    "0x0e0Ce4D450c705F8a0B6Dd9d5123e3df2787D16B",
+    "0xA04BC7140c26fc9BB1F36B1A604C7A5a88fb0E70",
+    "0x59524D5667B299c0813Ba3c99a11C038a3908fBC",
+    "0x3333b97138D4b086720b5aE8A7844b1345a33333"
+]
+
+# BeefyOracle contract details
+BEEFY_ORACLE_ADDRESS = '0xBC4a342B0c057501E081484A2d24e576E854F823'
+BEEFY_ORACLE_ABI = [
+    {
+        "inputs": [{"internalType": "address", "name": "token", "type": "address"}],
+        "name": "getPriceInUSD",
+        "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]
+
+web3 = Web3(Web3.HTTPProvider("https://rpc.soniclabs.com"))
+
+def fetch_token_price_from_oracle(token_address):
+    """Fetch token price from BeefyOracle contract"""
+    try:
+        oracle_contract = web3.eth.contract(
+            address=Web3.to_checksum_address(BEEFY_ORACLE_ADDRESS),
+            abi=BEEFY_ORACLE_ABI
+        )
+        price_wei = oracle_contract.functions.getPriceInUSD(
+            Web3.to_checksum_address(token_address)
+        ).call()
+        price_usd = price_wei / 1e18
+        print(f"Price for token {token_address}: ${price_usd:.2f}")
+        return price_usd
+    except Exception as e:
+        print(f"Error fetching oracle price: {e}")
+        return None
+
+def fetch_data(url, name):
+    """Generic fetch function for API calls"""
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        print(f'{name} data fetched successfully')
+        return data
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching {name} data: {e}")
+        return None
+
+def fetch_sonic_price():
+    """Fetch Sonic price from SonicScan API"""
+    return fetch_data(
+        'https://api.sonicscan.org/api?module=stats&action=ethprice&apikey=Q3UEUBJ5H26SM85B8VCAS28KPWBMS3AS6X',
+        'Sonic price'
+    )
+
+def fetch_dexscreener_specific_pairs():
+    """Fetch data for specific DexScreener pairs"""
+    specific_pairs_data = {}
+    for address in SPECIFIC_PAIR_ADDRESSES:
+        pair_data = fetch_data(
+            f'https://api.dexscreener.com/tokens/v1/SONIC/{address}',
+            f'DexScreener pair {address}'
+        )
+        if pair_data:
+            specific_pairs_data[address] = pair_data
+    return specific_pairs_data if specific_pairs_data else None
+
+def fetch_pricing_data():
+    """Main function to fetch all pricing data"""
+    # Fetch Sonic price from SonicScan
+    sonic_price = fetch_sonic_price()
+    
+    # Fetch Wrapped Sonic price from BeefyOracle
+    wrapped_sonic_address = "0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38"
+    oracle_price = fetch_token_price_from_oracle(wrapped_sonic_address)
+    
+    # Fetch DexScreener data for specific pairs
+    dexscreener_data = fetch_dexscreener_specific_pairs()
+    
+    return {
+        'sonic_price': sonic_price,
+        'oracle_price': oracle_price,
+        'dexscreener_pairs': dexscreener_data
+    }
+
+if __name__ == "__main__":
+    pricing_data = fetch_pricing_data()
+    
+    # Print results
+    print("\nPricing Data Summary:")
+    if pricing_data['sonic_price']:
+        print(f"Sonic Price (SonicScan): ${pricing_data['sonic_price'].get('result', {}).get('ethusd', 'N/A')}")
+    if pricing_data['oracle_price']:
+        print(f"Wrapped Sonic Price (Oracle): ${pricing_data['oracle_price']:.4f}")
+    if pricing_data['dexscreener_pairs']:
+        print(f"DexScreener Pairs Fetched: {len(pricing_data['dexscreener_pairs'])}")

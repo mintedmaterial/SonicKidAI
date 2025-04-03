@@ -1,0 +1,162 @@
+Logs
+Get Event Logs by Address
+Returns the event logs from an address, with optional filtering by block range.
+
+Copy
+https://api.sonicscan.org/api
+   ?module=logs
+   &action=getLogs
+   &address=0xbd3531da5cf5857e7cfaa92426877b022e612cf8
+   &fromBlock=12878196
+   &toBlock=12878196
+   &page=1
+   &offset=1000
+   &apikey=YourApiKeyToken
+Try this endpoint in your browser 🔗
+
+Request
+Response
+Query Parameters
+
+Parameter
+Description
+address
+
+the string representing the address to check for logs
+
+fromBlock
+
+the integer block number to start searching for logs eg. 12878196
+
+toBlock
+
+the integer block number to stop searching for logs eg. 12879196
+
+page
+
+the integer page number, if pagination is enabled
+
+offset
+
+the number of transactions displayed per page
+
+limited to 1000 records per query, use the page parameter for subsequent records
+
+Get Event Logs by Topics
+Returns the events log in a block range, filtered by topics.
+
+Copy
+https://api.sonicscan.org/api
+   ?module=logs
+   &action=getLogs
+   &fromBlock=12878196
+   &toBlock=12879196
+   &topic0=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+   &topic0_1_opr=and
+   &topic1=0x0000000000000000000000000000000000000000000000000000000000000000
+   &page=1
+   &offset=1000
+   &apikey=YourApiKeyToken
+Usage:
+
+For a single topic, specify the topic number such as topic0, topic1, topic2, topic3
+
+For multiple topics, specify the topic numbers and topic operator either and or or such as below
+
+topic0_1_opr (and|or between topic0 & topic1), topic1_2_opr (and|or between topic1 & topic2) topic2_3_opr (and|or between topic2 & topic3), topic0_2_opr (and|or between topic0 & topic2) topic0_3_opr (and|or between topic0 & topic3), topic1_3_opr (and|or between topic1 & topic3)
+
+Try this endpoint in your browser 🔗
+
+Request
+Response
+Query Parameters
+
+Parameter
+Description
+fromBlock
+
+the integer block number to start searching for logs eg. 12878196
+
+toBlock
+
+the integer block number to stop searching for logs eg. 12879196
+
+topic
+
+the topic numbers to search for
+
+limited totopic0, topic1, topic2, topic3
+
+topicOperator
+
+the topic operator when multiple topic combinations are used
+
+limited to and or or
+
+page
+
+the integer page number, if pagination is enabled
+
+offset
+
+the number of transactions displayed per page
+
+limited to 1000 records per query, use the page parameter for subsequent records
+
+Get Event Logs by Address filtered by Topics
+Returns the event logs from an address, filtered by topics and block range.
+
+Copy
+https://api.sonicscan.org/api
+   ?module=logs
+   &action=getLogs
+   &fromBlock=15073139
+   &toBlock=15074139
+   &address=0x59728544b08ab483533076417fbbb2fd0b17ce3a
+   &topic0=0x27c4f0403323142b599832f26acd21c74a9e5b809f2215726e244a4ac588cd7d
+   &topic0_1_opr=and
+   &topic1=0x00000000000000000000000023581767a106ae21c074b2276d25e5c3e136a68b
+   &page=1
+   &offset=1000
+   &apikey=YourApiKeyToken
+Try this endpoint in your browser 🔗
+
+Request
+Response
+Query Parameters
+
+Parameter
+Description
+fromBlock
+
+the integer block number to start searching for logs eg. 12878196
+
+toBlock
+
+the integer block number to stop searching for logs eg. 12879196
+
+address
+
+the string representing the address to check for logs
+
+topic
+
+the topic numbers to search for
+
+limited totopic0, topic1, topic2, topic3
+
+topicOperator
+
+the topic operator when multiple topic combinations are used
+
+limited to and or or
+
+page
+
+the integer page number, if pagination is enabled
+
+offset
+
+the number of transactions displayed per page
+
+limited to 1000 records per query, use the page parameter for subsequent records

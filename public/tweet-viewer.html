@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Feed Viewer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .tweet-card {
+            transition: all 0.3s ease;
+        }
+        .tweet-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .profile-image {
+            width: 48px;
+            height: 48px;
+            background-color: #1da1f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .text-sonic {
+            color: #6600cc;
+        }
+        .bg-sonic-light {
+            background-color: #f5f0ff;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-4">
+    <div class="max-w-3xl mx-auto">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold text-sonic">SonicKid Twitter Feed</h1>
+            <button id="refresh-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                Refresh Tweets
+            </button>
+        </div>
+        
+        <div class="bg-white shadow rounded-lg p-6 mb-6">
+            <h2 class="text-lg font-semibold mb-4">Post New Tweet</h2>
+            <div class="mb-4">
+                <textarea id="tweet-content" class="w-full p-2 border rounded" placeholder="Enter tweet content (use $TICKER for token symbols)..." rows="3"></textarea>
+            </div>
+            <div class="flex mb-4">
+                <input id="author-name" class="flex-1 p-2 border rounded mr-2" placeholder="Author Name (optional)">
+                <input id="author-username" class="flex-1 p-2 border rounded" placeholder="Username (optional)">
+            </div>
+            <button id="post-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                Post Tweet
+            </button>
+        </div>
+        
+        <div id="tweets-container" class="space-y-4">
+            <div class="flex justify-center items-center p-8">
+                <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-600"></div>
+                <span class="ml-4 text-gray-600">Loading tweets...</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = '/api/social';
+        const WEBHOOK_ENDPOINT = `${API_BASE}/webhook`;
+        const TWEETS_ENDPOINT = `${API_BASE}/tweets`;
+        
+        // Function to format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleString('en-US', { 
+                month: 'short', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit'
+            });
+        }
+        
+        // Function to get initials for profile image fallback
+        function getInitials(name) {
+            if (!name) return '?';
+            return name.split(' ').map(word => word[0]).join('').toUpperCase().substring(0, 2);
+        }
+        
+        // Function to highlight token symbols in text
+        function highlightTokens(text) {
+            return text.replace(/\$([A-Z]+)/g, '<span class="text-sonic font-semibold">$$$1</span>');
+        }
+        
+        // Function to fetch and display tweets
+        async function fetchTweets() {
+            try {
+                const response = await fetch(TWEETS_ENDPOINT);
+                const data = await response.json();
+                
+                if (data.success && data.tweets && data.tweets.length > 0) {
+                    renderTweets(data.tweets);
+                } else {
+                    showError('No tweets found');
+                }
+            } catch (error) {
+                showError('Error fetching tweets: ' + error.message);
+            }
+        }
+        
+        // Function to render tweets
+        function renderTweets(tweets) {
+            const container = document.getElementById('tweets-container');
+            container.innerHTML = '';
+            
+            tweets.forEach(tweet => {
+                const card = document.createElement('div');
+                card.className = 'tweet-card bg-white rounded-lg shadow p-4 hover:bg-sonic-light';
+                
+                const profileImg = tweet.author.profile_image_url ? 
+                    `<img src="${tweet.author.profile_image_url}" alt="${tweet.author.name}" class="rounded-full w-12 h-12">` :
+                    `<div class="profile-image rounded-full">${getInitials(tweet.author.name)}</div>`;
+                
+                const metrics = `
+                    <div class="flex text-gray-500 text-sm mt-2">
+                        <span class="mr-3">♥ ${tweet.public_metrics.like_count}</span>
+                        <span class="mr-3">↺ ${tweet.public_metrics.retweet_count}</span>
+                        <span>💬 ${tweet.public_metrics.reply_count}</span>
+                    </div>
+                `;
+                
+                card.innerHTML = `
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-3">
+                            ${profileImg}
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center">
+                                <span class="font-bold">${tweet.author.name}</span>
+                                <span class="text-gray-500 ml-2">@${tweet.author.username}</span>
+                                <span class="text-gray-400 ml-auto text-sm">${formatDate(tweet.created_at)}</span>
+                            </div>
+                            <div class="mt-1">
+                                ${highlightTokens(tweet.text)}
+                            </div>
+                            ${metrics}
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+        
+        // Function to show error
+        function showError(message) {
+            const container = document.getElementById('tweets-container');
+            container.innerHTML = `
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+        
+        // Function to post a new tweet
+        async function postTweet() {
+            const content = document.getElementById('tweet-content').value.trim();
+            if (!content) {
+                alert('Please enter tweet content');
+                return;
+            }
+            
+            const authorName = document.getElementById('author-name').value.trim();
+            const authorUsername = document.getElementById('author-username').value.trim();
+            
+            let payload = { content };
+            
+            // Add author information if provided
+            if (authorName || authorUsername) {
+                const name = authorName || 'Anonymous';
+                const username = authorUsername || name.toLowerCase().replace(/\s+/g, '_');
+                
+                payload.embeds = [{
+                    author: {
+                        name: authorUsername ? `${name}@${username}` : name
+                    }
+                }];
+            }
+            
+            try {
+                const response = await fetch(WEBHOOK_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('tweet-content').value = '';
+                    document.getElementById('author-name').value = '';
+                    document.getElementById('author-username').value = '';
+                    fetchTweets();
+                } else {
+                    alert('Error posting tweet: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                alert('Error posting tweet: ' + error.message);
+            }
+        }
+        
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchTweets();
+            
+            document.getElementById('refresh-btn').addEventListener('click', fetchTweets);
+            document.getElementById('post-btn').addEventListener('click', postTweet);
+        });
+    </script>
+</body>
+</html>

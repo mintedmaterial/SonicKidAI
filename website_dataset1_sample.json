@@ -1,0 +1,2045 @@
+[
+  {
+    "type": "tweet",
+    "id": "1904331820583342311",
+    "url": "https://x.com/scamface_/status/1904331820583342311",
+    "twitterUrl": "https://twitter.com/scamface_/status/1904331820583342311",
+    "text": "Boost Liquidity Sonic Labs Earn Rewards! \n\nRewards:\n3,000 Sonic OG NFTs distributed \n\n https://t.co/ddW05vFbSD\n\ud83d\udd17 Start Providing Liquidity: https://t.co/BOt4L85OWj\n\n#9mmPro #SonicLabs #SonicOG #LiquidityProvider",
+    "fullText": "Boost Liquidity Sonic Labs Earn Rewards! \n\nRewards:\n3,000 Sonic OG NFTs distributed \n\n https://t.co/ddW05vFbSD\n\ud83d\udd17 Start Providing Liquidity: https://t.co/BOt4L85OWj\n\n#9mmPro #SonicLabs #SonicOG #LiquidityProvider",
+    "source": "Twitter Web App",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 1,
+    "quoteCount": 0,
+    "viewCount": 20,
+    "createdAt": "Tue Mar 25 00:37:41 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "conversationId": "1904331820583342311",
+    "possiblySensitive": false,
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "scamface_",
+      "url": "https://x.com/scamface_",
+      "twitterUrl": "https://twitter.com/scamface_",
+      "id": "1368166206",
+      "name": "\ud83c\udf4a\ud83c\udf31michael_X",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1901385512188805120/DQ04ONVG_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1368166206/1741674467",
+      "description": "cryptocurrency mafia mustache \ud83e\udd78\n$Chia #Basechain $ETH \n #cryptojew                                  #cryptocurrency #maximulist \ud83d\udc40",
+      "location": "Antarctica",
+      "followers": 857,
+      "following": 556,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Sat Apr 20 23:01:35 +0000 2013",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 6457,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 1500,
+      "statusesCount": 6614,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": []
+    },
+    "extendedEntities": {},
+    "card": {
+      "rest_id": "https://t.co/BOt4L85OWj",
+      "legacy": {
+        "binding_values": [
+          {
+            "key": "description",
+            "value": {
+              "string_value": "Trade, earn, and own crypto on the all-in-one multichain DEX",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "domain",
+            "value": {
+              "string_value": "dex.9mm.pro",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "site",
+            "value": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1658474887596621824",
+                "path": []
+              }
+            }
+          },
+          {
+            "key": "creator",
+            "value": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1658474887596621824",
+                "path": []
+              }
+            }
+          },
+          {
+            "key": "photo_image_full_size_alt_text",
+            "value": {
+              "string_value": "Exchange",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "vanity_url",
+            "value": {
+              "scribe_key": "vanity_url",
+              "string_value": "dex.9mm.pro",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "summary_photo_image_alt_text",
+            "value": {
+              "string_value": "Exchange",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "title",
+            "value": {
+              "string_value": "Exchange | 9mm Pro",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "card_url",
+            "value": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/BOt4L85OWj",
+              "type": "STRING"
+            }
+          }
+        ],
+        "card_platform": {
+          "platform": {
+            "audience": {
+              "name": "production"
+            },
+            "device": {
+              "name": "Swift",
+              "version": "12"
+            }
+          }
+        },
+        "name": "summary_large_image",
+        "url": "https://t.co/BOt4L85OWj",
+        "user_refs_results": [
+          {
+            "result": {
+              "__typename": "User",
+              "id": "VXNlcjoxNjU4NDc0ODg3NTk2NjIxODI0",
+              "rest_id": "1658474887596621824",
+              "affiliates_highlighted_label": {},
+              "has_graduated_access": true,
+              "is_blue_verified": true,
+              "profile_image_shape": "Circle",
+              "legacy": {
+                "following": false,
+                "can_dm": true,
+                "can_media_tag": true,
+                "created_at": "Tue May 16 14:10:22 +0000 2023",
+                "default_profile": true,
+                "default_profile_image": false,
+                "description": "9MM Pro is a suite of user-friendly protocols designed to revolutionize the decentralized finance (DeFi) landscape across multiple blockchains.",
+                "entities": {
+                  "description": {
+                    "urls": []
+                  }
+                },
+                "fast_followers_count": 0,
+                "favourites_count": 1645,
+                "followers_count": 5263,
+                "friends_count": 291,
+                "has_custom_timelines": false,
+                "is_translator": false,
+                "listed_count": 21,
+                "location": "",
+                "media_count": 131,
+                "name": "9mm.pro | V2/ V3 DEX, PulseOG NFT, OTC and more",
+                "normal_followers_count": 5263,
+                "pinned_tweet_ids_str": [
+                  "1898992218574377140"
+                ],
+                "possibly_sensitive": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1658474887596621824/1731872089",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1691415512381825025/utYh-pfT_normal.jpg",
+                "profile_interstitial_type": "",
+                "screen_name": "9mm_pro",
+                "statuses_count": 766,
+                "translator_type": "none",
+                "verified": false,
+                "want_retweets": false,
+                "withheld_in_countries": []
+              },
+              "professional": {
+                "rest_id": "1659074593531875329",
+                "professional_type": "Business",
+                "category": []
+              },
+              "tipjar_settings": {}
+            }
+          },
+          {
+            "result": {
+              "__typename": "User",
+              "id": "VXNlcjoxNjU4NDc0ODg3NTk2NjIxODI0",
+              "rest_id": "1658474887596621824",
+              "affiliates_highlighted_label": {},
+              "has_graduated_access": true,
+              "is_blue_verified": true,
+              "profile_image_shape": "Circle",
+              "legacy": {
+                "following": false,
+                "can_dm": true,
+                "can_media_tag": true,
+                "created_at": "Tue May 16 14:10:22 +0000 2023",
+                "default_profile": true,
+                "default_profile_image": false,
+                "description": "9MM Pro is a suite of user-friendly protocols designed to revolutionize the decentralized finance (DeFi) landscape across multiple blockchains.",
+                "entities": {
+                  "description": {
+                    "urls": []
+                  }
+                },
+                "fast_followers_count": 0,
+                "favourites_count": 1645,
+                "followers_count": 5263,
+                "friends_count": 291,
+                "has_custom_timelines": false,
+                "is_translator": false,
+                "listed_count": 21,
+                "location": "",
+                "media_count": 131,
+                "name": "9mm.pro | V2/ V3 DEX, PulseOG NFT, OTC and more",
+                "normal_followers_count": 5263,
+                "pinned_tweet_ids_str": [
+                  "1898992218574377140"
+                ],
+                "possibly_sensitive": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1658474887596621824/1731872089",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1691415512381825025/utYh-pfT_normal.jpg",
+                "profile_interstitial_type": "",
+                "screen_name": "9mm_pro",
+                "statuses_count": 766,
+                "translator_type": "none",
+                "verified": false,
+                "want_retweets": false,
+                "withheld_in_countries": []
+              },
+              "professional": {
+                "rest_id": "1659074593531875329",
+                "professional_type": "Business",
+                "category": []
+              },
+              "tipjar_settings": {}
+            }
+          }
+        ]
+      }
+    },
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            165,
+            172
+          ],
+          "text": "9mmPro"
+        },
+        {
+          "indices": [
+            173,
+            183
+          ],
+          "text": "SonicLabs"
+        },
+        {
+          "indices": [
+            184,
+            192
+          ],
+          "text": "SonicOG"
+        },
+        {
+          "indices": [
+            193,
+            211
+          ],
+          "text": "LiquidityProvider"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "tanggang.life/sonic9mmpro",
+          "expanded_url": "https://tanggang.life/sonic9mmpro",
+          "url": "https://t.co/ddW05vFbSD",
+          "indices": [
+            87,
+            110
+          ]
+        },
+        {
+          "display_url": "dex.9mm.pro/swap?chain=son\u2026",
+          "expanded_url": "https://dex.9mm.pro/swap?chain=sonic",
+          "url": "https://t.co/BOt4L85OWj",
+          "indices": [
+            140,
+            163
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [],
+    "isConversationControlled": false
+  },
+  {
+    "type": "tweet",
+    "id": "1904323234981449935",
+    "url": "https://x.com/Paba_Laba/status/1904323234981449935",
+    "twitterUrl": "https://twitter.com/Paba_Laba/status/1904323234981449935",
+    "text": "\ud83d\ude80 Boost Your Liquidity on Sonic Labs &amp; Earn Rewards! \ud83d\ude80\n\n\ud83d\udd2b Provide liquidity to 9mm Pro\u2019s V2 Liquidity Pools &amp; earn rewards based on your 30-day average PLP balance for these pairs:\n Eligible Liquidity Pairs (PLP Eligible):\n\n#SonicOG\n\n#LiquidityProvider\n\nhttps://t.co/QnuVnMuVGc",
+    "fullText": "\ud83d\ude80 Boost Your Liquidity on Sonic Labs &amp; Earn Rewards! \ud83d\ude80\n\n\ud83d\udd2b Provide liquidity to 9mm Pro\u2019s V2 Liquidity Pools &amp; earn rewards based on your 30-day average PLP balance for these pairs:\n Eligible Liquidity Pairs (PLP Eligible):\n\n#SonicOG\n\n#LiquidityProvider\n\nhttps://t.co/QnuVnMuVGc",
+    "source": "Twitter Web App",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 1,
+    "quoteCount": 0,
+    "viewCount": 29,
+    "createdAt": "Tue Mar 25 00:03:34 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "conversationId": "1904323234981449935",
+    "possiblySensitive": false,
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "Paba_Laba",
+      "url": "https://x.com/Paba_Laba",
+      "twitterUrl": "https://twitter.com/Paba_Laba",
+      "id": "1328488959920513025",
+      "name": "\ud83c\udf4aPaba\ud83c\udf6aLaba\ud83c\udf4a",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1855698878877544448/Klx56aef_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1328488959920513025/1717042749",
+      "description": "student of #defi #crypto #PulseChain #TangGang #9mm $XCH #RWA I \u2764\ufe0f\ud83c\udf4a\ud83c\udf4c\ud83c\udf51\ud83c\udf4d\ud83c\udf50\ud83c\udf31#DYOR and absolute #NoFinancialAdvice - Free Crypto Education @tanggangacademy.com",
+      "location": "Texas, USA",
+      "followers": 1395,
+      "following": 1228,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": false,
+      "createdAt": "Tue Nov 17 00:04:53 +0000 2020",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 160452,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 1419,
+      "statusesCount": 19182,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "1399898106624450564"
+      ]
+    },
+    "extendedEntities": {},
+    "card": {
+      "rest_id": "https://t.co/QnuVnMuVGc",
+      "legacy": {
+        "binding_values": [
+          {
+            "key": "description",
+            "value": {
+              "string_value": "Trade, earn, and own crypto on the all-in-one multichain DEX",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "domain",
+            "value": {
+              "string_value": "dex.9mm.pro",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "site",
+            "value": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1658474887596621824",
+                "path": []
+              }
+            }
+          },
+          {
+            "key": "creator",
+            "value": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1658474887596621824",
+                "path": []
+              }
+            }
+          },
+          {
+            "key": "photo_image_full_size_alt_text",
+            "value": {
+              "string_value": "Exchange",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "vanity_url",
+            "value": {
+              "scribe_key": "vanity_url",
+              "string_value": "dex.9mm.pro",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "summary_photo_image_alt_text",
+            "value": {
+              "string_value": "Exchange",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "title",
+            "value": {
+              "string_value": "Exchange | 9mm Pro",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "card_url",
+            "value": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/QnuVnMuVGc",
+              "type": "STRING"
+            }
+          }
+        ],
+        "card_platform": {
+          "platform": {
+            "audience": {
+              "name": "production"
+            },
+            "device": {
+              "name": "Swift",
+              "version": "12"
+            }
+          }
+        },
+        "name": "summary_large_image",
+        "url": "https://t.co/QnuVnMuVGc",
+        "user_refs_results": [
+          {
+            "result": {
+              "__typename": "User",
+              "id": "VXNlcjoxNjU4NDc0ODg3NTk2NjIxODI0",
+              "rest_id": "1658474887596621824",
+              "affiliates_highlighted_label": {},
+              "has_graduated_access": true,
+              "is_blue_verified": true,
+              "profile_image_shape": "Circle",
+              "legacy": {
+                "following": false,
+                "can_dm": true,
+                "can_media_tag": true,
+                "created_at": "Tue May 16 14:10:22 +0000 2023",
+                "default_profile": true,
+                "default_profile_image": false,
+                "description": "9MM Pro is a suite of user-friendly protocols designed to revolutionize the decentralized finance (DeFi) landscape across multiple blockchains.",
+                "entities": {
+                  "description": {
+                    "urls": []
+                  }
+                },
+                "fast_followers_count": 0,
+                "favourites_count": 1645,
+                "followers_count": 5263,
+                "friends_count": 291,
+                "has_custom_timelines": false,
+                "is_translator": false,
+                "listed_count": 21,
+                "location": "",
+                "media_count": 131,
+                "name": "9mm.pro | V2/ V3 DEX, PulseOG NFT, OTC and more",
+                "normal_followers_count": 5263,
+                "pinned_tweet_ids_str": [
+                  "1898992218574377140"
+                ],
+                "possibly_sensitive": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1658474887596621824/1731872089",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1691415512381825025/utYh-pfT_normal.jpg",
+                "profile_interstitial_type": "",
+                "screen_name": "9mm_pro",
+                "statuses_count": 766,
+                "translator_type": "none",
+                "verified": false,
+                "want_retweets": false,
+                "withheld_in_countries": []
+              },
+              "professional": {
+                "rest_id": "1659074593531875329",
+                "professional_type": "Business",
+                "category": []
+              },
+              "tipjar_settings": {}
+            }
+          },
+          {
+            "result": {
+              "__typename": "User",
+              "id": "VXNlcjoxNjU4NDc0ODg3NTk2NjIxODI0",
+              "rest_id": "1658474887596621824",
+              "affiliates_highlighted_label": {},
+              "has_graduated_access": true,
+              "is_blue_verified": true,
+              "profile_image_shape": "Circle",
+              "legacy": {
+                "following": false,
+                "can_dm": true,
+                "can_media_tag": true,
+                "created_at": "Tue May 16 14:10:22 +0000 2023",
+                "default_profile": true,
+                "default_profile_image": false,
+                "description": "9MM Pro is a suite of user-friendly protocols designed to revolutionize the decentralized finance (DeFi) landscape across multiple blockchains.",
+                "entities": {
+                  "description": {
+                    "urls": []
+                  }
+                },
+                "fast_followers_count": 0,
+                "favourites_count": 1645,
+                "followers_count": 5263,
+                "friends_count": 291,
+                "has_custom_timelines": false,
+                "is_translator": false,
+                "listed_count": 21,
+                "location": "",
+                "media_count": 131,
+                "name": "9mm.pro | V2/ V3 DEX, PulseOG NFT, OTC and more",
+                "normal_followers_count": 5263,
+                "pinned_tweet_ids_str": [
+                  "1898992218574377140"
+                ],
+                "possibly_sensitive": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1658474887596621824/1731872089",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1691415512381825025/utYh-pfT_normal.jpg",
+                "profile_interstitial_type": "",
+                "screen_name": "9mm_pro",
+                "statuses_count": 766,
+                "translator_type": "none",
+                "verified": false,
+                "want_retweets": false,
+                "withheld_in_countries": []
+              },
+              "professional": {
+                "rest_id": "1659074593531875329",
+                "professional_type": "Business",
+                "category": []
+              },
+              "tipjar_settings": {}
+            }
+          }
+        ]
+      }
+    },
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            232,
+            240
+          ],
+          "text": "SonicOG"
+        },
+        {
+          "indices": [
+            242,
+            260
+          ],
+          "text": "LiquidityProvider"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "dex.9mm.pro/swap?chain=son\u2026",
+          "expanded_url": "https://dex.9mm.pro/swap?chain=sonic",
+          "url": "https://t.co/QnuVnMuVGc",
+          "indices": [
+            262,
+            285
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [],
+    "isConversationControlled": false
+  },
+  {
+    "type": "tweet",
+    "id": "1904315061256015898",
+    "url": "https://x.com/T3chT1n4/status/1904315061256015898",
+    "twitterUrl": "https://twitter.com/T3chT1n4/status/1904315061256015898",
+    "text": "Sonic Labs is stepping into the stablecoin game! \n\n\u26a1 The team, led by Andre Cronje, is gearing up to launch its own algorithmic stablecoin, prioritizing scalability and a solid launch. \n\nNo timeline yet, but this could shake up the #blockchain space. \n\nThoughts? \ud83e\udd14",
+    "fullText": "Sonic Labs is stepping into the stablecoin game! \n\n\u26a1 The team, led by Andre Cronje, is gearing up to launch its own algorithmic stablecoin, prioritizing scalability and a solid launch. \n\nNo timeline yet, but this could shake up the #blockchain space. \n\nThoughts? \ud83e\udd14",
+    "source": "Twitter for Android",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 15,
+    "createdAt": "Mon Mar 24 23:31:05 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "conversationId": "1904315061256015898",
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "T3chT1n4",
+      "url": "https://x.com/T3chT1n4",
+      "twitterUrl": "https://twitter.com/T3chT1n4",
+      "id": "1790536398677725184",
+      "name": "LegalG_Insights",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1829722238460780544/OVMixqNg_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1790536398677725184/1715796120",
+      "description": "Professional pizza\ud83c\udf55 reviewer seeking blockchain-based solution to pineapple\ud83c\udf4d controversy!\n\nSometimes I think\ud83e\udd14 in binary, but I dream in hexadecimal.",
+      "location": "Nigeria",
+      "followers": 1101,
+      "following": 35,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Wed May 15 00:15:35 +0000 2024",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "coinmarketcap.com/community/prof\u2026",
+              "expanded_url": "https://coinmarketcap.com/community/profile/Legalg_insights/",
+              "url": "https://t.co/x0gHj0ejmZ",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 81,
+      "hasCustomTimelines": false,
+      "isTranslator": false,
+      "mediaCount": 61,
+      "statusesCount": 417,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": []
+    },
+    "extendedEntities": {},
+    "card": {},
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            232,
+            243
+          ],
+          "text": "blockchain"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [],
+    "isConversationControlled": false
+  },
+  {
+    "type": "tweet",
+    "id": "1904312398129094841",
+    "url": "https://x.com/S6Land4/status/1904312398129094841",
+    "twitterUrl": "https://twitter.com/S6Land4/status/1904312398129094841",
+    "text": "\ud83d\ude80 Boost Your Liquidity on Sonic Labs &amp; Earn Rewards! \ud83d\ude80\n\n\ud83d\udd2b Provide liquidity to 9mm Pro\u2019s V2 Liquidity Pools \n\ud83d\udd17 Track your liquidity here: https://t.co/jgAMS4mn2N\n\ud83d\udd17 Start Providing Liquidity: https://t.co/0L3X8JTp1Q\n\n#9mmPro #SonicLabs #SonicOG #LiquidityProvider",
+    "fullText": "\ud83d\ude80 Boost Your Liquidity on Sonic Labs &amp; Earn Rewards! \ud83d\ude80\n\n\ud83d\udd2b Provide liquidity to 9mm Pro\u2019s V2 Liquidity Pools \n\ud83d\udd17 Track your liquidity here: https://t.co/jgAMS4mn2N\n\ud83d\udd17 Start Providing Liquidity: https://t.co/0L3X8JTp1Q\n\n#9mmPro #SonicLabs #SonicOG #LiquidityProvider",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 9,
+    "createdAt": "Mon Mar 24 23:20:30 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "conversationId": "1904312398129094841",
+    "possiblySensitive": false,
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "S6Land4",
+      "url": "https://x.com/S6Land4",
+      "twitterUrl": "https://twitter.com/S6Land4",
+      "id": "1878510714777956352",
+      "name": "NoLandS",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1904305080272101376/8CPjdW-2_normal.jpg",
+      "description": "",
+      "location": "Beloeil, Qu\u00e9bec",
+      "followers": 0,
+      "following": 5,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Sun Jan 12 18:34:15 +0000 2025",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 4,
+      "hasCustomTimelines": false,
+      "isTranslator": false,
+      "mediaCount": 1,
+      "statusesCount": 42,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": []
+    },
+    "extendedEntities": {},
+    "card": {
+      "rest_id": "https://t.co/0L3X8JTp1Q",
+      "legacy": {
+        "binding_values": [
+          {
+            "key": "description",
+            "value": {
+              "string_value": "Trade, earn, and own crypto on the all-in-one multichain DEX",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "domain",
+            "value": {
+              "string_value": "dex.9mm.pro",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "site",
+            "value": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1658474887596621824",
+                "path": []
+              }
+            }
+          },
+          {
+            "key": "creator",
+            "value": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1658474887596621824",
+                "path": []
+              }
+            }
+          },
+          {
+            "key": "photo_image_full_size_alt_text",
+            "value": {
+              "string_value": "Exchange",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "vanity_url",
+            "value": {
+              "scribe_key": "vanity_url",
+              "string_value": "dex.9mm.pro",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "summary_photo_image_alt_text",
+            "value": {
+              "string_value": "Exchange",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "title",
+            "value": {
+              "string_value": "Exchange | 9mm Pro",
+              "type": "STRING"
+            }
+          },
+          {
+            "key": "card_url",
+            "value": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/0L3X8JTp1Q",
+              "type": "STRING"
+            }
+          }
+        ],
+        "card_platform": {
+          "platform": {
+            "audience": {
+              "name": "production"
+            },
+            "device": {
+              "name": "Swift",
+              "version": "12"
+            }
+          }
+        },
+        "name": "summary_large_image",
+        "url": "https://t.co/0L3X8JTp1Q",
+        "user_refs_results": [
+          {
+            "result": {
+              "__typename": "User",
+              "id": "VXNlcjoxNjU4NDc0ODg3NTk2NjIxODI0",
+              "rest_id": "1658474887596621824",
+              "affiliates_highlighted_label": {},
+              "has_graduated_access": true,
+              "is_blue_verified": true,
+              "profile_image_shape": "Circle",
+              "legacy": {
+                "following": false,
+                "can_dm": true,
+                "can_media_tag": true,
+                "created_at": "Tue May 16 14:10:22 +0000 2023",
+                "default_profile": true,
+                "default_profile_image": false,
+                "description": "9MM Pro is a suite of user-friendly protocols designed to revolutionize the decentralized finance (DeFi) landscape across multiple blockchains.",
+                "entities": {
+                  "description": {
+                    "urls": []
+                  }
+                },
+                "fast_followers_count": 0,
+                "favourites_count": 1645,
+                "followers_count": 5263,
+                "friends_count": 291,
+                "has_custom_timelines": false,
+                "is_translator": false,
+                "listed_count": 21,
+                "location": "",
+                "media_count": 131,
+                "name": "9mm.pro | V2/ V3 DEX, PulseOG NFT, OTC and more",
+                "normal_followers_count": 5263,
+                "pinned_tweet_ids_str": [
+                  "1898992218574377140"
+                ],
+                "possibly_sensitive": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1658474887596621824/1731872089",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1691415512381825025/utYh-pfT_normal.jpg",
+                "profile_interstitial_type": "",
+                "screen_name": "9mm_pro",
+                "statuses_count": 766,
+                "translator_type": "none",
+                "verified": false,
+                "want_retweets": false,
+                "withheld_in_countries": []
+              },
+              "professional": {
+                "rest_id": "1659074593531875329",
+                "professional_type": "Business",
+                "category": []
+              },
+              "tipjar_settings": {}
+            }
+          },
+          {
+            "result": {
+              "__typename": "User",
+              "id": "VXNlcjoxNjU4NDc0ODg3NTk2NjIxODI0",
+              "rest_id": "1658474887596621824",
+              "affiliates_highlighted_label": {},
+              "has_graduated_access": true,
+              "is_blue_verified": true,
+              "profile_image_shape": "Circle",
+              "legacy": {
+                "following": false,
+                "can_dm": true,
+                "can_media_tag": true,
+                "created_at": "Tue May 16 14:10:22 +0000 2023",
+                "default_profile": true,
+                "default_profile_image": false,
+                "description": "9MM Pro is a suite of user-friendly protocols designed to revolutionize the decentralized finance (DeFi) landscape across multiple blockchains.",
+                "entities": {
+                  "description": {
+                    "urls": []
+                  }
+                },
+                "fast_followers_count": 0,
+                "favourites_count": 1645,
+                "followers_count": 5263,
+                "friends_count": 291,
+                "has_custom_timelines": false,
+                "is_translator": false,
+                "listed_count": 21,
+                "location": "",
+                "media_count": 131,
+                "name": "9mm.pro | V2/ V3 DEX, PulseOG NFT, OTC and more",
+                "normal_followers_count": 5263,
+                "pinned_tweet_ids_str": [
+                  "1898992218574377140"
+                ],
+                "possibly_sensitive": false,
+                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1658474887596621824/1731872089",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1691415512381825025/utYh-pfT_normal.jpg",
+                "profile_interstitial_type": "",
+                "screen_name": "9mm_pro",
+                "statuses_count": 766,
+                "translator_type": "none",
+                "verified": false,
+                "want_retweets": false,
+                "withheld_in_countries": []
+              },
+              "professional": {
+                "rest_id": "1659074593531875329",
+                "professional_type": "Business",
+                "category": []
+              },
+              "tipjar_settings": {}
+            }
+          }
+        ]
+      }
+    },
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            220,
+            227
+          ],
+          "text": "9mmPro"
+        },
+        {
+          "indices": [
+            228,
+            238
+          ],
+          "text": "SonicLabs"
+        },
+        {
+          "indices": [
+            239,
+            247
+          ],
+          "text": "SonicOG"
+        },
+        {
+          "indices": [
+            248,
+            266
+          ],
+          "text": "LiquidityProvider"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "tanggang.life/sonic9mmpro",
+          "expanded_url": "https://tanggang.life/sonic9mmpro",
+          "url": "https://t.co/jgAMS4mn2N",
+          "indices": [
+            142,
+            165
+          ]
+        },
+        {
+          "display_url": "dex.9mm.pro/swap?chain=son\u2026",
+          "expanded_url": "https://dex.9mm.pro/swap?chain=sonic",
+          "url": "https://t.co/0L3X8JTp1Q",
+          "indices": [
+            195,
+            218
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [],
+    "isConversationControlled": false
+  },
+  {
+    "type": "tweet",
+    "id": "1904297102521614439",
+    "url": "https://x.com/ultrayieldapp/status/1904297102521614439",
+    "twitterUrl": "https://twitter.com/ultrayieldapp/status/1904297102521614439",
+    "text": "Sonic Launches High-Yield Algorithmic Stablecoin, Evoking Memories of the Terra-Luna Crash\n\nSonic is launching a new yield-generating algorithmic stablecoin, bringing back memories of the Terra-Luna collapse in 2022. Despite concerns, Andre Cronje, co-founder of Sonic Labs, claims their model is solid, with proof-of-concept tests showing an APR of 200% at $10 million TVL, stabilizing around 4.9% at $1 billion.\n\nDo you believe in the success of this project?",
+    "fullText": "Sonic Launches High-Yield Algorithmic Stablecoin, Evoking Memories of the Terra-Luna Crash\n\nSonic is launching a new yield-generating algorithmic stablecoin, bringing back memories of the Terra-Luna collapse in 2022. Despite concerns, Andre Cronje, co-founder of Sonic Labs,",
+    "source": "Twitter Web App",
+    "retweetCount": 0,
+    "replyCount": 1,
+    "likeCount": 1,
+    "quoteCount": 0,
+    "viewCount": 45,
+    "createdAt": "Mon Mar 24 22:19:44 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "conversationId": "1904297102521614439",
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "ultrayieldapp",
+      "url": "https://x.com/ultrayieldapp",
+      "twitterUrl": "https://twitter.com/ultrayieldapp",
+      "id": "1830870238638084096",
+      "name": "UltraYield",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1863478603432013824/7iII3JNZ_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1830870238638084096/1725606553",
+      "description": "Generate additional yield on your tokens without selling them through uncorrelated market-neutral strategies. Get started below.",
+      "location": "",
+      "followers": 262,
+      "following": 20,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Tue Sep 03 07:27:49 +0000 2024",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "ultrayield.app",
+              "expanded_url": "https://ultrayield.app/",
+              "url": "https://t.co/KLKNAoKHTB",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 50,
+      "hasCustomTimelines": false,
+      "isTranslator": false,
+      "mediaCount": 8,
+      "statusesCount": 49,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "1868770915322097802"
+      ]
+    },
+    "extendedEntities": {},
+    "card": {},
+    "place": {},
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [],
+    "isConversationControlled": false
+  },
+  {
+    "type": "tweet",
+    "id": "1904295755508338956",
+    "url": "https://x.com/nicole_rai33581/status/1904295755508338956",
+    "twitterUrl": "https://twitter.com/nicole_rai33581/status/1904295755508338956",
+    "text": "@_Sonic_HUB @TheHedgehog_io @SonicLabs The Hedgehog project launching on Sonic Labs, with its focus on developer-friendliness and the FeeM program, is a compelling offering.The ability to earn 90% of the fees generated by their apps is a huge incentive for developers to build and deploy on the Sonic Labs platform.",
+    "fullText": "@_Sonic_HUB @TheHedgehog_io @SonicLabs The Hedgehog project launching on Sonic Labs, with its focus on developer-friendliness and the FeeM program, is a compelling offering.The ability to earn 90% of the fees generated by their apps is a huge incentive for developers to build and deploy on the Sonic Labs platform.",
+    "source": "Twitter for Android",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 38,
+    "createdAt": "Mon Mar 24 22:14:22 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": true,
+    "inReplyToId": "1904293736395522268",
+    "conversationId": "1904293736395522268",
+    "inReplyToUserId": "1526114197297590274",
+    "inReplyToUsername": "_Sonic_HUB",
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "nicole_rai33581",
+      "url": "https://x.com/nicole_rai33581",
+      "twitterUrl": "https://twitter.com/nicole_rai33581",
+      "id": "1878285312558059520",
+      "name": "Clairize nicole Raizen",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1878286498283573248/5JKih74M_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1878285312558059520/1736653370",
+      "description": "markets are born out of despair,growth out of doubt#Btc",
+      "location": "",
+      "followers": 220,
+      "following": 2782,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Sun Jan 12 03:39:00 +0000 2025",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 275,
+      "hasCustomTimelines": false,
+      "isTranslator": false,
+      "mediaCount": 1,
+      "statusesCount": 3246,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": []
+    },
+    "extendedEntities": {},
+    "card": {},
+    "place": {},
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "1526114197297590274",
+          "name": "SONIC_HUB",
+          "screen_name": "_Sonic_HUB",
+          "indices": [
+            0,
+            11
+          ]
+        },
+        {
+          "id_str": "1661260900454617090",
+          "name": "Hedgehog Protocol \ud83e\udd94",
+          "screen_name": "TheHedgehog_io",
+          "indices": [
+            12,
+            27
+          ]
+        },
+        {
+          "id_str": "977020204071792641",
+          "name": "Sonic Labs",
+          "screen_name": "SonicLabs",
+          "indices": [
+            28,
+            38
+          ]
+        }
+      ]
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [],
+    "isConversationControlled": false
+  },
+  {
+    "type": "tweet",
+    "id": "1904292138982293519",
+    "url": "https://x.com/briefing_block_/status/1904292138982293519",
+    "twitterUrl": "https://twitter.com/briefing_block_/status/1904292138982293519",
+    "text": "Sonic Labs Tests High-Yield Stablecoin\n\nSonic Labs (formerly Fantom) is trialing a new algorithmic stablecoin, Minimal USD (MUSD), offering annual yields up to 23%.\n\nCo-founder Andre Cronje (\"Godfather of DeFi\") revealed the interest rate will scale based on protocol TVL:\n\ud83d\udd38200% yield at $10M TVL\n\ud83d\udd3823.5% yield at $100M TVL\n\ud83d\udd38~4.9% yield above $1B TVL",
+    "fullText": "Sonic Labs Tests High-Yield Stablecoin\n\nSonic Labs (formerly Fantom) is trialing a new algorithmic stablecoin, Minimal USD (MUSD), offering annual yields up to 23%.\n\nCo-founder Andre Cronje (\"Godfather of DeFi\") revealed the interest rate will scale based on protocol TVL:\n\ud83d\udd38200% https://t.co/gPLJRP662E",
+    "source": "Twitter Web Client",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 28,
+    "createdAt": "Mon Mar 24 22:00:00 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "conversationId": "1904292138982293519",
+    "possiblySensitive": false,
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "briefing_block_",
+      "url": "https://x.com/briefing_block_",
+      "twitterUrl": "https://twitter.com/briefing_block_",
+      "id": "1855826071666720768",
+      "name": "Briefing Block",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1855826309785817088/UwmDvlyb_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1855826071666720768/1731306480",
+      "description": "",
+      "location": "",
+      "followers": 483,
+      "following": 1475,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Mon Nov 11 04:13:17 +0000 2024",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "briefingblock.com",
+              "expanded_url": "https://briefingblock.com/",
+              "url": "https://t.co/9QrsgaNZih",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 107,
+      "hasCustomTimelines": false,
+      "isTranslator": false,
+      "mediaCount": 748,
+      "statusesCount": 1671,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "1893254412249796780"
+      ]
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.x.com/gPLJRP662E",
+          "expanded_url": "https://x.com/briefing_block_/status/1904292138982293519/photo/1",
+          "id_str": "1904163548110233600",
+          "indices": [
+            279,
+            302
+          ],
+          "media_key": "3_1904163548110233600",
+          "media_url_https": "https://pbs.twimg.com/media/GmzyqIdboAAIeDU.jpg",
+          "type": "photo",
+          "url": "https://t.co/gPLJRP662E",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": []
+            },
+            "medium": {
+              "faces": []
+            },
+            "small": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "sizes": {
+            "large": {
+              "h": 800,
+              "w": 1200,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 800,
+              "w": 1200,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 453,
+              "w": 680,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 800,
+            "width": 1200,
+            "focus_rects": [
+              {
+                "x": 0,
+                "y": 54,
+                "w": 1200,
+                "h": 672
+              },
+              {
+                "x": 230,
+                "y": 0,
+                "w": 800,
+                "h": 800
+              },
+              {
+                "x": 279,
+                "y": 0,
+                "w": 702,
+                "h": 800
+              },
+              {
+                "x": 430,
+                "y": 0,
+                "w": 400,
+                "h": 800
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1200,
+                "h": 800
+              }
+            ]
+          },
+          "allow_download_status": {
+            "allow_download": true
+          },
+          "media_results": {
+            "result": {
+              "media_key": "3_1904163548110233600"
+            }
+          }
+        }
+      ]
+    },
+    "card": {},
+    "place": {},
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [
+      "https://pbs.twimg.com/media/GmzyqIdboAAIeDU.jpg"
+    ],
+    "isConversationControlled": false
+  },
+  {
+    "type": "tweet",
+    "id": "1904289555244597302",
+    "url": "https://x.com/SonicLabs/status/1904289555244597302",
+    "twitterUrl": "https://twitter.com/SonicLabs/status/1904289555244597302",
+    "text": "@danielesesta @aave https://t.co/7YnqD7qzLd",
+    "fullText": "@danielesesta @aave https://t.co/7YnqD7qzLd",
+    "source": "Twitter Web App",
+    "retweetCount": 0,
+    "replyCount": 2,
+    "likeCount": 14,
+    "quoteCount": 0,
+    "viewCount": 1426,
+    "createdAt": "Mon Mar 24 21:49:44 +0000 2025",
+    "lang": "qme",
+    "bookmarkCount": 1,
+    "isReply": true,
+    "inReplyToId": "1904287156652101881",
+    "conversationId": "1904281618317291704",
+    "inReplyToUserId": "141007481",
+    "inReplyToUsername": "danielesesta",
+    "possiblySensitive": false,
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "SonicLabs",
+      "url": "https://x.com/SonicLabs",
+      "twitterUrl": "https://twitter.com/SonicLabs",
+      "id": "977020204071792641",
+      "name": "Sonic Labs",
+      "isVerified": false,
+      "verifiedType": "Business",
+      "isBlueVerified": true,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1886106303262490624/3rEXurVD_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/977020204071792641/1741287030",
+      "description": "DeFi redefined. Sonic is the highest-performing EVM blockchain, combining speed, incentives, and world-class infrastructure. Powered by $S.",
+      "location": "",
+      "followers": 825725,
+      "following": 350,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Fri Mar 23 03:12:23 +0000 2018",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "linktr.ee/soniclabs",
+              "expanded_url": "https://linktr.ee/soniclabs",
+              "url": "https://t.co/YP1fMsd1Xk",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 6549,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 1739,
+      "statusesCount": 7756,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "1897721930767385075"
+      ]
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.x.com/7YnqD7qzLd",
+          "expanded_url": "https://x.com/SonicLabs/status/1904289555244597302/photo/1",
+          "ext_alt_text": "Pluie Temps Pourri GIF",
+          "id_str": "1904289540090609664",
+          "indices": [
+            20,
+            43
+          ],
+          "media_key": "16_1904289540090609664",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/Gm1lP1KXwAAABcC.jpg",
+          "type": "animated_gif",
+          "url": "https://t.co/7YnqD7qzLd",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "sizes": {
+            "large": {
+              "h": 124,
+              "w": 220,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 124,
+              "w": 220,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 124,
+              "w": 220,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 124,
+              "w": 124,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 124,
+            "width": 220,
+            "focus_rects": []
+          },
+          "video_info": {
+            "aspect_ratio": [
+              55,
+              31
+            ],
+            "variants": [
+              {
+                "bitrate": 0,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/tweet_video/Gm1lP1KXwAAABcC.mp4"
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "16_1904289540090609664"
+            }
+          }
+        }
+      ]
+    },
+    "card": {},
+    "place": {},
+    "entities": {
+      "hashtags": [],
+      "media": [
+        {
+          "display_url": "pic.x.com/7YnqD7qzLd",
+          "expanded_url": "https://x.com/SonicLabs/status/1904289555244597302/photo/1",
+          "ext_alt_text": "Pluie Temps Pourri GIF",
+          "id_str": "1904289540090609664",
+          "indices": [
+            20,
+            43
+          ],
+          "media_key": "16_1904289540090609664",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/Gm1lP1KXwAAABcC.jpg",
+          "type": "animated_gif",
+          "url": "https://t.co/7YnqD7qzLd",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "sizes": {
+            "large": {
+              "h": 124,
+              "w": 220,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 124,
+              "w": 220,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 124,
+              "w": 220,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 124,
+              "w": 124,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 124,
+            "width": 220,
+            "focus_rects": []
+          },
+          "video_info": {
+            "aspect_ratio": [
+              55,
+              31
+            ],
+            "variants": [
+              {
+                "bitrate": 0,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/tweet_video/Gm1lP1KXwAAABcC.mp4"
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "16_1904289540090609664"
+            }
+          }
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "141007481",
+          "name": "Daniele \ud83d\udfe7 ( Revenge Arc )",
+          "screen_name": "danielesesta",
+          "indices": [
+            0,
+            13
+          ]
+        },
+        {
+          "id_str": "867100084248469505",
+          "name": "Aave",
+          "screen_name": "aave",
+          "indices": [
+            14,
+            19
+          ]
+        }
+      ]
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [
+      "https://pbs.twimg.com/tweet_video_thumb/Gm1lP1KXwAAABcC.jpg"
+    ],
+    "isConversationControlled": false
+  },
+  {
+    "type": "tweet",
+    "id": "1904287636375609391",
+    "url": "https://x.com/CryptoDegensHQ/status/1904287636375609391",
+    "twitterUrl": "https://twitter.com/CryptoDegensHQ/status/1904287636375609391",
+    "text": "@SonicLabs @aave Sonic labs is broke \ud83e\udd23",
+    "fullText": "@SonicLabs @aave Sonic labs is broke \ud83e\udd23",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 53,
+    "createdAt": "Mon Mar 24 21:42:07 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": true,
+    "inReplyToId": "1904281618317291704",
+    "conversationId": "1904281618317291704",
+    "inReplyToUserId": "977020204071792641",
+    "inReplyToUsername": "SonicLabs",
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "CryptoDegensHQ",
+      "url": "https://x.com/CryptoDegensHQ",
+      "twitterUrl": "https://twitter.com/CryptoDegensHQ",
+      "id": "1751347111587667968",
+      "name": "Crypto Degen",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1899201564474040320/hmZAl1fh_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1751347111587667968/1741639627",
+      "description": "Bringing you the latest in crypto, DeFi, and market insights. Charts, trends, and alpha-stay ahead of the game! \ud83c\udf10",
+      "location": "Join Telegram  \ud83d\udc49",
+      "followers": 245,
+      "following": 29,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Sat Jan 27 20:51:35 +0000 2024",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "t.me/CryptoDegensHQ",
+              "expanded_url": "https://t.me/CryptoDegensHQ",
+              "url": "https://t.co/RWhndmqxqv",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 6498,
+      "hasCustomTimelines": false,
+      "isTranslator": false,
+      "mediaCount": 25,
+      "statusesCount": 2086,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "1904017145647845505"
+      ]
+    },
+    "extendedEntities": {},
+    "card": {},
+    "place": {},
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "977020204071792641",
+          "name": "Sonic Labs",
+          "screen_name": "SonicLabs",
+          "indices": [
+            0,
+            10
+          ]
+        },
+        {
+          "id_str": "867100084248469505",
+          "name": "Aave",
+          "screen_name": "aave",
+          "indices": [
+            11,
+            16
+          ]
+        }
+      ]
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [],
+    "isConversationControlled": false
+  },
+  {
+    "type": "tweet",
+    "id": "1904281618317291704",
+    "url": "https://x.com/SonicLabs/status/1904281618317291704",
+    "twitterUrl": "https://twitter.com/SonicLabs/status/1904281618317291704",
+    "text": "Morning routine. https://t.co/rj91KAMWuB",
+    "fullText": "Morning routine. https://t.co/rj91KAMWuB",
+    "source": "Typefully",
+    "retweetCount": 46,
+    "replyCount": 39,
+    "likeCount": 487,
+    "quoteCount": 6,
+    "viewCount": 20149,
+    "createdAt": "Mon Mar 24 21:18:12 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 6,
+    "isReply": false,
+    "conversationId": "1904281618317291704",
+    "possiblySensitive": false,
+    "isPinned": false,
+    "author": {
+      "type": "user",
+      "userName": "SonicLabs",
+      "url": "https://x.com/SonicLabs",
+      "twitterUrl": "https://twitter.com/SonicLabs",
+      "id": "977020204071792641",
+      "name": "Sonic Labs",
+      "isVerified": false,
+      "verifiedType": "Business",
+      "isBlueVerified": true,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1886106303262490624/3rEXurVD_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/977020204071792641/1741287030",
+      "description": "DeFi redefined. Sonic is the highest-performing EVM blockchain, combining speed, incentives, and world-class infrastructure. Powered by $S.",
+      "location": "",
+      "followers": 825725,
+      "following": 350,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Fri Mar 23 03:12:23 +0000 2018",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "linktr.ee/soniclabs",
+              "expanded_url": "https://linktr.ee/soniclabs",
+              "url": "https://t.co/YP1fMsd1Xk",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 6549,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 1739,
+      "statusesCount": 7756,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "1897721930767385075"
+      ]
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.x.com/rj91KAMWuB",
+          "expanded_url": "https://x.com/SonicLabs/status/1904281618317291704/photo/1",
+          "id_str": "1904281615083442177",
+          "indices": [
+            17,
+            40
+          ],
+          "media_key": "3_1904281615083442177",
+          "media_url_https": "https://pbs.twimg.com/media/Gm1eCiNbEAEn1Qs.jpg",
+          "type": "photo",
+          "url": "https://t.co/rj91KAMWuB",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "all": {
+              "tags": [
+                {
+                  "user_id": "867100084248469505",
+                  "name": "Aave",
+                  "screen_name": "aave",
+                  "type": "user"
+                }
+              ]
+            },
+            "large": {
+              "faces": []
+            },
+            "medium": {
+              "faces": []
+            },
+            "small": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "sizes": {
+            "large": {
+              "h": 1080,
+              "w": 1080,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 1080,
+              "w": 1080,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 680,
+              "w": 680,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 1080,
+            "width": 1080,
+            "focus_rects": [
+              {
+                "x": 0,
+                "y": 373,
+                "w": 1080,
+                "h": 605
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1080,
+                "h": 1080
+              },
+              {
+                "x": 133,
+                "y": 0,
+                "w": 947,
+                "h": 1080
+              },
+              {
+                "x": 513,
+                "y": 0,
+                "w": 540,
+                "h": 1080
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1080,
+                "h": 1080
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "3_1904281615083442177"
+            }
+          }
+        }
+      ]
+    },
+    "card": {},
+    "place": {},
+    "entities": {
+      "hashtags": [],
+      "media": [
+        {
+          "display_url": "pic.x.com/rj91KAMWuB",
+          "expanded_url": "https://x.com/SonicLabs/status/1904281618317291704/photo/1",
+          "id_str": "1904281615083442177",
+          "indices": [
+            17,
+            40
+          ],
+          "media_key": "3_1904281615083442177",
+          "media_url_https": "https://pbs.twimg.com/media/Gm1eCiNbEAEn1Qs.jpg",
+          "type": "photo",
+          "url": "https://t.co/rj91KAMWuB",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "all": {
+              "tags": [
+                {
+                  "user_id": "867100084248469505",
+                  "name": "Aave",
+                  "screen_name": "aave",
+                  "type": "user"
+                }
+              ]
+            },
+            "large": {
+              "faces": []
+            },
+            "medium": {
+              "faces": []
+            },
+            "small": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "sizes": {
+            "large": {
+              "h": 1080,
+              "w": 1080,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 1080,
+              "w": 1080,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 680,
+              "w": 680,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 1080,
+            "width": 1080,
+            "focus_rects": [
+              {
+                "x": 0,
+                "y": 373,
+                "w": 1080,
+                "h": 605
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1080,
+                "h": 1080
+              },
+              {
+                "x": 133,
+                "y": 0,
+                "w": 947,
+                "h": 1080
+              },
+              {
+                "x": 513,
+                "y": 0,
+                "w": 540,
+                "h": 1080
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1080,
+                "h": 1080
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "3_1904281615083442177"
+            }
+          }
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "isRetweet": false,
+    "isQuote": false,
+    "media": [
+      "https://pbs.twimg.com/media/Gm1eCiNbEAEn1Qs.jpg"
+    ],
+    "isConversationControlled": false
+  }
+]

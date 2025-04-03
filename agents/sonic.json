@@ -1,0 +1,13 @@
+{
+    "name": "sonic",
+    "description": "Sonic Kid Agent for cross-blockchain trading and social media analytics",
+    "connections": [
+        "ethereum",
+        "openai",
+        "telegram",
+        "discord"
+    ],
+    "settings": {
+        "default_llm": "openai"
+    }
+}

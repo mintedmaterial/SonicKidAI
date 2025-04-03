@@ -1,0 +1,75 @@
+class LazyBearTasks:
+    @staticmethod
+    def create_token() -> Dict[str, Any]:
+        """Create a token on Lazy Bear using environment credentials and provided details"""
+        # Retrieve token details from environment variables or hardcoded for this example
+        token_name = os.getenv('LAZYBEAR_TOKEN_NAME', 'SonicKid')
+        token_symbol = os.getenv('LAZYBEAR_TOKEN_SYMBOL', 'KID')
+        token_description = os.getenv('LAZYBEAR_TOKEN_DESCRIPTION', 'A fun and exciting new token on Lazy Bear!')
+        initial_buy_amount = os.getenv('LAZYBEAR_INITIAL_BUY', '100')  # In $S
+        dex_choice = os.getenv('LAZYBEAR_DEX_CHOICE', 'Shadow')  # Default to Shadow DEX
+
+        # Ensure required fields are present
+        required_fields = [token_name, token_symbol, token_description]
+        if not all(required_fields):
+            raise ValueError("Required token details not found in environment variables")
+
+        return {
+            "task": (
+                "Phase 1 - Navigate and Select DEX:\n"
+                "1. Navigate to https://lazybear.io/create-token\n"
+                "2. Wait for page to fully load and network to be idle\n"
+                "3. Locate DEX selection dropdown (data-testid='dex-select')\n"
+                f"4. Select DEX: {dex_choice}\n"
+                "5. Click 'Next' or continue button (data-testid='continue-button')\n\n"
+
+                "Phase 2 - Upload Image and Enter Token Details:\n"
+                "6. Wait for image upload section (data-testid='token-image-upload')\n"
+                "7. Click 'Upload' button and select token image from local path: 'token_image.png'\n"
+                "8. Verify image appears in preview\n"
+                "9. Locate name input field (data-testid='token-name')\n"
+                f"10. Enter token name: {token_name}\n"
+                "11. Locate symbol input field (data-testid='token-symbol')\n"
+                f"12. Enter token symbol: {token_symbol}\n"
+                "13. Locate description textarea (data-testid='token-description')\n"
+                f"14. Enter token description: {token_description}\n"
+                "15. Locate initial buy input (data-testid='initial-buy')\n"
+                f"16. Enter initial buy amount: {initial_buy_amount} $S\n\n"
+
+                "Phase 3 - Agree and Submit:\n"
+                "17. Find terms and conditions checkbox (data-testid='terms-checkbox')\n"
+                "18. Click to check 'I Agree to the Terms and Conditions and Content Policy'\n"
+                "19. Locate submit button (data-testid='create-token-button')\n"
+                "20. Click 'Create Token!' button\n\n"
+
+                "Phase 4 - Validation:\n"
+                "21. Wait for success message or token creation confirmation (timeout: 60s)\n"
+                "22. Verify token creation success:\n"
+                "    - Find token name {token_name} on the page\n"
+                "    - Check for token symbol {token_symbol} in the confirmation\n"
+                "    - Ensure initial buy amount {initial_buy_amount} $S is displayed\n"
+                "23. Confirm transaction details are saved"
+            ),
+            "save_browser_data": True,
+            "wait_for_network_idle": True,
+            "timeout": 120,  # Timeout for token creation flow
+            "override_system_message": LazyBearTasks._get_create_token_prompt()
+        }
+
+    @staticmethod
+    def _get_create_token_prompt() -> str:
+        """Generate a prompt for the browser automation system"""
+        return (
+            "Automate token creation on Lazy Bear with the following steps. Ensure all fields are "
+            "filled correctly, and handle any potential errors or verification steps. Verify the "
+            "token is successfully created before completing the task."
+        )
+
+
+# Example usage
+if __name__ == "__main__":
+    try:
+        token_creation_task = LazyBearTasks.create_token()
+        print("Token creation task instructions:", token_creation_task["task"])
+    except ValueError as e:
+        print(f"Error: {e}")                             

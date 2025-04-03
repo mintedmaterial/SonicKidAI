@@ -1,0 +1,84 @@
+Pagination
+Our API supports pagination on all /results endpoints to facilitate efficient data retrieval by dividing large datasets into smaller, manageable chunks. This feature helps prevent overload, ensures smoother performance, and enhances the user experience by making it easier to navigate through data, thus avoiding limit errors. Pagination is available for the following endpoints:
+
+Get Execution Results
+Get Execution Results CSV
+Get Query Results
+Get Query Results CSV
+Pagination can be effectively combined with filtering and sorting to optimize data fetching.
+
+​
+Example Paginating Request
+Python SDK
+cURL
+Python
+Javascript
+Go
+PHP
+Java
+
+Copy
+import requests
+
+url = "https://api.dune.com/api/v1/query/{query_id}/results"
+
+headers = {"X-DUNE-API-KEY": "<x-dune-api-key>"}
+
+params = {"limit": 1000, "offset": 0}  # Define limit and offset parameters
+
+response = requests.request("GET", url, headers=headers, params=params)
+
+print(response.text)
+
+To paginate through results:
+
+Use the limit parameter to set the maximum number of results per request.
+The offset parameter defines the starting point for the data retrieval, with a default value of 0 (the first row).
+For JSON responses, the next_offset and next_uri fields in the response body indicate how to fetch the next page. For CSV responses, look for the X-Dune-Next-Offset and X-Dune-Next-Uri headers. The server may adjust the provided limit if deemed too large, ensuring efficient data handling. Follow these indicators to navigate through the dataset seamlessly.
+​
+Pagination Parameters
+​
+limit (required)
+Type: integer
+Description: Specifies the maximum number of rows to return in a single request, controlling the page size for pagination.
+​
+offset
+Type: integer
+Description: Determines the starting point for data retrieval, allowing for sequential access through the dataset.
+Default: 0 (the first row)
+Usage: Use in conjunction with limit to navigate through results in an efficient, incremental manner.
+​
+Pagination in Response
+The following fields in the response body are related to pagination and can be utilized when doing paginated get results request. If they are available, you can use them to paginate the next page. If they are not available, that means there are no more results to be fetched.
+
+JSON response endpoints
+CSV response endpoints
+next_offset
+
+Type: Integer
+Description: Provides the offset to use for retrieving the next page of results, if available.
+next_uri
+
+Type: String (URL)
+Description: Specifies the complete URI to retrieve the next page of results, if available.
+If you pass in an invalid offset parameter value, you will get an empty result set. For example, if there are only 25 rows of result data, and you pass in offset=30, you will not receive an error, but rather an empty result with metadata like this. Note the response field result.total_row_count, indicating this result has only 25 rows.
+
+
+Example empty response
+
+
+Example paginated response
+
+Data Returned Limit
+
+When using pagination, our intention is to use sizes that work well on mobile, with lower data and ram consumption. For this, and to avoid more work on the developer, when the client specifies a very large limit value (for example 500000 rows), instead of returning an error, the server will override this limit to a lower, safer value (for example 30000 rows) and will always provide the correct next offset and limit value to use on the next paginated requests. The exact maximum limit value is subject to change.
+
+Data Size Limit
+
+Dune internally has a maximum query result size limit (which currently is 8GB, but subject to increase in the future). If your query yields more than 8GB of data, the result will be truncated in storage. In such cases, pulling the result data (using pagination) but without specifying allow_partial_results set to true will trigger an error message: “error”: “Partial Result, please request with ‘allows_partial_results=true’”. If you wish to retrieve partial results, you can pass the parameter allow_partial_results=true. But please make sure you indeed want to fetch the truncated result.
+
+So what? Related to pagination, this means that
+
+For query results under 8GB, use the API as normal.
+When your query results exceed 8GB, in addition to limit and offset parameters in order to read the partial result (the first 8GB of data), set allow_partial_results=true
+You can use the Get Status API to check the size of your result, result.result_set_size

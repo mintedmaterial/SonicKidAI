@@ -1,0 +1,462 @@
+modules = ["nodejs-20", "web", "postgresql-16", "python-3.11", "python3"]
+run = "npm run dev"
+hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+deploymentTarget = "cloudrun"
+build = ["npm", "run", "build"]
+run = ["npm", "run", "start"]
+
+[[ports]]
+localPort = 3000
+externalPort = 3000
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
+
+[[ports]]
+localPort = 8000
+externalPort = 8000
+
+[[ports]]
+localPort = 8888
+externalPort = 80
+
+[[ports]]
+localPort = 9222
+externalPort = 9000
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Telegram Bot"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Twitter Test"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test LangChain"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test Ethereum Actions"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test GOAT"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Hugging Face Import"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Integrated Bot Test"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Market Service Test"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test SONIC Transfer"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test Trading Commands"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test DexScreener"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "TopHat Updates"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test EternalAI"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test Bot Commands"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test Sentiment"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test Contract Verification"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test Market Analysis"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Discord Test"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Discord Bot"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test Browser Connection"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Browser API Server"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+waitForPort = 5000
+
+[[workflows.workflow]]
+name = "Telegram Bot"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python src/test_connections.py"
+
+[[workflows.workflow]]
+name = "Twitter Test"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 test_tweet.py"
+
+[[workflows.workflow]]
+name = "Test LangChain"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python test_langchain.py"
+
+[[workflows.workflow]]
+name = "Test Ethereum Actions"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 src/test_ethereum_actions.py"
+
+[[workflows.workflow]]
+name = "Test GOAT"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python src/test_goat_connection.py"
+
+[[workflows.workflow]]
+name = "Hugging Face Import"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python test_huggingface_import.py"
+
+[[workflows.workflow]]
+name = "Integrated Bot Test"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python test_integrated_bots.py"
+
+[[workflows.workflow]]
+name = "Market Service Test"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python src/test_market_service.py"
+
+[[workflows.workflow]]
+name = "Test SONIC Transfer"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 test_odos.py"
+
+[[workflows.workflow]]
+name = "Test Trading Commands"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 test_trading_signals.py"
+
+[[workflows.workflow]]
+name = "Test DexScreener"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 src/test_dexscreener.py"
+
+[[workflows.workflow]]
+name = "TopHat Updates"
+author = "agent"
+mode = "sequential"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 src/test_tophat.py"
+
+[[workflows.workflow]]
+name = "Test EternalAI"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python test_eternal_ai.py"
+
+[[workflows.workflow]]
+name = "Test Bot Commands"
+author = "agent"
+mode = "parallel"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python src/test_telegram.py"
+
+[[workflows.workflow]]
+name = "Test Sentiment"
+author = "agent"
+mode = "parallel"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python test_huggingface_sentiment.py"
+
+[[workflows.workflow]]
+name = "Test Contract Verification"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python test_contract_verification.py"
+
+[[workflows.workflow]]
+name = "Test Market Analysis"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python test_integrated_analysis.py"
+
+[[workflows.workflow]]
+name = "Discord Test"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 test_discord_connection.py"
+
+[[workflows.workflow]]
+name = "Discord Bot"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python run_discord_bot.py"
+
+[[workflows.workflow]]
+name = "Test Browser Connection"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python src/test_webbrowser_connection.py"
+
+[[workflows.workflow]]
+name = "Browser API Server"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python -m uvicorn src.server.app:app --host 0.0.0.0 --port 8000"
+
+[[workflows.workflow]]
+name = "Agent Activity"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python run_agent_activity_service.py"

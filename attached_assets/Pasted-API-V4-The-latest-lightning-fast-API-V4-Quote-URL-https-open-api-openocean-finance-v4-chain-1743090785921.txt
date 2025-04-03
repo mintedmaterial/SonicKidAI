@@ -1,0 +1,731 @@
+API V4
+The latest lightning fast API V4
+
+Quote
+URL: https://open-api.openocean.finance/v4/:chain/quote
+
+Method: get
+
+Params:
+
+parameter
+type
+example
+description
+chain
+
+string
+
+bsc or 56
+
+Chain name or Chain ID (support chain)
+
+inTokenAddress
+
+string
+
+0x783C08b5F26E3daf8C4681F3bf49844e425b6393
+
+token address
+
+outTokenAddress
+
+string
+
+0xD81D45E7635400dDD9c028839e9a9eF479006B28
+
+out token address
+
+amount
+
+string
+
+5
+
+token amount (without decimals)
+
+e.g. 
+1.00 ETH set as 1
+
+1.23 USDC set as 1.23
+
+gasPrice
+
+string
+
+5
+
+Please set the gas price in GWEI without decimals
+e.g. 14 GWEI set as 14
+
+*Note: Please set 1 as the default gasPrice on Sui & Solana.
+
+disabledDexIds
+
+string (Optional）
+
+1
+
+Enter the 'index' number of dexs through dexList endpoint to disable single or multiple dexs separated by commas, e.g. disabledDexIds: "2,6,9".
+
+enabledDexIds
+
+string (Optional）
+
+1
+
+Enter the 'index' number of dexs through dexList. 
+
+Note: enableDexIds has higher priority compared with disabledDexIds
+
+Example:
+
+Request 
+
+Copy
+https://open-api.openocean.finance/v4/bsc/quote?inTokenAddress=0x55d398326f99059ff775485246999027b3197955&outTokenAddress=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d&amount=5&gasPrice=1
+Response:
+
+Copy
+{
+    "code": 200,
+    "data": {
+        "inToken": {
+            "address": "0x55d398326f99059ff775485246999027b3197955",
+            "decimals": 18,
+            "symbol": "USDT",
+            "name": "Tether USD",
+            "usd": "0.998546",
+            "volume": 4.99273
+        },
+        "outToken": {
+            "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+            "decimals": 18,
+            "symbol": "USDC",
+            "name": "USD Coin",
+            "usd": "0.999955",
+            "volume": 4.993697212299812
+        },
+        "inAmount": "5000000000000000000",
+        "outAmount": "4993921938787056372",
+        "estimatedGas": "129211",
+        "dexes": [
+            {
+                "dexIndex": 0,
+                "dexCode": "Pancake",
+                "swapAmount": "4979841669990999203"
+            },
+            {
+                "dexIndex": 1,
+                "dexCode": "PancakeV2",
+                "swapAmount": "4974920727654969974"
+            },
+            {
+                "dexIndex": 3,
+                "dexCode": "Bakery",
+                "swapAmount": "755767313321589992"
+            },
+            ...
+        ],
+        "path": {
+            "from": "0x55d398326f99059fF775485246999027B3197955",
+            "to": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+            "parts": 10,
+            "routes": [
+                {
+                    "parts": 10,
+                    "percentage": 100,
+                    "subRoutes": [
+                        {
+                            "from": "0x55d398326f99059fF775485246999027B3197955",
+                            "to": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+                            "parts": 25,
+                            "dexes": [
+                                {
+                                    "dex": "PancakeV3",
+                                    "id": "0x92b7807bF19b7DDdf89b706143896d05228f3121",
+                                    "parts": 25,
+                                    "percentage": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "save": -0.0018,
+        "price_impact": "0.01%"
+    }
+}
+JavaScript Demo
+Copy
+const axios = require('axios');
+const chain = 'bsc';
+const url = `https://open-api.openocean.finance/v4/${chain}/quote`;
+const params = {
+    inTokenAddress: '0x55d398326f99059ff775485246999027b3197955', // USDT token address
+    outTokenAddress: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',// USDC token address
+    amount: 1,   // without decimals
+    gasPrice: 3  // without decimals
+}
+async function main() {
+    try {
+        const { data } = await axios.get(url, { params })
+        if (data?.code === 200) console.log('quote success');
+
+    } catch (error) {
+        console.log(data);
+
+    }
+}
+main();
+Python Demo
+
+Copy
+import requests
+
+chain = 'bsc'
+url = f'https://open-api.openocean.finance/v4/{chain}/quote'
+params = {
+    'inTokenAddress': '0x55d398326f99059ff775485246999027b3197955',
+    'outTokenAddress': '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
+    'amount': 1,
+    'gasPrice': 3
+}
+
+def main():
+    response = requests.get(url, params=params)
+    
+    if response.status_code == 200:
+        data = response.json()
+        print(data)
+    else:
+        print("Error occurred:", response.text)
+
+if __name__ == "__main__":
+    main()
+Go Demo
+Copy
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"encoding/json"
+)
+
+func main() {
+	chain := "bsc"
+	url := fmt.Sprintf("https://open-api.openocean.finance/v4/%s/quote", chain)
+	params := map[string]string{
+		"inTokenAddress":  "0x55d398326f99059ff775485246999027b3197955",
+		"outTokenAddress": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+		"amount":          "1",
+		"gasPrice":        "3",
+	}
+
+	resp, err := http.Get(url)
+	if err != nil {
+		fmt.Println("quote fail")
+		return
+	}
+	defer resp.Body.Close()
+
+	var data map[string]interface{}
+	json.NewDecoder(resp.Body).Decode(&data)
+
+	code, ok := data["code"].(float64)
+	if !ok {
+		fmt.Println("quote fail")
+		return
+	}
+
+	if code == 200 {
+		fmt.Println("quote success")
+	} else {
+		fmt.Println("quote fail")
+	}
+}
+JAVA Demo
+Copy
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class Main {
+    public static void main(String[] args) {
+        String chain = "bsc";
+        String url = "https://open-api.openocean.finance/v4/" + chain + "/quote";
+        
+        Map<String, Object> params = new HashMap<>();
+        params.put("inTokenAddress", "0x55d398326f99059ff775485246999027b3197955");
+        params.put("outTokenAddress", "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d");
+        params.put("amount", 1);
+        params.put("gasPrice", 3);
+        
+        try {
+            URL apiUrl = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) apiUrl.openConnection();
+            connection.setRequestMethod("GET");
+            
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode data = mapper.readTree(connection.getInputStream());
+            
+            if (data.has("code") && data.get("code").asInt() == 200) {
+                System.out.println("quote success");
+            } else {
+                System.out.println("quote fail");
+            }
+        } catch (IOException e) {
+            System.out.println("quote fail");
+        }
+    }
+}
+Swap_Quote
+URL: https://open-api.openocean.finance/v4/:chain/swap
+
+Method: get
+
+Params:
+
+parameter
+type
+example
+description
+chain
+
+string
+
+bsc or 56
+
+Chain name or Chain ID          (support chain)
+
+inTokenAddress
+
+string
+
+0x783C08b5F26E3daf8C4681F3bf49844e425b6393
+
+token address
+
+outTokenAddress
+
+string
+
+0xD81D45E7635400dDD9c028839e9a9eF479006B28
+
+out token address
+
+amount
+
+string
+
+5
+
+Please set token amount without decimals.
+
+e.g. 
+1.00 ETH set as 1
+
+1.23 USDC set as 1.23
+
+gasPrice
+
+string
+
+5
+
+Please set the gas price in GWEI without decimals
+
+ e.g. 14 GWEI set as 14
+
+*Note: Please set 1 as the default gasPrice on Sui & Solana. 
+
+slippage
+
+string
+
+1
+
+Define the acceptable slippage level by inputting a percentage value within the range of 0.05 to 50.
+
+e.g. 1% slippage set as 1
+
+default value 1
+
+account
+
+string
+
+0xaPbs...D9sh
+
+user's wallet address.
+*If this param is not included in the request url, the response will only return quotes, without the calldata/transaction body.
+
+referrer
+
+string (Optional）
+
+0xD4eb...37BB
+
+The wallet address used to be mark as partners and receive an extra referrerFee from user.
+
+referrerFee
+
+number (Optional）
+
+1
+
+Specify the percentage of in-token you wish to receive from the transaction, within the range of 0% to 3%, with 1% represented as '1', in the range of 0.01 to 3.
+
+e.g. 1.2% fee set as 1.2
+
+By default, OpenOcean shares 20% of the fee. Please contact us if you wish to modify this rate.
+
+enabledDexIds
+
+string (Optional）
+
+1
+
+Enter the 'index' number of dexs through dexList endpoint to enable the dexs to access.
+
+Note: enableDexIds has higher priority compare with disabledDexIds
+
+Example:
+
+request:
+
+Copy
+https://open-api.openocean.finance/v4/bsc/swap?inTokenAddress=0x55d398326f99059ff775485246999027b3197955&outTokenAddress=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d&amount=5&gasPrice=1&slippage=1&account=0x2FF855378Cd29f120CDF9d675E959cb5422ec5f2&referrer=0xD4eb4cbB1ECbf96a1F0C67D958Ff6fBbB7B037BB
+response:
+
+Copy
+{
+    "code": 200,
+    "data": {
+        "inToken": {
+            "address": "0x55d398326f99059ff775485246999027b3197955",
+            "decimals": 18,
+            "symbol": "USDT",
+            "name": "Tether USD",
+            "usd": "0.998546",
+            "volume": 4.99273
+        },
+        "outToken": {
+            "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+            "decimals": 18,
+            "symbol": "USDC",
+            "name": "USD Coin",
+            "usd": "0.999955",
+            "volume": 4.993697212299812
+        },
+        "inAmount": "5000000000000000000",
+        "outAmount": "4993921938787056372",
+        "estimatedGas": 516812,
+        "minOutAmount": "4943982719399185808",
+        "from": "0x2FF855378Cd29f120CDF9d675E959cb5422ec5f2",
+        "to": "0x6352a56caadC4F1E25CD6c75970Fa768A3304e64",
+        "value": "0",
+        "gasPrice": "1000000000",
+        "data": "0x90411a32...",
+        "chainId": 56,
+        "rfqDeadline": 0,
+        "gmxFee": 0,
+        "price_impact": "0.01%"
+    }
+}
+The'estimatedGas'in the returned response is only a reference. When sending transactions on-chain, use eth_estimateGas * 1.25 -1.5 as needed. If the ‘estmateGas’ fails, we don't recommend submitting the tx on-chain. 
+
+We also recommend updating the 'gasprice' parameter to avoid future failures due to the fluctuations of the on-chain gas price.
+
+Get TokenList
+URL: https://open-api.openocean.finance/v4/:chain/tokenList
+
+Method: get
+
+Params:
+
+parameter
+type
+example
+description
+chain
+
+string
+
+bsc or 56
+
+Chain name or Chain ID    (support chain)
+
+Example:
+
+Request: 
+
+Copy
+https://open-api.openocean.finance/v4/bsc/tokenList
+Response:
+
+Copy
+{
+"code": 200,
+"data": [ {       
+    "id":2737,
+    "code":"minu",
+    "name":"Minu",
+    "address":"0xf48f91df403976060cc05dbbf8a0901b09fdefd4",
+    "decimals":18,"symbol":"Minu",
+    "icon":"https://s3.openocean.finance/token_logos/logos/1708980043911_24176891326005867.jpg",
+    "chain":"bsc","createtime":"2024-02-26T20:40:57.000Z",
+    "hot":null,"sort":"2024-02-26T20:40:57.000Z",
+    "chainId":null,
+    "customSymbol":null,
+    "customAddress":null,
+    "usd":"6.38459e-7"}
+    ...
+    ]
+}
+Get Dexes List
+URL: https://open-api.openocean.finance/v4/:chain/dexList
+
+Method: get
+
+Params:
+
+Parameter
+type
+example
+description
+chain
+
+string
+
+bsc or 56
+
+chain name or chain ID    (support chain)
+
+Example:
+
+Request: 
+
+Copy
+https://open-api.openocean.finance/v3/avax/dexList
+Response:
+
+Copy
+{
+"code": 200,
+"data": [
+    {
+        "index": 1,
+        "code": "SushiSwap",
+        "name": "SushiSwap"
+    },
+    {
+        "index": 2,
+        "code": "Pangolin",
+        "name": "Pangolin"
+    },
+    ...
+]  // Response
+}
+Get GasPrice
+URL: https://open-api.openocean.finance/v4/:chain/gasPrice
+
+Method: get
+
+Params:
+
+parameter
+type
+example
+description
+chain
+
+string
+
+bsc or 56
+
+chain name or chain ID    (support chain)
+
+Example:
+
+Request: 
+
+Copy
+https://open-api.openocean.finance/v4/bsc/gasPrice
+Response:
+
+Copy
+{
+ "code": 200,
+ "data": {
+  "standard": 1000000000,
+  "fast": 1000000000,
+  "instant": 1000000000
+ },
+ "without_decimals": {
+  "standard": "1",
+  "fast": "1",
+  "instant": "1"
+ }
+}
+Please be aware that when using/quote and/swapin our API, the gasPrice should set in GWEI without decimals.
+
+e.g. 14 GWEI set as 14
+
+Get Transaction
+URL: https://open-api.openocean.finance/v4/:chain/getTransaction
+
+Method: get
+
+Params:
+
+parameter
+type
+example
+description
+chain
+
+string
+
+bsc or 56
+
+Chain name or Chain ID          (support chain)
+
+hash
+
+string
+
+hash from chain
+
+Example:
+
+Request: 
+
+Copy
+https://open-api.openocean.finance/v4/bsc/getTransaction?hash=0x756b98a89714be5c640ea9922aba12e0c94bc30e5a17e111d1aa40373cc24782
+Response:
+
+Copy
+{
+  "code": 200,
+  "data":  {
+"id": 1194505,
+"tx_id": null,
+"block_number": 37495567,
+"tx_index": 153,
+"address": "0x6352a56caadC4F1E25CD6c75970Fa768A3304e64",
+"tx_hash": "0x756b98a89714be5c640ea9922aba12e0c94bc30e5a17e111d1aa40373cc24782",
+"tx_hash_url": "https://bscscan.com/tx/0x756b98a89714be5c640ea9922aba12e0c94bc30e5a17e111d1aa40373cc24782",
+"sender": "0xB3cbefF0336BaA4863Cb51238bD6C35BDAaB3D84",
+"receiver": "0xB3cbefF0336BaA4863Cb51238bD6C35BDAaB3D84",
+"in_token_address": "0x8ea5219a16c2dbF1d6335A6aa0c6bd45c50347C5",
+"in_token_symbol": "OOE",
+"out_token_address": "0x55d398326f99059fF775485246999027B3197955",
+"out_token_symbol": "USDT",
+"referrer": "0x3487Ef9f9B36547e43268B8f0E2349a226c70b53",
+"in_amount": "276240675000000000000",
+"out_amount": "5913781972337104042",
+"fee": "",
+"referrer_fee": "",
+"usd_valuation": 5.89409756,
+"create_at": "2024-04-02T02:23:04.000Z",
+"update_at": "2024-04-02T02:23:04.000Z",
+"tx_fee": "0.000238858",
+"tx_fee_valuation": "0.13744845",
+"in_token_decimals": 18,
+"out_token_decimals": 18,
+"in_amount_value": "276.240675",
+"out_amount_value": "5.913781972337104042",
+"tx_profit": "0",
+"tx_profit_valuation": "0"
+  }
+}
+DecodeInputData
+URL: https://open-api.openocean.finance/v4/:chain/decodeInputData
+
+Method: get
+
+Params:
+
+parameter
+type
+example
+description
+chain
+
+string
+
+bsc or 56
+
+Chain name or Chain ID          (support chain)
+
+data
+
+string
+
+inputData
+
+method
+
+string
+
+swap
+
+function name
+
+Example:
+
+Request: 
+
+Copy
+https://open-api.openocean.finance/v4/bsc/decodeInputData?data={000000xxxxxx}&method=swap
+response:
+
+Copy
+  {
+  "caller": "0x55877bD7F2EE37BDe55cA4B271A3631f3A7ef121",
+  "desc": {
+"srcToken": "0x8ea5219a16c2dbF1d6335A6aa0c6bd45c50347C5",
+"dstToken": "0x55d398326f99059fF775485246999027B3197955",
+"srcReceiver": "0xcE07D794FD313a1792E9bdef9912a949DfE99D75",
+"dstReceiver": "0xB3cbefF0336BaA4863Cb51238bD6C35BDAaB3D84",
+"amount": "276240675000000000000",
+"minReturnAmount": "5854644152613733002",
+"guaranteedAmount": "5913781972337104042",
+"flags": "2",
+"referrer": "0x3487Ef9f9B36547e43268B8f0E2349a226c70b53",
+"permit": "0x"
+  },
+  "calls": [
+{
+  "target": "0",
+  "gasLimit": "0",
+  "value": "0",
+  "data": "0xcac460ee00000000000000003b7c4580ce07d794fd313a1792e9bdef9912a949dfe99d750000000000000000000000008ea5219a16c2dbf1d6335a6aa0c6bd45c50347c50000000000000000000000008e50d726e2ea87a27fa94760d4e65d58c3ad8b44"
+},
+{
+  "target": "0",
+  "gasLimit": "0",
+  "value": "0",
+  "data": "0xcac460ee80000000000000003b8b87c08e50d726e2ea87a27fa94760d4e65d58c3ad8b44000000000000000000000000e9e7cea3dedca5984780bafc599bd69add087d5600000000000000000000000055877bd7f2ee37bde55ca4b271a3631f3a7ef121"
+},
+{
+  "target": "0",
+  "gasLimit": "0",
+  "value": "0",
+  "data": "0x8a6a1e8500000000000000000000000055d398326f99059ff775485246999027b3197955000000000000000000000000353c1f0bc78fbbc245b3c93ef77b1dcc5b77d2a00000000000000000000000000000000000000000000000005211f95f0c4314aa"
+},
+{
+  "target": "0",
+  "gasLimit": "0",
+  "value": "0",
+  "data": "0x9f86542200000000000000000000000055d398326f99059ff775485246999027b319795500000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000004400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000064d1660f9900000000000000000000000055d398326f99059ff775485246999027b3197955000000000000000000000000b3cbeff0336baa4863cb51238bd6c35bdaab3d84000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000"
+}
+  ]
+}

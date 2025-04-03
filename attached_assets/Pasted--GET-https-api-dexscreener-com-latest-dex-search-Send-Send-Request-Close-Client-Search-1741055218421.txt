@@ -1,0 +1,714 @@
+
+GET
+https://api.dexscreener.com
+/latest/dex/search
+
+
+Send
+Send Request
+Close Client
+Search for pairs matching query (rate-limit 300 requests per minute)
+Filter Sections
+All
+Query
+Auth
+Cookies
+Headers
+Query
+
+Query Parameters
+ClearAll Query Parameters
+Row Enabled
+
+q
+Required
+Sonic/USDC
+
+Row Enabled
+
+Key
+Value
+Response
+Response Information, Duration:158ms
+, Status:
+200 OK
+Filter Sections
+All
+Cookies
+Headers
+Body
+All
+
+Cookies
+No cookies
+
+Headers
+3
+
+Body
+DownloadResponse Body
+application/json
+Copy content
+{
+  "schemaVersion": "1.0.0",
+  "pairs": [
+    {
+      "chainId": "sonic",
+      "dexId": "swapx",
+      "url": "https://dexscreener.com/sonic/0x5ddbef774488cc68266d5f15bfb08eaa7cd513f9",
+      "pairAddress": "0x5DDbeF774488cc68266d5F15bFB08eaA7cd513F9",
+      "labels": [
+        "v3"
+      ],
+      "baseToken": {
+        "address": "0xE5DA20F15420aD15DE0fa650600aFc998bbE3955",
+        "name": "Beets Staked Sonic",
+        "symbol": "stS"
+      },
+      "quoteToken": {
+        "address": "0x29219dd400f2Bf60E5a23d13Be72B486D4038894",
+        "name": "Bridged USDC (Sonic Labs)",
+        "symbol": "USDC.e"
+      },
+      "priceNative": "0.5317",
+      "priceUsd": "0.5317",
+      "txns": {
+        "m5": {
+          "buys": 42,
+          "sells": 60
+        },
+        "h1": {
+          "buys": 418,
+          "sells": 485
+        },
+        "h6": {
+          "buys": 969,
+          "sells": 1164
+        },
+        "h24": {
+          "buys": 2471,
+          "sells": 3026
+        }
+      },
+      "volume": {
+        "h24": 1012141.09,
+        "h6": 361950.1,
+        "h1": 156716.99,
+        "m5": 54277.39
+      },
+      "priceChange": {
+        "m5": -0.73,
+        "h1": -8.22,
+        "h6": -12.98,
+        "h24": -27.46
+      },
+      "liquidity": {
+        "usd": 675460.35,
+        "base": 900374,
+        "quote": 196689
+      },
+      "fdv": 79250327,
+      "marketCap": 79250327,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/sonic/0xe5da20f15420ad15de0fa650600afc998bbe3955.png?key=001ef0",
+        "header": "https://dd.dexscreener.com/ds-data/tokens/sonic/0xe5da20f15420ad15de0fa650600afc998bbe3955/header.png?key=001ef0",
+        "openGraph": "https://cdn.dexscreener.com/token-images/og/sonic/0xe5da20f15420ad15de0fa650600afc998bbe3955?timestamp=1741054800000",
+        "websites": [
+          {
+            "label": "Website",
+            "url": "https://beets.fi/"
+          },
+          {
+            "label": "Docs",
+            "url": "https://docs.beets.fi/"
+          },
+          {
+            "label": "Discord",
+            "url": "https://beets.fi/discord"
+          }
+        ],
+        "socials": [
+          {
+            "type": "twitter",
+            "url": "https://x.com/beets_fi"
+          }
+        ]
+      }
+    },
+    {
+      "chainId": "solana",
+      "dexId": "meteora",
+      "url": "https://dexscreener.com/solana/26bq9sdkyp6odafegqc3oast724qpflpvuwqpb7xl1us",
+      "pairAddress": "26BQ9SdKYP6odaFeGQC3oaST724QPFLpVuWqpB7xL1US",
+      "labels": [
+        "DLMM"
+      ],
+      "baseToken": {
+        "address": "SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES",
+        "name": "Sonic SVM",
+        "symbol": "SONIC"
+      },
+      "quoteToken": {
+        "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "name": "USD Coin",
+        "symbol": "USDC"
+      },
+      "priceNative": "0.2417",
+      "priceUsd": "0.2417",
+      "txns": {
+        "m5": {
+          "buys": 26,
+          "sells": 55
+        },
+        "h1": {
+          "buys": 312,
+          "sells": 625
+        },
+        "h6": {
+          "buys": 877,
+          "sells": 1375
+        },
+        "h24": {
+          "buys": 2064,
+          "sells": 2727
+        }
+      },
+      "volume": {
+        "h24": 1793253.78,
+        "h6": 946192.83,
+        "h1": 550658.19,
+        "m5": 84719.9
+      },
+      "priceChange": {
+        "m5": -0.95,
+        "h1": -6.22,
+        "h6": -9.71,
+        "h24": -21.08
+      },
+      "liquidity": {
+        "usd": 1542939.47,
+        "base": 2185814,
+        "quote": 1014498
+      },
+      "fdv": 580222201,
+      "marketCap": 87033350,
+      "pairCreatedAt": 1739826224000,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES.png?key=b3f315",
+        "header": "https://dd.dexscreener.com/ds-data/tokens/solana/SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES/header.png?key=b3f315",
+        "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES?timestamp=1741054800000",
+        "websites": [
+          {
+            "label": "Website",
+            "url": "https://info-sonic.app/"
+          }
+        ],
+        "socials": [
+          {
+            "type": "twitter",
+            "url": "https://x.com/SonicSVM"
+          }
+        ]
+      }
+    },
+    {
+      "chainId": "sonic",
+      "dexId": "shadow-exchange",
+      "url": "https://dexscreener.com/sonic/0x66a8289bdd968d1157eb1a608f60a87759632cd6",
+      "pairAddress": "0x66A8289bdD968D1157eB1a608f60a87759632cd6",
+      "baseToken": {
+        "address": "0xf26Ff70573ddc8a90Bd7865AF8d7d70B8Ff019bC",
+        "name": "Eggs",
+        "symbol": "EGGS"
+      },
+      "quoteToken": {
+        "address": "0x29219dd400f2Bf60E5a23d13Be72B486D4038894",
+        "name": "Bridged USDC (Sonic Labs)",
+        "symbol": "USDC.e"
+      },
+      "priceNative": "0.0006068",
+      "priceUsd": "0.0006068",
+      "txns": {
+        "m5": {
+          "buys": 12,
+          "sells": 35
+        },
+        "h1": {
+          "buys": 85,
+          "sells": 354
+        },
+        "h6": {
+          "buys": 231,
+          "sells": 769
+        },
+        "h24": {
+          "buys": 915,
+          "sells": 2469
+        }
+      },
+      "volume": {
+        "h24": 2786362.47,
+        "h6": 882854.61,
+        "h1": 481686.57,
+        "m5": 26239.73
+      },
+      "priceChange": {
+        "m5": -0.45,
+        "h1": -8.19,
+        "h6": -12.43,
+        "h24": -27.08
+      },
+      "liquidity": {
+        "usd": 801075.42,
+        "base": 1273603747,
+        "quote": 28218
+      },
+      "fdv": 52186311,
+      "marketCap": 52186311,
+      "pairCreatedAt": 1739460695000,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/sonic/0xf26ff70573ddc8a90bd7865af8d7d70b8ff019bc.png?key=5e5b9c",
+        "header": "https://dd.dexscreener.com/ds-data/tokens/sonic/0xf26ff70573ddc8a90bd7865af8d7d70b8ff019bc/header.png?key=5e5b9c",
+        "openGraph": "https://cdn.dexscreener.com/token-images/og/sonic/0xf26ff70573ddc8a90bd7865af8d7d70b8ff019bc?timestamp=1741054800000",
+        "websites": [
+          {
+            "label": "Website",
+            "url": "https://eggs.finance"
+          },
+          {
+            "label": "Docs",
+            "url": "https://eggs-finance.gitbook.io/docs"
+          }
+        ],
+        "socials": [
+          {
+            "type": "twitter",
+            "url": "https://x.com/eggsonsonic"
+          },
+          {
+            "type": "telegram",
+            "url": "https://t.me/eggsfinance"
+          }
+        ]
+      }
+    },
+    {
+      "chainId": "sonic",
+      "dexId": "shadow-exchange",
+      "url": "https://dexscreener.com/sonic/0x779ca4e7f14d10489cd32655fc513641ba3a8d8f",
+      "pairAddress": "0x779cA4E7F14d10489cd32655fc513641bA3a8d8F",
+      "baseToken": {
+        "address": "0x3333b97138D4b086720b5aE8A7844b1345a33333",
+        "name": "Shadow",
+        "symbol": "SHADOW"
+      },
+      "quoteToken": {
+        "address": "0x29219dd400f2Bf60E5a23d13Be72B486D4038894",
+        "name": "Bridged USDC (Sonic Labs)",
+        "symbol": "USDC.e"
+      },
+      "priceNative": "77.9591",
+      "priceUsd": "77.95",
+      "txns": {
+        "m5": {
+          "buys": 9,
+          "sells": 8
+        },
+        "h1": {
+          "buys": 40,
+          "sells": 130
+        },
+        "h6": {
+          "buys": 88,
+          "sells": 282
+        },
+        "h24": {
+          "buys": 103,
+          "sells": 888
+        }
+      },
+      "volume": {
+        "h24": 1884221.5,
+        "h6": 657315.68,
+        "h1": 132985.72,
+        "m5": 6856.24
+      },
+      "priceChange": {
+        "m5": 0.34,
+        "h1": -8.77,
+        "h6": -12.98,
+        "h24": -32.05
+      },
+      "liquidity": {
+        "usd": 351577.66,
+        "base": 3643.1789,
+        "quote": 67558
+      },
+      "fdv": 252833685,
+      "marketCap": 17438594,
+      "pairCreatedAt": 1737226481000,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/sonic/0x3333b97138d4b086720b5ae8a7844b1345a33333.png?key=c2e8a2",
+        "header": "https://dd.dexscreener.com/ds-data/tokens/sonic/0x3333b97138d4b086720b5ae8a7844b1345a33333/header.png?key=c2e8a2",
+        "openGraph": "https://cdn.dexscreener.com/token-images/og/sonic/0x3333b97138d4b086720b5ae8a7844b1345a33333?timestamp=1741054800000",
+        "websites": [
+          {
+            "label": "Website",
+            "url": "https://www.shadow.so/"
+          },
+          {
+            "label": "Docs",
+            "url": "https://docs.shadow.so/"
+          }
+        ],
+        "socials": [
+          {
+            "type": "twitter",
+            "url": "https://x.com/ShadowOnSonic"
+          },
+          {
+            "type": "discord",
+            "url": "https://discord.gg/shadowexchange"
+          }
+        ]
+      }
+    },
+    {
+      "chainId": "sonic",
+      "dexId": "swapx",
+      "url": "https://dexscreener.com/sonic/0x6f7c5f531024216cd8156d0b4e271e0c92a8a4e6",
+      "pairAddress": "0x6F7C5f531024216CD8156D0B4E271E0C92a8A4E6",
+      "labels": [
+        "v3"
+      ],
+      "baseToken": {
+        "address": "0x79bbF4508B1391af3A0F4B30bb5FC4aa9ab0E07C",
+        "name": "HeyAnon",
+        "symbol": "Anon"
+      },
+      "quoteToken": {
+        "address": "0x29219dd400f2Bf60E5a23d13Be72B486D4038894",
+        "name": "Bridged USDC (Sonic Labs)",
+        "symbol": "USDC.e"
+      },
+      "priceNative": "5.9766",
+      "priceUsd": "5.97",
+      "txns": {
+        "m5": {
+          "buys": 11,
+          "sells": 5
+        },
+        "h1": {
+          "buys": 49,
+          "sells": 72
+        },
+        "h6": {
+          "buys": 167,
+          "sells": 219
+        },
+        "h24": {
+          "buys": 524,
+          "sells": 955
+        }
+      },
+      "volume": {
+        "h24": 628710.77,
+        "h6": 111911.83,
+        "h1": 26829.32,
+        "m5": 6240.41
+      },
+      "priceChange": {
+        "m5": -0.29,
+        "h1": -8.13,
+        "h6": -13.27,
+        "h24": -26.59
+      },
+      "liquidity": {
+        "usd": 401314.05,
+        "base": 36821,
+        "quote": 181246
+      },
+      "fdv": 96314483,
+      "marketCap": 76142509,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/sonic/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c.png?key=0ad06b",
+        "header": "https://dd.dexscreener.com/ds-data/tokens/sonic/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c/header.png?key=0ad06b",
+        "openGraph": "https://cdn.dexscreener.com/token-images/og/sonic/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c?timestamp=1741054800000",
+        "websites": [
+          {
+            "label": "Website",
+            "url": "https://heyanon.ai/"
+          },
+          {
+            "label": "Docs",
+            "url": "https://docs.heyanon.ai/heyanon.ai"
+          }
+        ],
+        "socials": [
+          {
+            "type": "twitter",
+            "url": "https://x.com/HeyAnonai"
+          },
+          {
+            "type": "telegram",
+            "url": "https://t.me/realwagmi"
+          },
+          {
+            "type": "discord",
+            "url": "https://discord.com/invite/realwagmi"
+          }
+        ]
+      }
+    },
+    {
+      "chainId": "sonic",
+      "dexId": "shadow-exchange",
+      "url": "https://dexscreener.com/sonic/0x9b480e05a9e907d8c7a1ecc676f66355dc1e4888",
+      "pairAddress": "0x9B480E05a9E907D8C7a1Ecc676F66355DC1e4888",
+      "baseToken": {
+        "address": "0x79bbF4508B1391af3A0F4B30bb5FC4aa9ab0E07C",
+        "name": "HeyAnon",
+        "symbol": "Anon"
+      },
+      "quoteToken": {
+        "address": "0x29219dd400f2Bf60E5a23d13Be72B486D4038894",
+        "name": "Bridged USDC (Sonic Labs)",
+        "symbol": "USDC.e"
+      },
+      "priceNative": "5.9725",
+      "priceUsd": "5.97",
+      "txns": {
+        "m5": {
+          "buys": 7,
+          "sells": 0
+        },
+        "h1": {
+          "buys": 12,
+          "sells": 101
+        },
+        "h6": {
+          "buys": 49,
+          "sells": 259
+        },
+        "h24": {
+          "buys": 150,
+          "sells": 1036
+        }
+      },
+      "volume": {
+        "h24": 1620349.19,
+        "h6": 358039.84,
+        "h1": 116928.49,
+        "m5": 2201.05
+      },
+      "priceChange": {
+        "m5": 0.18,
+        "h1": -8.74,
+        "h6": -13.98,
+        "h24": -27.13
+      },
+      "liquidity": {
+        "usd": 637119.16,
+        "base": 100008,
+        "quote": 39811
+      },
+      "fdv": 96249314,
+      "marketCap": 76090988,
+      "pairCreatedAt": 1737385597000,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/sonic/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c.png?key=0ad06b",
+        "header": "https://dd.dexscreener.com/ds-data/tokens/sonic/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c/header.png?key=0ad06b",
+        "openGraph": "https://cdn.dexscreener.com/token-images/og/sonic/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c?timestamp=1741054800000",
+        "websites": [
+          {
+            "label": "Website",
+            "url": "https://heyanon.ai/"
+          },
+          {
+            "label": "Docs",
+            "url": "https://docs.heyanon.ai/heyanon.ai"
+          }
+        ],
+        "socials": [
+          {
+            "type": "twitter",
+            "url": "https://x.com/HeyAnonai"
+          },
+          {
+            "type": "telegram",
+            "url": "https://t.me/realwagmi"
+          },
+          {
+            "type": "discord",
+            "url": "https://discord.com/invite/realwagmi"
+          }
+        ]
+      }
+    },
+    {
+      "chainId": "sonic",
+      "dexId": "swapx",
+      "url": "https://dexscreener.com/sonic/0x467865e7ce29e7ed8f362d51fd7141117b234b44",
+      "pairAddress": "0x467865E7Ce29E7ED8f362D51Fd7141117B234b44",
+      "labels": [
+        "v3"
+      ],
+      "baseToken": {
+        "address": "0xA04BC7140c26fc9BB1F36B1A604C7A5a88fb0E70",
+        "name": "SwapX",
+        "symbol": "SWPx"
+      },
+      "quoteToken": {
+        "address": "0x29219dd400f2Bf60E5a23d13Be72B486D4038894",
+        "name": "Bridged USDC (Sonic Labs)",
+        "symbol": "USDC.e"
+      },
+      "priceNative": "0.4604",
+      "priceUsd": "0.4604",
+      "txns": {
+        "m5": {
+          "buys": 0,
+          "sells": 0
+        },
+        "h1": {
+          "buys": 0,
+          "sells": 68
+        },
+        "h6": {
+          "buys": 7,
+          "sells": 266
+        },
+        "h24": {
+          "buys": 20,
+          "sells": 948
+        }
+      },
+      "volume": {
+        "h24": 274267.22,
+        "h6": 52738.33,
+        "h1": 19397.66,
+        "m5": 0
+      },
+      "priceChange": {
+        "h1": -6.19,
+        "h6": -9.23,
+        "h24": -25.02
+      },
+      "liquidity": {
+        "usd": 1196513.68,
+        "base": 1302463,
+        "quote": 596838
+      },
+      "fdv": 25378035,
+      "marketCap": 6716485,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/sonic/0xa04bc7140c26fc9bb1f36b1a604c7a5a88fb0e70.png?key=cc8aa5",
+        "header": "https://dd.dexscreener.com/ds-data/tokens/sonic/0xa04bc7140c26fc9bb1f36b1a604c7a5a88fb0e70/header.png?key=cc8aa5",
+        "openGraph": "https://cdn.dexscreener.com/token-images/og/sonic/0xa04bc7140c26fc9bb1f36b1a604c7a5a88fb0e70?timestamp=1741054800000",
+        "websites": [
+          {
+            "label": "Website",
+            "url": "http://swapx.fi/"
+          },
+          {
+            "label": "Docs",
+            "url": "https://swapxfi.gitbook.io/swapx-docs"
+          }
+        ],
+        "socials": [
+          {
+            "type": "twitter",
+            "url": "http://x.com/swapxfi"
+          },
+          {
+            "type": "telegram",
+            "url": "http://t.me/swapxfi"
+          },
+          {
+            "type": "discord",
+            "url": "http://discord.com/invite/yXU4HMsp6P"
+          }
+        ]
+      }
+    },
+    {
+      "chainId": "sonic",
+      "dexId": "shadow-exchange",
+      "url": "https://dexscreener.com/sonic/0x3fccdda302b23f3741df05e698d1300a346d92b1",
+      "pairAddress": "0x3FccDDA302b23F3741Df05E698d1300A346D92b1",
+      "baseToken": {
+        "address": "0x3333111A391cC08fa51353E9195526A70b333333",
+        "name": "Shadow Liquid Staking Token",
+        "symbol": "x33"
+      },
+      "quoteToken": {
+        "address": "0x29219dd400f2Bf60E5a23d13Be72B486D4038894",
+        "name": "Bridged USDC (Sonic Labs)",
+        "symbol": "USDC.e"
+      },
+      "priceNative": "59.4917",
+      "priceUsd": "59.49",
+      "txns": {
+        "m5": {
+          "buys": 5,
+          "sells": 7
+        },
+        "h1": {
+          "buys": 31,
+          "sells": 70
+        },
+        "h6": {
+          "buys": 82,
+          "sells": 226
+        },
+        "h24": {
+          "buys": 123,
+          "sells": 688
+        }
+      },
+      "volume": {
+        "h24": 762137.6,
+        "h6": 298631.09,
+        "h1": 88624.39,
+        "m5": 2820.58
+      },
+      "priceChange": {
+        "m5": 0.45,
+        "h1": -9.07,
+        "h6": -12.48,
+        "h24": -37.34
+      },
+      "liquidity": {
+        "usd": 1414624.39,
+        "base": 23055,
+        "quote": 43033
+      },
+      "fdv": 22175927,
+      "marketCap": 22175927,
+      "pairCreatedAt": 1738413432000,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/sonic/0x3333111a391cc08fa51353e9195526a70b333333.png?key=6ad28a",
+        "header": "https://dd.dexscreener.com/ds-data/tokens/sonic/0x3333111a391cc08fa51353e9195526a70b333333/header.png?key=6ad28a",
+        "openGraph": "https://cdn.dexscreener.com/token-images/og/sonic/0x3333111a391cc08fa51353e9195526a70b333333?timestamp=1741054800000",
+        "websites": [
+          {
+            "label": "Website",
+            "url": "https://www.shadow.so/"
+          },
+          {
+            "label": "Docs",
+            "url": "https://docs.shadow.so/"
+          }
+        ],
+        "socials": [
+          {
+            "type": "twitter",
+            "url": "https://x.com/ShadowOnSonic"
+          },
+          {
+            "type": "discord",
+            "url": "https://discord.gg/shadowexchange"
+          }
+        ]
+      }
+    },

@@ -1,0 +1,135 @@
+To fix the example based on your requirements, I’ll modify the API request to:
+Use the wallet address 0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9.
+
+Target the Sonic chain (assuming "Soinc" is a typo for "Sonic," a blockchain supported by OpenOcean).
+
+Swap 5 wS of the token 0x6fB9897896Fe5D05025Eb43306675727887D0B7c (input token).
+
+Set slippage to 3%.
+
+Assume the output token isn’t specified, so I’ll leave it as a placeholder for you to define (e.g., swapping to another token on Sonic).
+Assumptions and Notes
+Sonic Chain: OpenOcean’s API uses chain-specific paths (e.g., /v4/bsc/ for BSC). I’ll assume Sonic is supported and use /v4/sonic/, but you should verify the exact chain identifier in OpenOcean’s documentation (e.g., it might be /v4/sonic/ or a numeric chain ID like /v4/9006/ if Sonic’s chain ID is 9006). I’ll proceed with /v4/sonic/ for now.
+
+"5 wS": I assume "wS" means "wrapped Sonic" or a token unit, and the amount is 5 units of the token 0x6fB9897896Fe5D05025Eb43306675727887D0B7c. If "wS" refers to a different token, please clarify its address.
+
+Output Token: Since you didn’t specify the outTokenAddress, I’ll use a placeholder (OUT_TOKEN_ADDRESS). Replace it with the desired output token’s address on Sonic.
+
+Gas Price: I’ll keep gasPrice=1 (1 Gwei) as in the original, but Sonic might use a different gas pricing model—adjust if needed.
+Here’s the fixed example:
+Fixed Example (GET Request from Wallet on Sonic Chain)
+javascript
+var request = require('request');
+
+// Wallet address initiating the swap
+const walletAddress = '0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9';
+
+// API request options
+var options = {
+  method: 'GET',
+  url: 'https://open-api-pro.openocean.finance/v4/sonic/swap?inTokenAddress=0x6fB9897896Fe5D05025Eb43306675727887D0B7c&outTokenAddress=OUT_TOKEN_ADDRESS&amount=5&gasPrice=1&slippage=3&account=' + walletAddress + '&referrer=0x4fAf1aeDFb5C32C784192346263C4156ea91eBD2',
+  headers: {
+    'apikey': 'mNhHD7nFNkCHGevafz40BQc1dX9AzxkH',
+    'Content-Type': 'application/json'
+  }
+};
+
+// Make the request
+request(options, (error, response, body) => {
+  if (error) {
+    console.error('Error:', error);
+  } else {
+    console.log(`Swap details for wallet ${walletAddress} on Sonic chain:`, body);
+  }
+});
+
+Changes Made:
+Wallet Address: Updated account to 0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9.
+
+Chain: Changed /v4/bsc/ to /v4/sonic/ for the Sonic chain (verify this endpoint with OpenOcean’s docs).
+
+Input Token: Set inTokenAddress to 0x6fB9897896Fe5D05025Eb43306675727887D0B7c.
+
+Output Token: Set outTokenAddress to OUT_TOKEN_ADDRESS (replace with the actual token address you’re swapping to).
+
+Amount: Set amount=5 for 5 units of the input token.
+
+Slippage: Updated slippage=3 for 3% slippage.
+
+Cleaner Syntax: Used string concatenation for readability (you could also use template literals).
+Verification Steps
+Check Sonic Support: Confirm that OpenOcean supports Sonic and the correct chain path (e.g., /v4/sonic/). If it’s different (e.g., /v4/sonic-testnet/ or a chain ID), update the URL.
+
+Specify Output Token: Replace OUT_TOKEN_ADDRESS with the token you want to receive (e.g., Sonic’s native token or another ERC-20 token on Sonic).
+
+Test the Request: Run the code and check the response. The API should return swap details like the expected output amount or transaction data.
+Example Output
+The response might look like (hypothetical JSON based on typical DeFi APIs):
+json
+{
+  "inTokenAddress": "0x6fB9897896Fe5D05025Eb43306675727887D0B7c",
+  "outTokenAddress": "OUT_TOKEN_ADDRESS",
+  "amountIn": "5",
+  "amountOut": "4.85", // Example output after slippage
+  "to": "0xSomeContractAddress",
+  "data": "0xSomeEncodedData",
+  "value": "0"
+}
+
+You’d then use this data with a wallet (e.g., via ethers.js) to execute the swap on-chain.
+If You Want to Execute the Swap
+If you need the swap executed from the wallet (not just a quote), you’d need the wallet’s private key and a Sonic RPC provider. Here’s an extended version with ethers.js:
+javascript
+const ethers = require('ethers');
+const request = require('request');
+
+// Wallet details
+const privateKey = 'YOUR_PRIVATE_KEY'; // Replace with the wallet's private key
+const walletAddress = '0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9';
+const provider = new ethers.providers.JsonRpcProvider('https://sonic-rpc-endpoint'); // Replace with Sonic's RPC URL
+const wallet = new ethers.Wallet(privateKey, provider);
+
+// API request options
+const options = {
+  method: 'GET',
+  url: 'https://open-api-pro.openocean.finance/v4/sonic/swap?inTokenAddress=0x6fB9897896Fe5D05025Eb43306675727887D0B7c&outTokenAddress=OUT_TOKEN_ADDRESS&amount=5&gasPrice=1&slippage=3&account=' + walletAddress + '&referrer=0x4fAf1aeDFb5C32C784192346263C4156ea91eBD2',
+  headers: {
+    'apikey': 'mNhHD7nFNkCHGevafz40BQc1dX9AzxkH',
+    'Content-Type': 'application/json'
+  }
+};
+
+request(options, async (error, response, body) => {
+  if (error) {
+    console.error('Error:', error);
+    return;
+  }
+
+  const swapData = JSON.parse(body);
+  console.log('Swap data:', swapData);
+
+  const tx = {
+    to: swapData.to,
+    data: swapData.data,
+    value: ethers.utils.parseEther(swapData.value || '0'),
+    gasPrice: ethers.utils.parseUnits('1', 'gwei'),
+    gasLimit: 300000 // Adjust based on Sonic’s requirements
+  };
+
+  try {
+    const txResponse = await wallet.sendTransaction(tx);
+    console.log(`Transaction sent from ${walletAddress}:`, txResponse.hash);
+    await txResponse.wait();
+    console.log('Transaction confirmed');
+  } catch (err) {
+    console.error('Transaction error:', err);
+  }
+});
+
+Additional Requirements:
+Replace 'https://sonic-rpc-endpoint' with Sonic’s actual RPC URL (e.g., from their docs or a provider like Sonic Labs).
+
+Replace 'YOUR_PRIVATE_KEY' with the private key for 0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9.
+
+Replace OUT_TOKEN_ADDRESS as noted earlier.
+

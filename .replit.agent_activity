@@ -1,0 +1,16 @@
+run = "python3 test_agent_activity.py"
+language = "python3"
+
+[nix]
+channel = "stable-22_11"
+
+[env]
+PYTHONHOME = "/home/runner/python-shared"
+PYTHONBIN = "/home/runner/python-shared/bin/python3"
+TARSAFE_SAVE_METADATA = "1"
+PATH = "/home/runner/$REPL_SLUG/.local/bin:/home/runner/python-shared/bin:/home/runner/$REPL_SLUG/node_modules/.bin"
+PYTHONPATH = "/home/runner/$REPL_SLUG:/home/runner/$REPL_SLUG/python-packages"
+LD_LIBRARY_PATH = "/home/runner/$REPL_SLUG/.local/lib/python3.10/site-packages:/home/runner/python-shared/lib"
+
+[unitTest]
+language = "python3"

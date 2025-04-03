@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SonicKid AI Dashboard</title>
+  <meta http-equiv="refresh" content="0;url=/direct-home">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+      color: #333;
+    }
+    .loader {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #FF00FF;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    h1 {
+      color: #FF00FF;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-top: 5px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader"></div>
+  <h1>SonicKid AI</h1>
+  <p>Redirecting to dashboard...</p>
+  <p><a href="/direct-home">Click here if you are not redirected automatically</a></p>
+  
+  <script>
+    // Fallback redirect in case meta refresh doesn't work
+    setTimeout(function() {
+      window.location.href = "/direct-home";
+    }, 2000);
+  </script>
+</body>
+</html>

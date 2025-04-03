@@ -1,0 +1,88 @@
+ @staticmethod
+    def _get_lazybear_prompt() -> str:
+        """Generate custom prompt for LazyBear token creation"""
+        return """You are a specialized web automation agent for creating tokens on LazyBear.
+
+Key Tasks:
+1. Handle wallet connection securely
+2. Manage token creation form accurately
+3. Monitor transaction confirmation
+4. Extract share URL for social media
+
+Critical Elements:
+- Wallet connection button/interface
+- Form fields for token details
+- Transaction confirmation indicators
+- Share URL/social sharing elements
+- Image upload field and preview
+
+Success Criteria:
+1. Token details submitted successfully
+2. Transaction confirmed on blockchain
+3. Share URL extracted and saved
+4. No wallet connection errors
+5. Image uploaded and visible
+
+Error Handling:
+- Monitor transaction status
+- Verify wallet connection
+- Validate form submissions
+- Confirm image upload success
+- Save any error messages
+
+Take deliberate actions and verify completion of each phase."""
+
+    @staticmethod
+    def create_token() -> Dict[str, Any]:
+        """Create a token on Lazy Bear using the provided details"""
+        wallet_address = os.getenv('SONIC_WALLET_ADDRESS', '0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9')
+        token_name = os.getenv('LAZYBEAR_TOKEN_NAME', 'BrowserKid')
+        token_symbol = os.getenv('LAZYBEAR_TOKEN_SYMBOL', 'KID')
+        token_description = os.getenv('LAZYBEAR_TOKEN_DESCRIPTION', 
+            'A token launched by Sonic Kid from the SonicLidz Dao project. Testing browser automation capabilities.')
+        telegram_url = 'https://t.me/+VcFSmzTH6783MGZh'
+        twitter_url = 'https://x.com/BanditKid45'
+        initial_buy_amount = os.getenv('LAZYBEAR_INITIAL_BUY', '100')
+        image_path = 'attached_assets/SonicLidzRound2.png'
+
+        return {
+            "task": (
+                "Phase 1 - Navigate and Select DEX:\n"
+                "1. Navigate to https://lazybear.io/create-token\n"
+                "2. Wait for page to fully load and network to be idle\n"
+                f"3. Connect wallet using address: {wallet_address}\n"
+                "4. Select DEX: Shadow from dropdown\n"
+                "5. Click 'Next' or continue button\n\n"
+
+                "Phase 2 - Upload Image and Enter Token Details:\n"
+                f"6. Upload token image from path: {image_path}\n"
+                "7. Wait for upload to complete and verify image preview\n"
+                "8. Enter token details:\n"
+                f"   - Name: {token_name}\n"
+                f"   - Symbol: {token_symbol}\n"
+                f"   - Description: {token_description}\n"
+                "9. Enter social links:\n"
+                f"   - Telegram: {telegram_url}\n"
+                f"   - Twitter: {twitter_url}\n"
+                f"10. Enter initial buy amount: {initial_buy_amount} $S\n\n"
+
+                "Phase 3 - Verify and Submit:\n"
+                "11. Review all entered information\n"
+                "12. Check terms and conditions box\n"
+                "13. Click 'Create Token!' button\n"
+                "14. Wait for transaction to be confirmed on blockchain\n"
+                "15. Extract share URL when available\n"
+                "16. Save extracted URL for Twitter post\n\n"
+
+                "Phase 4 - Result Validation:\n"
+                "17. Verify token creation success:\n"
+                "    - Check for token name in success message\n"
+                "    - Verify transaction hash is present\n"
+                "    - Confirm share URL is valid\n"
+                "18. Return task result with share URL"
+            ),
+            "save_browser_data": True,
+            "wait_for_network_idle": True,
+            "timeout": 300,  # Extended timeout for blockchain transaction
+            "override_system_message": BrowserTasks._get_lazybear_prompt()
+        }

@@ -1,0 +1,57 @@
+{
+    "default_agent": "sonic_kid",
+    "twitter": {
+        "username": "@BanditKid45"
+    },
+    "telegram": {
+        "bot_username": "sonic_kid_bot",
+        "test_chat_id": "-4165701014",
+        "allowed_chat_ids": ["-4165701014"]  
+    },
+    "networks": {
+        "sonic": {
+            "rpc_url": "https://rpc.soniclabs.com",
+            "aggregator_url": "https://aggregator-api.kyberswap.com/sonic/api/v1",
+            "chain_id": 146
+        },
+        "ethereum": {
+            "rpc_url": "https://eth.llamarpc.com",
+            "chain_id": 1
+        },
+        "base": {
+            "rpc_url": "https://mainnet.base.org",
+            "chain_id": 8453
+        }
+    },
+    "goat": {
+        "plugins": [
+            "erc20",
+            "coingecko"
+        ],
+        "rpc_url": "https://rpc.goat.network"
+    },
+    "ai": {
+        "main_instructor": {
+            "provider": "openrouter",
+            "model": "anthropic/claude-3-7-sonnet-20250219",
+            "temperature": 0.7,
+            "max_tokens": 150
+        },
+        "helper_agents": [
+            {
+                "name": "huggingface",
+                "type": "market_analysis",
+                "model": "EleutherAI/gpt-neo-2.7B"
+            },
+            {
+                "name": "hyperbolic",
+                "type": "sentiment_analysis",
+                "model": "hyperbolic/market-sentiment-large"
+            }
+        ]
+    },
+    "browser": {
+        "headless": true,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    }
+}

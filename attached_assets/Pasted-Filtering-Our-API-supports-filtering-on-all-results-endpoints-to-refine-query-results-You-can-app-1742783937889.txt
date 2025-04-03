@@ -1,0 +1,60 @@
+Filtering
+Our API supports filtering on all /results endpoints to refine query results. You can apply filters on both rows and columns to narrow down the data returned by the API. This feature is available for the following endpoints:
+
+Get Execution Results
+Get Execution Results CSV
+Get Query Results
+Get Query Results CSV
+Filtering can be effectively used in conjunction with pagination and sorting to further enhance query efficiency and relevance. See an example of filtering in action with this Dune farcaster frame.
+
+​
+Example Filtering Request
+Python SDK
+cURL
+Python
+Javascript
+Go
+PHP
+Java
+
+Copy
+import dotenv, os
+from dune_client.types import QueryParameter
+from dune_client.client import DuneClient
+from dune_client.query import QueryBase
+
+os.chdir("<path_to_your_dotevn_file>")
+
+# load .env file
+dotenv.load_dotenv(".env")
+# setup Dune Python client
+dune = DuneClient.from_env()
+
+query_result = dune.get_latest_result_dataframe(
+    query=3567562 # https://dune.com/queries/3567562
+    , filters="overtip_amount > 0"
+    , columns=["donor_fname","overtip_amount","days_overtipped","overall_tip_given_amount","overall_avg_tip_amount"]
+    , sort_by=["overall_tip_given_amount desc"]
+)
+
+print(query_result)
+
+​
+Filtering Parameters
+​
+filters
+Type: string
+Description: Allows specifying criteria to filter rows in the result set. It functions similarly to a SQL WHERE clause. If omitted, all results are returned.
+Use the format <column_name> <operator> <value> for criteria, for example, block_time >= '2024-03-05 15:03'.
+Combine criteria using parentheses and logical operators AND / OR, e.g., block_time >= '2024-03-05 15:03' AND (project = 'uniswap' OR project = 'balancer').
+The IN operator is permitted, as in tx_to IN (0x6a3e4b7e23661108aaec70266c468e6c679ae022, 0xdbf89389504e39f03fbb6bdd601aabb6bfbbed71).
+The NOT operator is not supported; using NOT IN or NOT LIKE will produce an error.
+For column names with special characters (e.g., spaces, emojis, dashes, dots), enclose them in double quotes: "special, column" = 'ABC'.
+Values must be strings or numbers. SQL expressions like now() - interval '1' day are not allowed.
+Dates and times should be formatted as strings, e.g., block_time > '2023-01-03'.
+​
+columns
+Type: string
+Description: Specifies the column names to include in the result set. If omitted, all columns are returned.
+List column names without spaces, e.g., use project,block_time,amount_usd instead of project, block_time, amount_usd.
+Specifying columns helps limit the results to essential data, reducing the data cost of the call.

@@ -1,0 +1,70 @@
+Client SDKs
+​
+Python
+We currently support a Python SDK for working with our API. You’ll find Python SDK snippets on all endpoint pages, if you want to go deeper into the code then check out these files.
+
+To still the SDK, run the following command in your terminal:
+
+
+Copy
+pip install dune-client
+Be sure you are using the latest release. You can find all release versions here - there may be code added to the repo that has not been put into a release yet.
+
+You will commonly work with the QueryBase class which can be created like this:
+
+
+Copy
+from dune_client.types import QueryParameter
+from dune_client.client import DuneClient
+from dune_client.query import QueryBase
+
+query = QueryBase(
+    name="Sample Query",
+    query_id=1215383,
+    params=[
+        QueryParameter.text_type(name="TextField", value="Word"),
+        QueryParameter.number_type(name="NumberField", value=3.1415926535),
+        QueryParameter.date_type(name="DateField", value="2022-05-04 00:00:00"),
+        QueryParameter.enum_type(name="EnumField", value="Option 1"),
+    ],
+)
+print("Results available at", query.url())
+The query object is defined as QueryBase and all properties can be found in this file.
+
+Other classes such as execution results can be found here, detailing operations like ResultsResponse.get_rows() for getting the data out of a GET request.
+
+If you are trying to load data into a Pandas DataFrame, you can use the following function from the sdk.
+
+
+Copy
+results_df = dune.run_query_dataframe(query)
+​
+Typescript
+We have a community client from that can be found here.
+
+To install, run this command
+
+
+Copy
+yarn add @duneanalytics/client-sdk
+Currently this client only supports the execution based endpoints, and not Query Endpoints or uploads. Here is an example query:
+
+
+Copy
+import { QueryParameter, DuneClient } from "@duneanalytics/client-sdk";
+const { DUNE_API_KEY } = process.env;
+
+const client = new DuneClient(DUNE_API_KEY ?? "");
+const queryID = 1215383;
+const params = {
+  query_parameters = [
+    QueryParameter.text("TextField", "Plain Text"),
+    QueryParameter.number("NumberField", 3.1415926535),
+    QueryParameter.date("DateField", "2022-05-04 00:00:00"),
+    QueryParameter.enum("ListField", "Option 1"),
+  ]
+};
+
+client
+  .runQuery(queryID, params)
+  .then((executionResult) => console.log(executionResult.result?.rows));

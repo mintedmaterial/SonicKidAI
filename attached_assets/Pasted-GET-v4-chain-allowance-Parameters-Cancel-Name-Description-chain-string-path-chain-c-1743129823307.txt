@@ -1,0 +1,73 @@
+GET
+/v4/{chain}/allowance
+
+Parameters
+Cancel
+Name	Description
+chain *
+string
+(path)
+chain code or chain id
+
+
+sonic
+inTokenAddress *
+string
+(query)
+in token address, you can set one by one, such as: 0x000..., 0x222...
+
+0x71E99522EaD5E21CF57F1f542Dc4ad2E841F7321
+account *
+string
+(query)
+users wallet address, such as 0x000...
+
+0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'https://open-api.openocean.finance/v4/sonic/allowance?inTokenAddress=0x71E99522EaD5E21CF57F1f542Dc4ad2E841F7321&account=0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9' \
+  -H 'accept: */*'
+Request URL
+https://open-api.openocean.finance/v4/sonic/allowance?inTokenAddress=0x71E99522EaD5E21CF57F1f542Dc4ad2E841F7321&account=0xCC98d2e64279645D204DD7b25A7c09b6B3ded0d9
+Server response
+Code	Details
+200	
+Response body
+Download
+{
+  "code": 200,
+  "data": [
+    {
+      "symbol": "METRO",
+      "allowance": "0",
+      "raw": "0"
+    }
+  ]
+}
+Response headers
+ access-control-allow-headers: * 
+ access-control-allow-method: GET,POST,PUT,OPTIONS 
+ access-control-allow-origin: * 
+ cf-cache-status: DYNAMIC 
+ cf-ray: 9273c7250ef6f07e-DFW 
+ content-encoding: br 
+ content-type: application/json; charset=utf-8 
+ date: Fri,28 Mar 2025 02:43:06 GMT 
+ etag: W/"42-Z+CH1FIwxkvuNhSzs89fYLSZLJc" 
+ nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800} 
+ report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=%2BP%2F7lcBOojPT4nGP8iN%2FUsFZK5Xwy1digOqcXeV6lm3ITRbvf2JNGeYaOZZCx2qvQERKeLfPeOMm8LBZZjqFRpX0Ssu6MvIYsWHHpshqR2P272HrPWwW2YbpeDExRJ%2F5wxGvIxcMpiCZHXn9isRxBjeLGSGbgRfr"}],"group":"cf-nel","max_age":604800} 
+ server: cloudflare 
+ server-timing: cfL4;desc="?proto=TCP&rtt=55991&min_rtt=24032&rtt_var=19998&sent=532&recv=317&lost=0&retrans=106&sent_bytes=656087&recv_bytes=20363&delivery_rate=1156514&cwnd=90&unsent_bytes=0&cid=5343b4402367986a&ts=93064&x=0" 
+ strict-transport-security: max-age=31536000; includeSubdomains; 
+ x-content-type-options: nosniff 
+ x-frame-options: SAMEORIGIN 
+ x-powered-by: Express 
+ x-xss-protection: 1; mode=block 
+Responses
+Code	Description	Links
+200	
+No links
