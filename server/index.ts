@@ -16,10 +16,8 @@ console.log(`Process ID: ${process.pid}`);
 console.log('Current directory:', process.cwd());
 
 const app = express();
-const FRONTEND_PORT = process.env.FRONTEND_PORT ? parseInt(process.env.FRONTEND_PORT, 10) : 3000;
-const BACKEND_PORT = process.env.BACKEND_PORT ? parseInt(process.env.BACKEND_PORT, 10) : 5000;
-const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : FRONTEND_PORT;
 const HOST = '0.0.0.0';
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8888;
 
 console.log(`Attempting to configure server on ${HOST}:${PORT}`);
 
@@ -40,17 +38,17 @@ const setupServer = async () => {
     }));
     app.use(express.json());
     console.log('✅ Basic middleware configured');
-    
+
     // Create server
     console.log('Creating HTTP server...');
     const server = createServer(app);
     console.log('✅ HTTP server created');
-    
+
     // Register API routes before Vite to ensure they take precedence
     console.log('Registering API routes...');
     registerRoutes(app);
     console.log('✅ API routes registered');
-    
+
     // Initialize Agent Activity Service
     console.log('Initializing Agent Activity Service...');
     try {
@@ -60,7 +58,7 @@ const setupServer = async () => {
         anthropicApiKey: process.env.OPENROUTER_API_KEY, // Use Anthropic via OpenRouter
         postIntervalMinutes: 180 // 3 hours
       });
-      
+
       // Start the service
       const success = agentActivityService.start();
       if (success) {
@@ -71,44 +69,44 @@ const setupServer = async () => {
     } catch (error) {
       console.error('❌ Error initializing Agent Activity Service:', error);
     }
-    
+
     // Serve static files from the public directory and project root
     console.log('Setting up static file service from /public directory and project root...');
     app.use(express.static(path.join(process.cwd(), 'public')));
     app.use(express.static(process.cwd())); // Serve files from project root
     console.log('✅ Static file service configured');
-    
+
     // Commented out redirect to allow React app to be served at root
     // app.get('/', (req, res) => {
     //   console.log('Root route accessed, redirecting to dashboard');
     //   res.redirect('/direct-home');
     // });
-    
+
     // Test route
     app.get('/test', (req, res) => {
       res.send('Test route working!');
     });
-    
+
     // Direct data routes for critical APIs (bypass SPA middleware completely)
     app.get('/data/sonic-pairs.json', async (req, res) => {
       console.log('Direct data endpoint for Sonic pairs accessed');
-      
+
       // Set headers to ensure proper JSON handling
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('X-Content-Type-Options', 'nosniff');
       res.setHeader('Cache-Control', 'no-cache');
-      
+
       try {
         // Import market data service directly from the shared file
         const { marketData } = await import('../shared/marketdata');
-        
+
         // Get limit parameter or default to 20
         const limit = req.query.limit ? parseInt(req.query.limit.toString()) : 20;
-        
+
         // Fetch data directly
         console.log(`Fetching Sonic pairs directly (limit: ${limit})...`);
         const pairs = await marketData.getSonicPairs(limit);
-        
+
         // Send response
         return res.json({
           success: true,
@@ -125,16 +123,16 @@ const setupServer = async () => {
         });
       }
     });
-    
+
     // Direct token endpoint by symbol to provide Sonic token data
     app.get('/data/token-by-symbol', async (req, res) => {
       console.log('Direct data endpoint for token by symbol accessed');
-      
+
       // Set headers to ensure proper JSON handling
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('X-Content-Type-Options', 'nosniff');
       res.setHeader('Cache-Control', 'no-cache');
-      
+
       try {
         // Check if symbol parameter exists
         if (!req.query.symbol) {
@@ -143,13 +141,13 @@ const setupServer = async () => {
             error: 'Symbol parameter is required'
           });
         }
-        
+
         // Get symbol and chainId parameters
         const symbol = req.query.symbol.toString().toUpperCase();
         const chainId = req.query.chainId ? req.query.chainId.toString() : 'sonic';
-        
+
         console.log(`Looking up token by symbol: ${symbol}, chainId: ${chainId}`);
-        
+
         // For SONIC token requests, directly return the hardcoded data that works
         if (symbol === 'SONIC' || symbol === 'WS' || symbol === 'S') {
           console.log('Returning hardcoded SONIC token data for reliability');
@@ -169,20 +167,20 @@ const setupServer = async () => {
             source: "sonic_labs"
           });
         }
-        
+
         // Import market data service directly
         const { marketData } = await import('../shared/marketdata');
-        
+
         // Fetch data directly
         const data = await marketData.getTokenData(symbol, chainId);
-        
+
         if (!data) {
           return res.status(404).json({
             success: false,
             error: `Token data not found for symbol: ${symbol}`
           });
         }
-        
+
         // Send response - return directly without wrapping in a "data" property
         return res.status(200).json(data);
       } catch (error) {
@@ -194,27 +192,27 @@ const setupServer = async () => {
         });
       }
     });
-    
+
     // Direct Sonic token endpoint (using real data)
     app.get('/data/sonic', async (req, res) => {
       console.log('Direct Sonic token data endpoint accessed');
-      
+
       // Set headers to ensure proper JSON handling
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('X-Content-Type-Options', 'nosniff');
       res.setHeader('Cache-Control', 'max-age=20'); // Tell clients to cache for 20 seconds
-      
+
       try {
         // Import market data service directly from the shared file
         const { marketData } = await import('../shared/marketdata');
-        
+
         // Use the sonic-price data type for faster refresh (20s instead of 60s for regular price)
         console.log('Fetching real Sonic token data...');
-        
+
         // We reuse the marketData.getTokenData for now - this will be enhanced 
         // with a specific cached_sonic_price handler in a future update
         const tokenData = await marketData.getTokenData('SONIC', 'sonic');
-        
+
         if (tokenData) {
           console.log('✅ Real Sonic token data retrieved successfully');
           // Add volumeChange24h and priceChange24h if not already present
@@ -260,16 +258,16 @@ const setupServer = async () => {
         });
       }
     });
-    
+
     // Direct Project of the Week data endpoint
     app.get('/data/project-of-week', async (req, res) => {
       console.log('Direct Project of the Week data endpoint accessed');
-      
+
       // Set headers to ensure proper JSON handling
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('X-Content-Type-Options', 'nosniff');
       res.setHeader('Cache-Control', 'max-age=300'); // Cache for 5 minutes
-      
+
       try {
         // Directly provide the Pass the Joint project data
         console.log('✅ Returning Pass the Joint project data directly');
@@ -288,7 +286,7 @@ const setupServer = async () => {
         });
       } catch (error) {
         console.error('Error serving Project of the Week data:', error);
-        
+
         // Return error response
         return res.status(500).json({
           error: 'Failed to serve Project of the Week data',
@@ -296,19 +294,19 @@ const setupServer = async () => {
         });
       }
     });
-    
+
     // Special endpoint for Joint logo to bypass caching issues
     app.get('/data/joint-logo', (req, res) => {
       console.log('Joint logo image requested');
       const logoPath = path.resolve(process.cwd(), 'public', 'joint_logo.jpg');
       res.sendFile(logoPath);
     });
-    
+
     console.log('✅ Test route added');
-    
+
     // Set up Vite middleware for development AFTER API routes
     console.log('Setting up Vite development middleware...');
-    
+
     if (process.env.NODE_ENV === 'development') {
       // Use Vite's dev middleware
       await setupVite(app, server);
@@ -317,27 +315,27 @@ const setupServer = async () => {
       // For production, serve static files
       const clientDistPath = path.resolve(process.cwd(), 'dist', 'client');
       app.use(express.static(clientDistPath));
-      
+
       // All other routes should serve the index.html for client-side routing
       app.get('*', (req, res, next) => {
         // Skip API routes
         if (req.url.startsWith('/api/')) {
           return next();
         }
-        
+
         console.log(`SPA route handler: ${req.url}`);
         // Send the index.html file for all non-API routes
         res.sendFile(path.resolve(clientDistPath, 'index.html'));
       });
     }
-    
+
     console.log('✅ SPA route handling configured');
 
     // Bind server to appropriate port based on environment variables
     console.log(`Attempting to bind server to ${HOST}:${PORT}...`);
     server.listen(PORT, HOST, () => {
       console.log(`🚀 Main server running at http://${HOST}:${PORT}`);
-      
+
       // Only create secondary server in development mode if explicitly requested
       if (process.env.NODE_ENV === 'development' && process.env.ENABLE_SECONDARY_SERVER === 'true') {
         // Create a secondary server instance for BACKEND_PORT (for workflow compatibility)
@@ -345,7 +343,7 @@ const setupServer = async () => {
         secondaryServer.listen(BACKEND_PORT, HOST, () => {
           console.log(`🔄 Secondary server running at http://${HOST}:${BACKEND_PORT} (for workflow compatibility)`);
         });
-        
+
         // Error handler for secondary server
         secondaryServer.on('error', (error: Error & { code?: string }) => {
           console.error(`❌ Secondary server startup error (port ${BACKEND_PORT}):`);
