@@ -1,9 +1,32 @@
-"""ZerePy API Client"""
+"""SonicKid API Client"""
 import requests
-from typing import Optional, List, Dict, Any
+import os
+from typing import Optional, List, Dict, Any, Union
 
-class ZerePyClient:
-    def __init__(self, base_url: str = "http://localhost:5000"):
+# Try to import from the api_client_config module, if available
+try:
+    from src.api_client_config import get_api_base_url
+except ImportError:
+    # Fallback method if the module isn't available
+    def get_api_base_url() -> str:
+        """Get the base URL for API requests based on environment variables"""
+        api_base_url = os.environ.get("API_BASE_URL")
+        if api_base_url:
+            return api_base_url
+        
+        # Check environment variables in order of precedence
+        frontend_port = os.environ.get("FRONTEND_PORT", "3000")
+        backend_port = os.environ.get("BACKEND_PORT", "5000")
+        
+        # Default to the frontend port (for the main application)
+        server_port = frontend_port
+        
+        return f"http://localhost:{server_port}"
+
+class SonicKidClient:
+    def __init__(self, base_url: Optional[str] = None):
+        if base_url is None:
+            base_url = get_api_base_url()
         self.base_url = base_url.rstrip('/')
 
     def _make_request(self, method: str, endpoint: str, **kwargs) -> Dict[str, Any]:
@@ -71,3 +94,6 @@ class ZerePyClient:
     def stop_agent(self) -> Dict[str, Any]:
         """Stop the agent loop"""
         return self._make_request("POST", "/agent/stop")
+
+# Keep ZerePyClient as an alias for backward compatibility
+ZerePyClient = SonicKidClient

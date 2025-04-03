@@ -1,138 +1,122 @@
-# Staged Deployment Guide for GOAT Platform
+# Staged Deployment Guide
+
+This guide outlines the process for performing a staged deployment of the application, which helps prevent resource competition and ensures a successful deployment.
 
 ## Overview
 
-This document outlines the staged deployment approach for the GOAT Platform to address the issue of multiple competing workflows preventing successful deployment. Instead of trying to deploy everything at once, we'll deploy components in stages:
+The staged deployment approach involves:
 
-1. **Stage 1:** Frontend Application Only
-2. **Stage 2:** Core Backend Services
-3. **Stage 3:** Additional Workflows and Services
+1. First deploying the frontend and core server components
+2. Then gradually enabling individual workflows as needed
 
-## Stage 1: Frontend Application Only
+This approach ensures that the main application is successfully deployed before potentially resource-intensive workflows are activated.
 
-### Deployment Steps
+## Prerequisites
 
-1. **Prepare the deployment server:**
-   ```bash
-   # Set environment variables to skip the Browser API Server
-   NODE_ENV=production DEPLOYMENT_MODE=true SINGLE_SERVER_MODE=true SKIP_API_SERVER=true node deployment.js
-   ```
+- Ensure all environment variables are properly set in Replit Secrets
+- Make sure the `SKIP_API_SERVER` environment variable is set to `true` for initial deployment
+- Verify that all required scripts are executable:
+  ```bash
+  chmod +x manage-workflows.sh
+  chmod +x clean-for-deployment.sh
+  chmod +x restart_individual_workflow.sh
+  chmod +x monitor_deployment.sh
+  ```
 
-2. **Verify the frontend is working:**
-   - Check that the static files are being properly served
-   - Confirm that the frontend application loads correctly in the browser
-   - Verify that routes are working properly
-   - Any API calls that require the Browser API Server will show appropriate error messages
+## Step 1: Prepare for Deployment
 
-## Stage 2: Core Backend Services
-
-After successful deployment of the frontend, add the Browser API Server:
-
-1. **Start the Browser API Server workflow:**
-   ```bash
-   # Use the restart_individual_workflow.sh script to start the Browser API Server
-   ./restart_individual_workflow.sh "Browser API Server"
-   ```
-
-2. **Enable the Browser API Server in the deployment server:**
-   ```bash
-   # Remove the SKIP_API_SERVER flag
-   NODE_ENV=production DEPLOYMENT_MODE=true SINGLE_SERVER_MODE=true node deployment.js
-   ```
-
-3. **Verify that the Browser API Server is working:**
-   - Check that API endpoints return the expected responses
-   - Verify that frontend features that depend on the Browser API Server are functioning
-
-## Stage 3: Additional Workflows and Services
-
-After the core application is deployed and working, add additional workflows one by one:
-
-1. **Start essential services first:**
-   ```bash
-   # Start the Telegram Bot workflow
-   ./restart_individual_workflow.sh "Telegram Bot"
-   
-   # Start the Discord Bot workflow
-   ./restart_individual_workflow.sh "Discord Bot"
-   ```
-
-2. **Add additional services as needed:**
-   ```bash
-   # Example of starting other services
-   ./restart_individual_workflow.sh "Market Service Test"
-   ./restart_individual_workflow.sh "Test DexScreener"
-   ```
-
-3. **Verify each service is working before adding the next one:**
-   - Check logs to ensure services are starting correctly
-   - Confirm that features dependent on each service are functioning
-
-## Troubleshooting
-
-If a deployment fails:
-
-1. **Check the logs:**
-   ```bash
-   # View the deployment server logs
-   tail -f deployment.log
-   ```
-
-2. **Roll back to the previous stage:**
-   - If adding a workflow causes issues, stop that workflow and continue with the rest
-   - If the core deployment fails, restart without the problematic components
-
-3. **Common issues:**
-   - Port conflicts: Ensure no other processes are using ports 3000 or 8000
-   - Memory limits: Monitor memory usage and reduce the number of concurrent workflows
-   - Environment variables: Verify all required environment variables are set correctly
-
-## Deployment Sequence Diagram
-
+```bash
+# Run the clean-for-deployment script to prepare the project
+./clean-for-deployment.sh
 ```
-┌─────────────┐      ┌───────────────────┐      ┌─────────────────────┐
-│ Frontend    │      │ Core Backend      │      │ Additional Services │
-│ Application │──────│ (Browser API)     │──────│ (Bots, Analytics)   │
-└─────────────┘      └───────────────────┘      └─────────────────────┘
-      Stage 1               Stage 2                    Stage 3
+
+This script will:
+- Clean up build files and caches
+- Trim log files
+- Set necessary environment variables for deployment
+- Build the frontend for production
+- Stop all workflows
+
+## Step 2: Deploy the Main Application
+
+1. Click the "Deploy" button in Replit
+2. Wait for the deployment to complete
+3. Verify that the main application is working correctly
+
+## Step 3: Enable Workflows Gradually
+
+After the main application is deployed and working, gradually enable workflows one by one:
+
+```bash
+# First, check the status of all workflows
+./manage-workflows.sh status
+
+# Start individual workflows as needed
+./restart_individual_workflow.sh telegram_bot
+./restart_individual_workflow.sh discord_bot
+
+# Wait and verify each workflow before starting the next one
 ```
+
+## Step 4: Monitor Deployment
+
+Use the monitoring script to check on the status of your deployment:
+
+```bash
+./monitor_deployment.sh
+```
+
+## Port Configuration
+
+The application uses the following port configuration:
+
+- **Frontend Port**: 3000 (default)
+- **Backend Port**: 5000 
+- **Browser API Port**: 8000
+
+These ports can be configured via environment variables:
+- `FRONTEND_PORT`
+- `BACKEND_PORT`
+- `BROWSER_API_PORT`
 
 ## Environment Variables
 
-For successful deployment, ensure the following environment variables are set:
+The following environment variables control the deployment:
 
-1. **Core Environment Variables:**
-   - `NODE_ENV=production`: Sets Node.js to production mode
-   - `DEPLOYMENT_MODE=true`: Enables deployment-specific behaviors
-   - `SINGLE_SERVER_MODE=true`: Uses a single server for the deployment
-   - `SKIP_API_SERVER=true`: (Optional) Skips starting the Browser API Server in initial deployment
+- `SKIP_API_SERVER`: When set to `true`, the Browser API Server will not be started during initial deployment
+- `FRONTEND_PORT`: Port for the frontend server (default: 3000)
+- `BACKEND_PORT`: Port for the backend server (default: 5000)
+- `BROWSER_API_PORT`: Port for the Browser API Server (default: 8000)
 
-2. **Database Variables:**
-   - `DATABASE_URL`: Connection string for the PostgreSQL database
+## Troubleshooting
 
-3. **API Keys:**
-   - Make sure all required API keys for external services are set
-   - These will be preserved during deployment and made available to workflows
+### Common Issues
 
-## Best Practices
+1. **Deployment times out**:
+   - Make sure `SKIP_API_SERVER` is set to `true`
+   - Ensure all workflows are stopped before deployment
 
-1. **Always back up before deployment:**
-   - Take snapshots or backups of your Replit environment
-   - Document the current state of the deployment
+2. **Workflow fails to start after deployment**:
+   - Check for conflicting port usage
+   - Verify that the required environment variables are set
+   - Look for errors in the workflow logs
 
-2. **Monitor resource usage:**
-   - Keep track of memory usage during deployment
-   - Limit the number of concurrent workflows based on available resources
+3. **Resource limits exceeded**:
+   - Start fewer workflows simultaneously
+   - Consider optimizing resource-intensive workflows
 
-3. **Maintain a deployment log:**
-   - Document which components were deployed and when
-   - Note any issues encountered and their solutions
+### Getting Help
 
-4. **Test thoroughly between stages:**
-   - Do not proceed to the next stage until the current stage is verified
-   - Involve users or testers in the verification process when possible
+If you encounter issues with the deployment, refer to:
+- `REPLIT_DEPLOYMENT_GUIDE.md` for Replit-specific deployment information
+- Workflow logs for detailed error messages
+- Replit documentation on deployment limits and best practices
 
-5. **Manage environment variables carefully:**
-   - Ensure all required environment variables are set before deployment
-   - Use the Replit Secrets tab to store sensitive API keys and credentials
-   - Check for missing environment variables in logs
+## Next Steps
+
+After successful deployment:
+
+1. Test the application thoroughly
+2. Set up monitoring and alerts
+3. Consider implementing CI/CD pipelines for future deployments
+4. Document the production environment configuration

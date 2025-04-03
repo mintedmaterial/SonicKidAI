@@ -1,1 +1,1 @@
-python src/test_connections.py
+./start-python-service.sh run_telegram_bot.py
