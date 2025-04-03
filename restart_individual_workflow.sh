@@ -13,6 +13,53 @@ fi
 WORKFLOW_NAME="$1"
 echo "🔄 Attempting to restart workflow: $WORKFLOW_NAME"
 
+# Check for essential environment variables
+check_env_vars() {
+    local missing_vars=()
+    
+    # Standard deployment variables
+    if [ -z "$NODE_ENV" ]; then missing_vars+=("NODE_ENV"); fi
+    if [ -z "$DATABASE_URL" ]; then missing_vars+=("DATABASE_URL"); fi
+    
+    # Check for workflow-specific variables
+    case "$WORKFLOW_NAME" in
+        "Telegram Bot")
+            if [ -z "$TELEGRAM_BOT_TOKEN" ]; then missing_vars+=("TELEGRAM_BOT_TOKEN"); fi
+            ;;
+        "Discord Bot")
+            if [ -z "$DISCORD_BOT_TOKEN" ]; then missing_vars+=("DISCORD_BOT_TOKEN"); fi
+            ;;
+        "Twitter Test")
+            if [ -z "$TWITTER_API_KEY" ]; then missing_vars+=("TWITTER_API_KEY"); fi
+            if [ -z "$TWITTER_API_SECRET" ]; then missing_vars+=("TWITTER_API_SECRET"); fi
+            ;;
+        "Test EternalAI")
+            if [ -z "$OPENAI_API_KEY" ]; then missing_vars+=("OPENAI_API_KEY"); fi
+            ;;
+    esac
+    
+    # Report missing variables
+    if [ ${#missing_vars[@]} -gt 0 ]; then
+        echo "⚠️ Warning: Missing environment variables for $WORKFLOW_NAME:"
+        for var in "${missing_vars[@]}"; do
+            echo "  - $var"
+        done
+        echo ""
+        echo "📝 These variables may be required for the workflow to function correctly."
+        echo "   You can add them in the Replit Secrets tab."
+        echo ""
+        read -p "Continue anyway? (y/n): " -n 1 -r
+        echo ""
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            echo "❌ Restart canceled."
+            exit 1
+        fi
+    fi
+}
+
+# Run the environment variable check
+check_env_vars
+
 # Check if the .replit file exists
 if [ ! -f .replit ]; then
     echo "❌ Error: .replit file not found"

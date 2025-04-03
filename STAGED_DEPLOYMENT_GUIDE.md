@@ -97,6 +97,23 @@ If a deployment fails:
       Stage 1               Stage 2                    Stage 3
 ```
 
+## Environment Variables
+
+For successful deployment, ensure the following environment variables are set:
+
+1. **Core Environment Variables:**
+   - `NODE_ENV=production`: Sets Node.js to production mode
+   - `DEPLOYMENT_MODE=true`: Enables deployment-specific behaviors
+   - `SINGLE_SERVER_MODE=true`: Uses a single server for the deployment
+   - `SKIP_API_SERVER=true`: (Optional) Skips starting the Browser API Server in initial deployment
+
+2. **Database Variables:**
+   - `DATABASE_URL`: Connection string for the PostgreSQL database
+
+3. **API Keys:**
+   - Make sure all required API keys for external services are set
+   - These will be preserved during deployment and made available to workflows
+
 ## Best Practices
 
 1. **Always back up before deployment:**
@@ -114,3 +131,8 @@ If a deployment fails:
 4. **Test thoroughly between stages:**
    - Do not proceed to the next stage until the current stage is verified
    - Involve users or testers in the verification process when possible
+
+5. **Manage environment variables carefully:**
+   - Ensure all required environment variables are set before deployment
+   - Use the Replit Secrets tab to store sensitive API keys and credentials
+   - Check for missing environment variables in logs

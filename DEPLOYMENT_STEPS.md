@@ -6,7 +6,28 @@ This document provides a concise step-by-step guide for deploying the GOAT Platf
 
 - Ensure all code is committed and pushed to the repository
 - Verify that frontend build artifacts are generated or will be generated during deployment
-- Check that environment variables are properly set up
+- Check that environment variables are properly set up:
+  ```bash
+  # Run the environment variable check script
+  ./check_deployment_env.sh
+  
+  # If any environment variables are missing, add them in the Replit Secrets tab
+  # Then run the check script again to verify
+  ```
+
+## Port Configuration
+
+The application uses the following port configuration:
+
+- **Frontend Dashboard:** Port 3000 (configurable via `FRONTEND_PORT`)
+- **Backend API Services:** Port 5000 (configurable via `BACKEND_PORT`)
+- **Browser API Server:** Port 8000 (configurable via `BROWSER_API_PORT`)
+
+During deployment, these ports are used with the following priorities:
+1. If `PORT` is set by Replit, it will be used for the main application
+2. Otherwise, `FRONTEND_PORT` (or default 3000) will be used
+
+You can customize ports by setting these environment variables in the Replit Secrets tab.
 
 ## Stage 1: Deploy Frontend Only
 
@@ -32,8 +53,13 @@ This document provides a concise step-by-step guide for deploying the GOAT Platf
 
 ## Stage 2: Add Core Backend Services
 
-1. **Deploy the Browser API Server:**
+1. **Deploy the Browser API Server with proper port configuration:**
    ```bash
+   # If you want to use custom ports, set them as environment variables
+   # export FRONTEND_PORT=3000
+   # export BACKEND_PORT=5000
+   # export BROWSER_API_PORT=8000
+   
    # Start the Browser API Server workflow
    ./restart_individual_workflow.sh "Browser API Server"
    
@@ -45,11 +71,13 @@ This document provides a concise step-by-step guide for deploying the GOAT Platf
    ```bash
    # Stop the previous deployment server instance (if running)
    # Then start a new one without skipping the API server
+   # Make sure to use the same port configuration as before
    NODE_ENV=production DEPLOYMENT_MODE=true SINGLE_SERVER_MODE=true node deployment.js
    ```
 
 3. **Verify backend integration:**
-   - Check that the Browser API Server is running (port 8000)
+   - Check that the Browser API Server is running on its designated port (default: 8000)
+   - Check that the frontend is accessible on its port (default: 3000, or PORT if set by Replit)
    - Verify that frontend API calls are working
    - Test key app functionality that relies on the API
 
@@ -93,8 +121,11 @@ If you encounter issues during deployment:
 
 2. **Common issues:**
    - **Memory limits:** If you see out-of-memory errors, reduce the number of concurrent workflows
-   - **Port conflicts:** Make sure no other processes are using required ports (3000, 8000)
-   - **API unavailability:** Verify the Browser API Server is running
+   - **Port conflicts:** Make sure no other processes are using the defined ports:
+     - Frontend Dashboard: FRONTEND_PORT (default: 3000)
+     - Backend API: BACKEND_PORT (default: 5000)
+     - Browser API Server: BROWSER_API_PORT (default: 8000)
+   - **API unavailability:** Verify the Browser API Server is running on the correct port
    - **Missing environment variables:** Check that all required environment variables are set
 
 3. **Recovery steps:**

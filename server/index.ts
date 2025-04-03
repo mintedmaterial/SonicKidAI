@@ -16,7 +16,9 @@ console.log(`Process ID: ${process.pid}`);
 console.log('Current directory:', process.cwd());
 
 const app = express();
-const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+const FRONTEND_PORT = process.env.FRONTEND_PORT ? parseInt(process.env.FRONTEND_PORT, 10) : 3000;
+const BACKEND_PORT = process.env.BACKEND_PORT ? parseInt(process.env.BACKEND_PORT, 10) : 5000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : FRONTEND_PORT;
 const HOST = '0.0.0.0';
 
 console.log(`Attempting to configure server on ${HOST}:${PORT}`);
@@ -331,30 +333,32 @@ const setupServer = async () => {
     
     console.log('✅ SPA route handling configured');
 
-    // Bind server to a single port in production, dual ports in development
+    // Bind server to appropriate port based on environment variables
     console.log(`Attempting to bind server to ${HOST}:${PORT}...`);
     server.listen(PORT, HOST, () => {
       console.log(`🚀 Main server running at http://${HOST}:${PORT}`);
       
-      // Only create secondary server in development mode
-      if (process.env.NODE_ENV === 'development') {
-        // Create a secondary server instance for port 5000 (for workflow compatibility)
-        const secondaryPort = 5000;
+      // Only create secondary server in development mode if explicitly requested
+      if (process.env.NODE_ENV === 'development' && process.env.ENABLE_SECONDARY_SERVER === 'true') {
+        // Create a secondary server instance for BACKEND_PORT (for workflow compatibility)
         const secondaryServer = createServer(app);
-        secondaryServer.listen(secondaryPort, HOST, () => {
-          console.log(`🔄 Secondary server running at http://${HOST}:${secondaryPort} (for workflow compatibility)`);
+        secondaryServer.listen(BACKEND_PORT, HOST, () => {
+          console.log(`🔄 Secondary server running at http://${HOST}:${BACKEND_PORT} (for workflow compatibility)`);
         });
         
         // Error handler for secondary server
         secondaryServer.on('error', (error: Error & { code?: string }) => {
-          console.error(`❌ Secondary server startup error (port ${secondaryPort}):`);
+          console.error(`❌ Secondary server startup error (port ${BACKEND_PORT}):`);
           console.error('Error code:', error.code);
           console.error('Error message:', error.message);
           // Don't exit process if secondary server fails, just log it
           if (error.code === 'EADDRINUSE') {
-            console.error(`Port ${secondaryPort} already in use, secondary server not started`);
+            console.error(`Port ${BACKEND_PORT} already in use, secondary server not started`);
           }
         });
+      } else if (process.env.NODE_ENV === 'development') {
+        console.log(`ℹ️ Secondary server not started. To enable it, set ENABLE_SECONDARY_SERVER=true`);
+        console.log(`ℹ️ Using single port configuration with PORT=${PORT}`);
       }
     });
 
