@@ -45,7 +45,6 @@ dependencies = [
     "pandas>=2.2.3",
     "pyarrow>=19.0.0",
     "datasets>=3.3.0",
-    "psycopg2-binary>=2.9.10",
     "telegram>=0.0.1",
     "beautifulsoup4>=4.13.3",
     "pytz>=2025.1",
@@ -69,6 +68,7 @@ dependencies = [
     "dune-client>=1.7.8",
     "httpx>=0.28.1",
     "cytoolz>=1.0.1",
+    "psycopg2-binary>=2.9.10",
 ]
 
 [project.optional-dependencies]
