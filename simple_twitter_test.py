@@ -40,10 +40,10 @@ async def run_search(query, count=10):
         "        // First try to get recent tweets to see if basic API works",
         "        console.log('Testing basic functionality with getTweets...');",
         "        try {",
-        "            const elon_tweets = await scraper.getTweets('elonmusk', 2);",
-        "            console.log('Elon tweets test result:', JSON.stringify(elon_tweets));",
+        "            const andre_tweets = await scraper.getTweets('AndreCronjeTech', 2);",
+        "            console.log('Andre Cronje tweets test result:', JSON.stringify(andre_tweets));",
         "        } catch (e) {",
-        "            console.log('Elon tweets error:', e.message);",
+        "            console.log('Andre Cronje tweets error:', e.message);",
         "        }",
         "        ",
         "        // Try various search modes",
@@ -119,7 +119,7 @@ async def main():
         logger.info("Testing Twitter search functionality...")
         
         # Test different search terms
-        search_terms = ["bitcoin", "ethereum", "crypto", "nft"]
+        search_terms = ["SonicLabs", "fantom", "defi", "crypto"]
         for term in search_terms:
             logger.info(f"Searching for tweets about '{term}'...")
             result = await run_search(term, 5)
@@ -127,28 +127,85 @@ async def main():
             if result:
                 logger.info(f"Successfully searched for '{term}'")
                 
-                # Try to parse JSON from the response
+                # Parse and analyze all the different result formats from the output
                 try:
-                    # Find the JSON part of the output (there might be other console.log statements)
-                    json_start = result.find('[')
-                    json_end = result.rfind(']') + 1
+                    # Look for specific results sections
+                    result_sections = {
+                        "Andre Cronje tweets": result.find("Andre Cronje tweets test result:"),
+                        "LATEST RESULTS": result.find("LATEST RESULTS:"),
+                        "TOP RESULTS": result.find("TOP RESULTS:"),
+                        "PHOTO RESULTS": result.find("PHOTO RESULTS:"),
+                        "FETCH RESULTS": result.find("FETCH RESULTS:")
+                    }
                     
-                    if json_start >= 0 and json_end > json_start:
-                        json_part = result[json_start:json_end]
-                        tweets_data = json.loads(json_part)
+                    logger.info(f"Analysis of search results for '{term}':")
+                    
+                    for section_name, section_start in result_sections.items():
+                        if section_start < 0:
+                            logger.info(f"  - {section_name}: Section not found in output")
+                            continue
+                            
+                        # Find the JSON part after this section marker
+                        # First, get the text from the section marker to the end
+                        section_text = result[section_start:]
                         
-                        logger.info(f"Found {len(tweets_data)} tweets for '{term}'")
-                        for i, tweet in enumerate(tweets_data[:3], 1):
-                            if isinstance(tweet, dict) and 'text' in tweet:
-                                logger.info(f"  {i}. {tweet.get('text', 'No text')[:50]}...")
+                        # Find the first '{' or '[' after the section marker
+                        json_start_char = None
+                        for char_idx, char in enumerate(section_text):
+                            if char in ['{', '[']:
+                                json_start_char = char
+                                json_start = section_start + char_idx
+                                break
+                        
+                        if not json_start_char:
+                            logger.info(f"  - {section_name}: No JSON object found")
+                            continue
+                            
+                        # Find the matching closing bracket
+                        json_end_char = ']' if json_start_char == '[' else '}'
+                        json_end = result.find(json_end_char, json_start)
+                        
+                        if json_end < 0:
+                            logger.info(f"  - {section_name}: Incomplete JSON object")
+                            continue
+                            
+                        # For proper JSON, include the closing bracket
+                        json_end += 1
+                        
+                        # Extract and parse the JSON
+                        try:
+                            json_part = result[json_start:json_end]
+                            data = json.loads(json_part)
+                            
+                            if isinstance(data, list):
+                                logger.info(f"  - {section_name}: Found array with {len(data)} items")
+                                for i, item in enumerate(data[:2], 1):  # Show first 2 items max
+                                    if isinstance(item, dict):
+                                        # Extract useful info based on the data structure
+                                        if 'text' in item:
+                                            text = item.get('text', '')[:50] + '...'
+                                            logger.info(f"      {i}. Text: {text}")
+                                        elif 'full_text' in item:
+                                            text = item.get('full_text', '')[:50] + '...'
+                                            logger.info(f"      {i}. Full text: {text}")
+                                        
+                                        # Add any other useful properties like username, date, etc.
+                                        if 'user' in item and isinstance(item['user'], dict):
+                                            username = item['user'].get('screen_name', 'unknown')
+                                            logger.info(f"         User: @{username}")
+                                    else:
+                                        logger.info(f"      {i}. Item type: {type(item)}")
+                            elif isinstance(data, dict):
+                                logger.info(f"  - {section_name}: Found object with {len(data)} properties")
+                                # Show top-level keys
+                                logger.info(f"      Keys: {', '.join(list(data.keys())[:5])}" + 
+                                          f"{' and more' if len(data) > 5 else ''}")
                             else:
-                                logger.info(f"  {i}. Unexpected tweet format: {type(tweet)}")
-                    else:
-                        logger.error(f"Could not find JSON array in result for '{term}'")
-                except json.JSONDecodeError as e:
-                    logger.error(f"Error parsing JSON for '{term}': {str(e)}")
+                                logger.info(f"  - {section_name}: Found data of type {type(data)}")
+                        except json.JSONDecodeError:
+                            logger.info(f"  - {section_name}: Invalid JSON: {json_part[:50]}...")
                 except Exception as e:
-                    logger.error(f"Error processing results for '{term}': {str(e)}")
+                    logger.error(f"Error analyzing results for '{term}': {str(e)}", exc_info=True)
             else:
                 logger.error(f"Failed to search for '{term}'")
         

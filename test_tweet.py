@@ -1,334 +1,445 @@
 """
-Test Twitter Client Implementation using ElizaOS agent-twitter-client
+Test Twitter Client functionality using agent-twitter-client package
 
-This script tests the ElizaOS Twitter client integration, which doesn't require
-Twitter API keys. It demonstrates basic Twitter functionality including:
-- Reading tweets
-- Posting tweets
-- Following users
-- Getting trending topics
-
-Usage:
-    python test_tweet.py
+This script demonstrates how to use the Twitter client without requiring
+Twitter API keys. Instead, it uses the provided username, password, and
+email credentials for authentication.
 """
 
 import os
 import json
 import asyncio
 import logging
-from datetime import datetime
 import subprocess
+from typing import Dict, List, Optional, Any, Union
 from dotenv import load_dotenv
 
 # Set up logging
 logging.basicConfig(
-    level=logging.DEBUG,  # Changed to DEBUG level to see more information
+    level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-# Twitter credentials from environment variables
-# Load environment variables from .env file
-try:
-    load_dotenv()
-    logger.info("Environment variables loaded from .env file")
-except Exception as e:
-    logger.warning(f"Could not load environment variables from .env file: {str(e)}")
+# Load environment variables
+load_dotenv()
 
-# Get Twitter credentials from environment variables
-TWITTER_USERNAME = os.getenv("TWITTER_USERNAME", "")
-TWITTER_PASSWORD = os.getenv("TWITTER_PASSWORD", "")
-TWITTER_EMAIL = os.getenv("TWITTER_EMAIL", "")
-TWITTER_COOKIES = os.getenv("TWITTER_COOKIES", "")
+class TwitterClient:
+    """Twitter client that uses agent-twitter-client package with Node.js interop"""
 
-# Debug output for credentials (safely masked)
-logger.debug(f"Username: '{TWITTER_USERNAME}'")
-logger.debug(f"Email: '{TWITTER_EMAIL}'")
-logger.debug(f"Password length: {len(TWITTER_PASSWORD)}")
-
-logger.info(f"Twitter credentials loaded. Username: {TWITTER_USERNAME and 'YES' or 'NO'}, " +
-            f"Password: {TWITTER_PASSWORD and 'YES' or 'NO'}, " +
-            f"Email: {TWITTER_EMAIL and 'YES' or 'NO'}, " +
-            f"Cookies: {TWITTER_COOKIES and 'YES' or 'NO'}")
-
-# Note: We'll build the Node.js script template dynamically to avoid string formatting issues
-
-def get_auth_code():
-    """Generate authentication code based on available credentials"""
-    # Try different authentication methods in order of preference
-    auth_token = os.getenv("TWITTER_AUTH_TOKEN")
-    
-    if TWITTER_COOKIES and TWITTER_COOKIES.strip():
-        # Use pre-formatted cookies if available
-        logger.info("Using Twitter cookies for authentication")
+    def __init__(self):
+        """Initialize the Twitter client"""
+        self.username = os.getenv("TWITTER_USERNAME")
+        self.password = os.getenv("TWITTER_PASSWORD")
+        self.email = os.getenv("TWITTER_EMAIL")
+        self.auth_token = os.getenv("TWITTER_AUTH_TOKEN")
         
-        # Check if the cookies string is already properly formatted
-        if TWITTER_COOKIES.startswith('[') and ']' in TWITTER_COOKIES:
-            return f"await scraper.setCookies({TWITTER_COOKIES});"
+        # Check if we have necessary credentials
+        if not all([self.username, self.password, self.email]):
+            logger.warning("Missing Twitter credentials. Set TWITTER_USERNAME, TWITTER_PASSWORD, and TWITTER_EMAIL environment variables.")
+        
+        # Save cookies path
+        self.cookies_path = "twitter_cookies.json"
+        
+    async def get_profile(self, screen_name: str) -> Dict[str, Any]:
+        """Get a Twitter profile by screen name"""
+        logger.info(f"Getting profile for @{screen_name}...")
+        
+        script_parts = [
+            "const twitterClient = require('agent-twitter-client');",
+            "const Scraper = twitterClient.Scraper;",
+            "",
+            "async function getProfile() {",
+            "    try {",
+            "        // Create scraper with debug mode",
+            "        console.log('Creating Twitter scraper...');",
+            "        const scraper = new Scraper({ debug: true });",
+            "",
+            f"        // Try to get profile for @{screen_name}",
+            "        console.log('Getting profile...');",
+            f"        const profile = await scraper.getProfile('{screen_name}');",
+            "        console.log('PROFILE_RESULT:', JSON.stringify(profile));",
+            "    } catch (error) {",
+            "        console.error('Error:', error.message);",
+            "        process.exit(1);",
+            "    }",
+            "}",
+            "",
+            "getProfile().catch(console.error);"
+        ]
+        
+        result = await self._run_node_script(script_parts)
+        if not result:
+            return {}
+            
+        # Extract profile JSON
+        profile_json = self._extract_json_after_marker(result, "PROFILE_RESULT:")
+        if profile_json:
+            return profile_json
+        return {}
+
+    async def search_tweets(self, query: str, count: int = 10) -> List[Dict[str, Any]]:
+        """Search for tweets using given query"""
+        logger.info(f"Searching for tweets with query '{query}'...")
+
+        script_parts = [
+            "const twitterClient = require('agent-twitter-client');",
+            "const Scraper = twitterClient.Scraper;",
+            "const SearchMode = twitterClient.SearchMode;",
+            "",
+            "async function searchTweets() {",
+            "    try {",
+            "        // Create scraper with debug mode",
+            "        console.log('Creating Twitter scraper...');",
+            "        const scraper = new Scraper({ debug: true });",
+            "",
+            f"        // Search for tweets with query '{query}'",
+            "        console.log('Searching for tweets...');",
+            f"        const tweets = await scraper.searchTweets('{query}', {count}, SearchMode.Latest);",
+            "        console.log('SEARCH_RESULTS:', JSON.stringify(tweets));",
+            "    } catch (error) {",
+            "        console.error('Error:', error.message);",
+            "        process.exit(1);",
+            "    }",
+            "}",
+            "",
+            "searchTweets().catch(console.error);"
+        ]
+        
+        result = await self._run_node_script(script_parts)
+        if not result:
+            return []
+            
+        # Extract search results JSON
+        search_json = self._extract_json_after_marker(result, "SEARCH_RESULTS:")
+        if search_json:
+            return search_json if isinstance(search_json, list) else []
+        return []
+        
+    async def get_user_tweets(self, screen_name: str, count: int = 10) -> List[Dict[str, Any]]:
+        """Get a user's tweets"""
+        logger.info(f"Getting tweets for @{screen_name}...")
+
+        script_parts = [
+            "const twitterClient = require('agent-twitter-client');",
+            "const Scraper = twitterClient.Scraper;",
+            "",
+            "async function getUserTweets() {",
+            "    try {",
+            "        // Create scraper with debug mode",
+            "        console.log('Creating Twitter scraper...');",
+            "        const scraper = new Scraper({ debug: true });",
+            "",
+            f"        // Get tweets for @{screen_name}",
+            "        console.log('Getting user tweets...');",
+            f"        const tweets = await scraper.getTweets('{screen_name}', {count});",
+            "        console.log('USER_TWEETS:', JSON.stringify(tweets));",
+            "    } catch (error) {",
+            "        console.error('Error:', error.message);",
+            "        process.exit(1);",
+            "    }",
+            "}",
+            "",
+            "getUserTweets().catch(console.error);"
+        ]
+        
+        result = await self._run_node_script(script_parts)
+        if not result:
+            return []
+            
+        # Extract tweets JSON
+        tweets_json = self._extract_json_after_marker(result, "USER_TWEETS:")
+        if tweets_json:
+            return tweets_json if isinstance(tweets_json, list) else []
+        return []
+        
+    async def get_tweet(self, tweet_id: str) -> Dict[str, Any]:
+        """Get a specific tweet by ID"""
+        logger.info(f"Getting tweet with ID {tweet_id}...")
+
+        script_parts = [
+            "const twitterClient = require('agent-twitter-client');",
+            "const Scraper = twitterClient.Scraper;",
+            "",
+            "async function getTweet() {",
+            "    try {",
+            "        // Create scraper with debug mode",
+            "        console.log('Creating Twitter scraper...');",
+            "        const scraper = new Scraper({ debug: true });",
+            "",
+            f"        // Get tweet with ID {tweet_id}",
+            "        console.log('Getting tweet...');",
+            f"        const tweet = await scraper.getTweet('{tweet_id}');",
+            "        console.log('TWEET_RESULT:', JSON.stringify(tweet));",
+            "    } catch (error) {",
+            "        console.error('Error:', error.message);",
+            "        process.exit(1);",
+            "    }",
+            "}",
+            "",
+            "getTweet().catch(console.error);"
+        ]
+        
+        result = await self._run_node_script(script_parts)
+        if not result:
+            return {}
+            
+        # Extract tweet JSON
+        tweet_json = self._extract_json_after_marker(result, "TWEET_RESULT:")
+        if tweet_json:
+            return tweet_json
+        return {}
     
-    # If we have an auth token, format it as cookies
-    elif auth_token and auth_token.strip():
-        logger.info(f"Using Twitter auth token for authentication")
-        return f"""
-            await scraper.setCookies([{{
-                name: "auth_token",
-                value: "{auth_token}",
-                domain: ".twitter.com",
-                path: "/",
-                expires: -1,
-                httpOnly: true,
-                secure: true
-            }}]);
-        """
+    async def get_trends(self) -> List[Dict[str, Any]]:
+        """Get current Twitter trends"""
+        logger.info("Getting current Twitter trends...")
+
+        script_parts = [
+            "const twitterClient = require('agent-twitter-client');",
+            "const Scraper = twitterClient.Scraper;",
+            "",
+            "async function getTrends() {",
+            "    try {",
+            "        // Create scraper with debug mode",
+            "        console.log('Creating Twitter scraper...');",
+            "        const scraper = new Scraper({ debug: true });",
+            "",
+            "        // Get trends",
+            "        console.log('Getting trends...');",
+            "        const trends = await scraper.getTrends();",
+            "        console.log('TRENDS_RESULT:', JSON.stringify(trends));",
+            "    } catch (error) {",
+            "        console.error('Error:', error.message);",
+            "        process.exit(1);",
+            "    }",
+            "}",
+            "",
+            "getTrends().catch(console.error);"
+        ]
+        
+        result = await self._run_node_script(script_parts)
+        if not result:
+            return []
+            
+        # Extract trends JSON
+        trends_json = self._extract_json_after_marker(result, "TRENDS_RESULT:")
+        if trends_json:
+            return trends_json if isinstance(trends_json, list) else []
+        return []
     
-    # If no cookies or token, try username/password
-    elif TWITTER_USERNAME and TWITTER_PASSWORD:
-        if TWITTER_EMAIL:
-            logger.info(f"Using Twitter username '{TWITTER_USERNAME}', password, and email '{TWITTER_EMAIL}' for authentication")
-            return f"await scraper.login('{TWITTER_USERNAME}', '{TWITTER_PASSWORD}', '{TWITTER_EMAIL}');"
+    async def authenticate(self) -> bool:
+        """Authenticate with Twitter using provided credentials"""
+        logger.info("Authenticating with Twitter...")
+        
+        # Prepare login script based on available credentials
+        if self.auth_token:
+            script_parts = [
+                "const twitterClient = require('agent-twitter-client');",
+                "const Scraper = twitterClient.Scraper;",
+                "",
+                "async function authenticateWithCookies() {",
+                "    try {",
+                "        // Create scraper with debug mode",
+                "        console.log('Creating Twitter scraper...');",
+                "        const scraper = new Scraper({ debug: true });",
+                "",
+                "        // Set the auth token cookie",
+                "        console.log('Setting auth token cookie...');",
+                f"        const authToken = '{self.auth_token}';",
+                "        const cookie = {",
+                "            name: 'auth_token',",
+                "            value: authToken,",
+                "            domain: '.twitter.com',",
+                "            path: '/',",
+                "            expires: -1",
+                "        };",
+                "        await scraper.setCookies([cookie]);",
+                "",
+                "        // Check if we're logged in",
+                "        console.log('Checking authentication status...');",
+                "        const isLoggedIn = await scraper.isLoggedIn();",
+                "        console.log('AUTH_RESULT:', JSON.stringify({ success: isLoggedIn }));",
+                "",
+                "        // Get and save cookies for future use if logged in",
+                "        if (isLoggedIn) {",
+                "            const cookies = await scraper.getCookies();",
+                "            console.log('COOKIES_RESULT:', JSON.stringify(cookies));",
+                "        }",
+                "    } catch (error) {",
+                "        console.error('Error:', error.message);",
+                "        process.exit(1);",
+                "    }",
+                "}",
+                "",
+                "authenticateWithCookies().catch(console.error);"
+            ]
         else:
-            logger.info(f"Using Twitter username '{TWITTER_USERNAME}' and password for authentication")
-            return f"await scraper.login('{TWITTER_USERNAME}', '{TWITTER_PASSWORD}');"
-    
-    # Fallback to no authentication
-    else:
-        logger.warning("No authentication credentials available")
-        return "console.log('No authentication credentials available');"
-
-async def run_twitter_operation(operation_code):
-    """Run a Twitter operation via Node.js"""
-    auth_code = get_auth_code()
-    
-    # Generate the full Node.js script without using string formatting
-    script_parts = [
-        "// Use CommonJS syntax for requiring the module",
-        "const twitterClient = require('agent-twitter-client');",
-        "const Scraper = twitterClient.Scraper;",
-        "const SearchMode = twitterClient.SearchMode;",
-        "",
-        "async function runTwitterOperation() {",
-        "    try {",
-        "        // Initialize the scraper with debug option",
-        "        const scraper = new Scraper({ debug: true });",
-        "        ",
-        "        console.log('Attempting authentication...');",
-        "        // Setup authentication",
-        f"        {auth_code}",
-        "        console.log('Authentication completed');",
-        "        ",
-        "        console.log('Executing operation...');",
-        "        // Perform the operation",
-        f"        {operation_code}",
-        "        console.log('Operation completed successfully');",
-        "        ",
-        "    } catch (error) {",
-        "        console.error('Error:', JSON.stringify(error, null, 2));",
-        "        console.error('Error message:', error.message);",
-        "        process.exit(1);",
-        "    }",
-        "}",
-        "",
-        "runTwitterOperation();"
-    ]
-    
-    script = "\n".join(script_parts)
-    
-    # Create a temporary JS file with a .cjs extension for CommonJS
-    temp_script_path = "temp_twitter_op.cjs"
-    with open(temp_script_path, "w") as f:
-        f.write(script)
-    
-    logger.debug(f"Generated script:\n{script}")
-    
-    try:
-        # Run the Node.js script
-        logger.debug("Executing Node.js script...")
-        result = subprocess.run(
-            ["node", temp_script_path],
-            capture_output=True,
-            text=True,
-            check=False  # Don't raise exception on non-zero exit
-        )
+            script_parts = [
+                "const twitterClient = require('agent-twitter-client');",
+                "const Scraper = twitterClient.Scraper;",
+                "",
+                "async function authenticateWithCredentials() {",
+                "    try {",
+                "        // Create scraper with debug mode",
+                "        console.log('Creating Twitter scraper...');",
+                "        const scraper = new Scraper({ debug: true });",
+                "",
+                "        // Authenticate with credentials",
+                "        console.log('Logging in with credentials...');",
+                f"        await scraper.login('{self.username}', '{self.password}', '{self.email}');",
+                "",
+                "        // Check if we're logged in",
+                "        console.log('Checking authentication status...');",
+                "        const isLoggedIn = await scraper.isLoggedIn();",
+                "        console.log('AUTH_RESULT:', JSON.stringify({ success: isLoggedIn }));",
+                "",
+                "        // Get and save cookies for future use if logged in",
+                "        if (isLoggedIn) {",
+                "            const cookies = await scraper.getCookies();",
+                "            console.log('COOKIES_RESULT:', JSON.stringify(cookies));",
+                "        }",
+                "    } catch (error) {",
+                "        console.error('Error:', error.message);",
+                "        process.exit(1);",
+                "    }",
+                "}",
+                "",
+                "authenticateWithCredentials().catch(console.error);"
+            ]
         
-        # Log output regardless of success
-        if result.stdout:
-            logger.debug(f"Script stdout: {result.stdout}")
+        result = await self._run_node_script(script_parts)
+        if not result:
+            return False
+            
+        # Extract authentication result
+        auth_json = self._extract_json_after_marker(result, "AUTH_RESULT:")
+        if auth_json and isinstance(auth_json, dict) and auth_json.get("success", False):
+            # Also extract and save cookies if available
+            cookies_json = self._extract_json_after_marker(result, "COOKIES_RESULT:")
+            if cookies_json:
+                with open(self.cookies_path, "w") as f:
+                    json.dump(cookies_json, f)
+                logger.info(f"Saved Twitter cookies to {self.cookies_path}")
+            return True
+        return False
+    
+    async def _run_node_script(self, script_parts: List[str]) -> Optional[str]:
+        """Run a Node.js script and return its output"""
+        script = "\n".join(script_parts)
         
-        # Check for errors
-        if result.returncode != 0:
-            logger.error(f"Script failed with exit code {result.returncode}")
-            if result.stderr:
-                logger.error(f"Script stderr: {result.stderr}")
+        # Write script to temporary file
+        temp_script_path = "temp_twitter_script.cjs"
+        with open(temp_script_path, "w") as f:
+            f.write(script)
+        
+        try:
+            # Run the Node.js script
+            logger.debug("Executing Node.js script...")
+            result = subprocess.run(
+                ["node", temp_script_path],
+                capture_output=True,
+                text=True,
+                check=False  # Don't raise exception on non-zero exit
+            )
+            
+            # Check for errors
+            if result.returncode != 0:
+                logger.error(f"Script failed with exit code {result.returncode}")
+                if result.stderr:
+                    logger.error(f"Error: {result.stderr}")
+                return None
+            
+            return result.stdout
+        except Exception as e:
+            logger.error(f"Error running Node.js script: {str(e)}")
             return None
-        
-        return result.stdout.strip()
-    except Exception as e:
-        logger.error(f"Error running Twitter operation: {str(e)}", exc_info=True)
-        return None
-    finally:
-        # Clean up temporary file
-        if os.path.exists(temp_script_path):
-            os.remove(temp_script_path)
-
-async def get_twitter_trends():
-    """Get current Twitter trending topics"""
-    operation = """
-        const trends = await scraper.getTrends();
-        console.log(JSON.stringify(trends));
-    """
-    return await run_twitter_operation(operation)
-
-async def get_user_tweets(username, count=10):
-    """Get tweets from a specific user"""
-    operation = f"""
-        const tweets = await scraper.getTweets('{username}', {count});
-        console.log(JSON.stringify(tweets));
-    """
-    return await run_twitter_operation(operation)
-
-async def get_tweet_by_id(tweet_id):
-    """Get a specific tweet by ID"""
-    operation = f"""
-        const tweet = await scraper.getTweet('{tweet_id}');
-        console.log(JSON.stringify(tweet));
-    """
-    return await run_twitter_operation(operation)
-
-async def post_tweet(text):
-    """Post a new tweet"""
-    operation = f"""
-        const result = await scraper.sendTweet('{text}');
-        console.log(JSON.stringify(result));
-    """
-    return await run_twitter_operation(operation)
-
-async def search_tweets(query, count=10):
-    """Search for tweets matching a query"""
-    operation = f"""
-        const tweets = await scraper.searchTweets('{query}', {count}, SearchMode.Latest);
-        console.log(JSON.stringify(tweets));
-    """
-    return await run_twitter_operation(operation)
-
-async def get_user_profile(username):
-    """Get a user's profile information"""
-    operation = f"""
-        const profile = await scraper.getProfile('{username}');
-        console.log(JSON.stringify(profile));
-    """
-    return await run_twitter_operation(operation)
-
-async def follow_user(username):
-    """Follow a user on Twitter"""
-    operation = f"""
-        const result = await scraper.followUser('{username}');
-        console.log(JSON.stringify(result));
-    """
-    return await run_twitter_operation(operation)
-
-async def store_twitter_cookies():
-    """Store Twitter cookies for future use"""
-    operation = """
-        const cookies = await scraper.getCookies();
-        console.log(JSON.stringify(cookies));
-    """
-    cookies_json = await run_twitter_operation(operation)
-    if cookies_json:
-        logger.info("Twitter cookies retrieved successfully")
-        logger.info("You can set these as TWITTER_COOKIES in your environment variables")
-        return cookies_json
-    return None
-
-async def get_twitter_home_timeline(count=10):
-    """Get the home timeline (requires authentication)"""
-    operation = f"""
-        const timeline = await scraper.fetchHomeTimeline({count});
-        console.log(JSON.stringify(timeline));
-    """
-    return await run_twitter_operation(operation)
-
-async def test_twitter_functionality():
-    """Test various Twitter functions"""
-    logger.info("Testing Twitter client functionality...")
+        finally:
+            # Clean up temporary file
+            if os.path.exists(temp_script_path):
+                os.remove(temp_script_path)
     
-    # Test if we have valid credentials
-    if not (TWITTER_USERNAME and TWITTER_PASSWORD) and not TWITTER_COOKIES:
-        logger.warning("No Twitter credentials found. Set TWITTER_USERNAME and TWITTER_PASSWORD or TWITTER_COOKIES")
-        logger.info("Running in limited functionality mode (read-only for public data)")
-    
-    # Get trending topics
-    logger.info("Fetching trending topics...")
-    trends = await get_twitter_trends()
-    if trends:
-        logger.info(f"Successfully retrieved trending topics")
-        trends_data = json.loads(trends)
-        for i, trend in enumerate(trends_data[:5], 1):
-            logger.info(f"  {i}. {trend.get('name', 'Unknown')} - {trend.get('tweet_volume', 'N/A')} tweets")
-    
-    # Get tweets from a popular account
-    test_account = "elonmusk"
-    logger.info(f"Fetching tweets from {test_account}...")
-    tweets = await get_user_tweets(test_account, 3)
-    if tweets:
-        logger.info(f"Successfully retrieved tweets from {test_account}")
+    def _extract_json_after_marker(self, text: str, marker: str) -> Union[Dict[str, Any], List[Dict[str, Any]], None]:
+        """Extract JSON object or array after a specific marker in text"""
         try:
-            tweets_data = json.loads(tweets)
-            for i, tweet in enumerate(tweets_data[:3], 1):
-                logger.info(f"  {i}. {tweet.get('text', 'No text')[:50]}...")
-        except json.JSONDecodeError:
-            logger.error("Error parsing tweets JSON")
-    
-    # Get user profile
-    logger.info(f"Fetching profile for {test_account}...")
-    profile = await get_user_profile(test_account)
-    if profile:
-        logger.info(f"Successfully retrieved profile for {test_account}")
-        try:
-            profile_data = json.loads(profile)
-            logger.info(f"  Name: {profile_data.get('name', 'Unknown')}")
-            logger.info(f"  Bio: {profile_data.get('description', 'No bio')[:50]}...")
-            logger.info(f"  Followers: {profile_data.get('followers_count', 'Unknown')}")
-        except json.JSONDecodeError:
-            logger.error("Error parsing profile JSON")
-    
-    # If we have credentials, test authenticated functions
-    if (TWITTER_USERNAME and TWITTER_PASSWORD) or TWITTER_COOKIES:
-        # Get home timeline
-        logger.info("Fetching home timeline...")
-        timeline = await get_twitter_home_timeline(5)
-        if timeline:
-            logger.info("Successfully retrieved home timeline")
-            try:
-                timeline_data = json.loads(timeline)
-                for i, tweet in enumerate(timeline_data[:3], 1):
-                    logger.info(f"  {i}. {tweet.get('text', 'No text')[:50]}...")
-            except json.JSONDecodeError:
-                logger.error("Error parsing timeline JSON")
-        
-        # Post a test tweet
-        test_tweet_text = f"Testing agent-twitter-client integration at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-        logger.info(f"Posting test tweet: {test_tweet_text}")
-        post_result = await post_tweet(test_tweet_text)
-        if post_result:
-            logger.info("Successfully posted tweet")
-            try:
-                post_data = json.loads(post_result)
-                logger.info(f"  Tweet ID: {post_data.get('id', 'Unknown')}")
-            except json.JSONDecodeError:
-                logger.error("Error parsing post result JSON")
-        
-        # Store cookies for future use
-        logger.info("Storing Twitter cookies...")
-        await store_twitter_cookies()
-    
-    logger.info("Twitter client test completed")
+            # Find the marker
+            marker_pos = text.find(marker)
+            if marker_pos < 0:
+                return None
+                
+            # Find the start of JSON (either { or [)
+            json_start = None
+            for i in range(marker_pos + len(marker), len(text)):
+                if text[i] in ['{', '[']:
+                    json_start = i
+                    json_start_char = text[i]
+                    break
+                    
+            if json_start is None:
+                return None
+                
+            # Find the matching closing bracket
+            closing_char = '}' if json_start_char == '{' else ']'
+            open_count = 1
+            json_end = None
+            
+            for i in range(json_start + 1, len(text)):
+                if text[i] == json_start_char:
+                    open_count += 1
+                elif text[i] == closing_char:
+                    open_count -= 1
+                    if open_count == 0:
+                        json_end = i + 1
+                        break
+                        
+            if json_end is None:
+                return None
+                
+            # Parse and return the JSON
+            json_str = text[json_start:json_end]
+            return json.loads(json_str)
+        except (json.JSONDecodeError, ValueError, IndexError) as e:
+            logger.error(f"Error extracting JSON: {str(e)}")
+            return None
 
-async def main():
-    """Main entry point"""
+async def test_twitter_client():
+    """Test Twitter client functionality"""
     try:
-        await test_twitter_functionality()
+        # Initialize Twitter client
+        client = TwitterClient()
+        
+        # Test basic search functionality first (doesn't require authentication)
+        logger.info("Testing search functionality...")
+        search_results = await client.search_tweets("SonicLabs", 5)
+        logger.info(f"Search results: {json.dumps(search_results, indent=2)}")
+        
+        # Test getting trends (doesn't require authentication)
+        logger.info("Testing trends functionality...")
+        trends = await client.get_trends()
+        logger.info(f"Trends: {json.dumps(trends, indent=2)}")
+        
+        # Try to authenticate if credentials are provided
+        if client.username and client.password and client.email or client.auth_token:
+            logger.info("Testing authentication...")
+            auth_result = await client.authenticate()
+            logger.info(f"Authentication result: {auth_result}")
+            
+            if auth_result:
+                # Test getting a profile (can work without auth but gives more data with auth)
+                logger.info("Testing profile retrieval...")
+                profile = await client.get_profile("AndreCronjeTech")
+                logger.info(f"Profile: {json.dumps(profile, indent=2)}")
+                
+                # Test getting user tweets
+                logger.info("Testing user tweets retrieval...")
+                user_tweets = await client.get_user_tweets("AndreCronjeTech", 3)
+                logger.info(f"User tweets: {json.dumps(user_tweets, indent=2)}")
+        else:
+            logger.warning("Skipping authentication tests due to missing credentials")
+        
+        logger.info("Twitter client tests completed")
+            
     except Exception as e:
-        logger.error(f"Error in Twitter test: {str(e)}", exc_info=True)
+        logger.error(f"Error testing Twitter client: {str(e)}", exc_info=True)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(test_twitter_client())
