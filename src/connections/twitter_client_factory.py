@@ -1,20 +1,27 @@
 """
 Twitter Client Factory
 
-This module provides a factory function for creating Twitter client connections.
+This module provides a factory for creating Twitter clients.
 """
 
-from typing import Dict, Any, Optional
-from src.connections.base_connection import BaseConnection
-from src.connections.twitter_client import TwitterClient
-from src.connection_manager import register_connection_factory
+import logging
+from typing import Optional
 
-@register_connection_factory("twitter_client")
-def create_twitter_client(config: Dict[str, Any]) -> Optional[BaseConnection]:
-    """Create a Twitter client connection"""
-    try:
-        return TwitterClient(config)
-    except Exception as e:
-        # Log error and return None to indicate failure
-        print(f"Failed to create Twitter client: {str(e)}")
-        return None
+from src.connections.twitter_client import TwitterClient
+
+logger = logging.getLogger(__name__)
+
+class TwitterClientFactory:
+    """Factory for creating Twitter clients"""
+    
+    @staticmethod
+    async def create_client() -> TwitterClient:
+        """
+        Create and return a Twitter client
+        
+        Returns:
+            Initialized TwitterClient instance
+        """
+        logger.info("Creating Twitter client")
+        client = TwitterClient()
+        return client
