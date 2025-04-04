@@ -93,7 +93,7 @@ class TwitterClient:
             str: JavaScript code for authenticating with Twitter
         """
         return """
-            import { Scraper } from 'agent-twitter-client';
+            const { Scraper } = require('agent-twitter-client');
             
             async function authenticate() {
                 try {
@@ -153,7 +153,7 @@ class TwitterClient:
         safe_tweet_text = tweet_text.replace('\\', '\\\\').replace('`', '\\`').replace('$', '\\$')
         
         return f"""
-            import {{ Scraper }} from 'agent-twitter-client';
+            const {{ Scraper }} = require('agent-twitter-client');
             
             async function postTweet() {{
                 try {{
@@ -209,7 +209,7 @@ class TwitterClient:
         """
         try:
             # Create a temporary file to hold the script
-            with tempfile.NamedTemporaryFile(suffix='.mjs', mode='w', delete=False) as temp_file:
+            with tempfile.NamedTemporaryFile(suffix='.cjs', mode='w', delete=False) as temp_file:
                 temp_file_path = temp_file.name
                 temp_file.write(script)
             
