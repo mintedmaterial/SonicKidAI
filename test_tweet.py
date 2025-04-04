@@ -22,7 +22,7 @@ from dotenv import load_dotenv
 
 # Set up logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,  # Changed to DEBUG level to see more information
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
@@ -40,6 +40,11 @@ TWITTER_USERNAME = os.getenv("TWITTER_USERNAME", "")
 TWITTER_PASSWORD = os.getenv("TWITTER_PASSWORD", "")
 TWITTER_EMAIL = os.getenv("TWITTER_EMAIL", "")
 TWITTER_COOKIES = os.getenv("TWITTER_COOKIES", "")
+
+# Debug output for credentials (safely masked)
+logger.debug(f"Username: '{TWITTER_USERNAME}'")
+logger.debug(f"Email: '{TWITTER_EMAIL}'")
+logger.debug(f"Password length: {len(TWITTER_PASSWORD)}")
 
 logger.info(f"Twitter credentials loaded. Username: {TWITTER_USERNAME and 'YES' or 'NO'}, " +
             f"Password: {TWITTER_PASSWORD and 'YES' or 'NO'}, " +
