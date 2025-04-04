@@ -26,16 +26,27 @@ class TwitterClient(BaseConnection):
     def __init__(self, config: Dict[str, Any]):
         """Initialize the Twitter client with configuration"""
         super().__init__(config)
+        
+        # Load environment variables from .env file
+        try:
+            load_dotenv()
+        except Exception as e:
+            logger.warning(f"Could not load environment variables from .env file: {str(e)}")
+            
+        # Get Twitter credentials from environment variables
         self._twitter_username = os.getenv("TWITTER_USERNAME", "")
         self._twitter_password = os.getenv("TWITTER_PASSWORD", "")
         self._twitter_email = os.getenv("TWITTER_EMAIL", "")
         self._twitter_cookies = os.getenv("TWITTER_COOKIES", "")
         
+        logger.info(f"Twitter credentials loaded. Username: {self._twitter_username and 'YES' or 'NO'}, " +
+                    f"Password: {self._twitter_password and 'YES' or 'NO'}, " +
+                    f"Email: {self._twitter_email and 'YES' or 'NO'}, " +
+                    f"Cookies: {self._twitter_cookies and 'YES' or 'NO'}")
+        
         # Check for required credentials
         if not ((self._twitter_username and self._twitter_password) or self._twitter_cookies):
             logger.warning("No Twitter credentials found. Limited functionality will be available.")
-        
-        # We'll build the Node.js script template dynamically when needed
     
     @property
     def is_llm_provider(self) -> bool:
@@ -138,24 +149,67 @@ class TwitterClient(BaseConnection):
     def _get_auth_code(self) -> str:
         """Generate authentication code based on available credentials"""
         if self._twitter_cookies:
+            # We need to properly format the auth_token as a cookie object
+            logger.info("Using Twitter cookies for authentication")
+            auth_token = self._twitter_cookies
+            if "auth_token" in auth_token:
+                # If it's just a token value, format it properly
+                if not auth_token.startswith("[") and not auth_token.startswith("{"):
+                    # It's just a raw token
+                    return f"""
+                        await scraper.setCookies([{{
+                            name: "auth_token",
+                            value: "{auth_token}",
+                            domain: ".twitter.com",
+                            path: "/",
+                            expires: -1,
+                            httpOnly: true,
+                            secure: true
+                        }}]);
+                    """
             return f"await scraper.setCookies({self._twitter_cookies});"
         elif self._twitter_username and self._twitter_password:
+            logger.info(f"Using Twitter username '{self._twitter_username}' and password for authentication")
             return f"await scraper.login('{self._twitter_username}', '{self._twitter_password}');"
         else:
+            logger.warning("No authentication credentials available")
             return "console.log('No authentication credentials available');"
     
     async def _run_twitter_operation(self, operation_code: str) -> Optional[str]:
         """Run a Twitter operation via Node.js"""
         auth_code = self._get_auth_code()
         
-        # Generate the full Node.js script
-        script = self._node_script_template.format(
-            auth_code=auth_code,
-            operation_code=operation_code
-        )
+        # Generate the full Node.js script without using string formatting
+        script_parts = [
+            "// Use CommonJS syntax for requiring the module",
+            "const twitterClient = require('agent-twitter-client');",
+            "const Scraper = twitterClient.Scraper;",
+            "const SearchMode = twitterClient.SearchMode;",
+            "",
+            "async function runTwitterOperation() {",
+            "    try {",
+            "        // Initialize the scraper",
+            "        const scraper = new Scraper();",
+            "        ",
+            "        // Setup authentication",
+            f"        {auth_code}",
+            "        ",
+            "        // Perform the operation",
+            f"        {operation_code}",
+            "        ",
+            "    } catch (error) {",
+            "        console.error('Error:', error.message);",
+            "        process.exit(1);",
+            "    }",
+            "}",
+            "",
+            "runTwitterOperation();"
+        ]
         
-        # Create a temporary JS file
-        with tempfile.NamedTemporaryFile(suffix='.js', delete=False, mode='w') as temp_file:
+        script = "\n".join(script_parts)
+        
+        # Create a temporary JS file with a .cjs extension for CommonJS
+        with tempfile.NamedTemporaryFile(suffix='.cjs', delete=False, mode='w') as temp_file:
             temp_script_path = temp_file.name
             temp_file.write(script)
         

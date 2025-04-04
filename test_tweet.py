@@ -28,20 +28,53 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Twitter credentials from environment variables
+# Load environment variables from .env file
+try:
+    load_dotenv()
+    logger.info("Environment variables loaded from .env file")
+except Exception as e:
+    logger.warning(f"Could not load environment variables from .env file: {str(e)}")
+
+# Get Twitter credentials from environment variables
 TWITTER_USERNAME = os.getenv("TWITTER_USERNAME", "")
 TWITTER_PASSWORD = os.getenv("TWITTER_PASSWORD", "")
 TWITTER_EMAIL = os.getenv("TWITTER_EMAIL", "")
 TWITTER_COOKIES = os.getenv("TWITTER_COOKIES", "")
+
+logger.info(f"Twitter credentials loaded. Username: {TWITTER_USERNAME and 'YES' or 'NO'}, " +
+            f"Password: {TWITTER_PASSWORD and 'YES' or 'NO'}, " +
+            f"Email: {TWITTER_EMAIL and 'YES' or 'NO'}, " +
+            f"Cookies: {TWITTER_COOKIES and 'YES' or 'NO'}")
 
 # Note: We'll build the Node.js script template dynamically to avoid string formatting issues
 
 def get_auth_code():
     """Generate authentication code based on available credentials"""
     if TWITTER_COOKIES:
+        # We need to properly format the auth_token as a cookie object
+        logger.info("Using Twitter cookies for authentication")
+        auth_token = TWITTER_COOKIES
+        if "auth_token" in auth_token:
+            # If it's just a token value, format it properly
+            if not auth_token.startswith("[") and not auth_token.startswith("{"):
+                # It's just a raw token
+                return f"""
+                    await scraper.setCookies([{{
+                        name: "auth_token",
+                        value: "{auth_token}",
+                        domain: ".twitter.com",
+                        path: "/",
+                        expires: -1,
+                        httpOnly: true,
+                        secure: true
+                    }}]);
+                """
         return f"await scraper.setCookies({TWITTER_COOKIES});"
     elif TWITTER_USERNAME and TWITTER_PASSWORD:
+        logger.info(f"Using Twitter username '{TWITTER_USERNAME}' and password for authentication")
         return f"await scraper.login('{TWITTER_USERNAME}', '{TWITTER_PASSWORD}');"
     else:
+        logger.warning("No authentication credentials available")
         return "console.log('No authentication credentials available');"
 
 async def run_twitter_operation(operation_code):
@@ -254,9 +287,6 @@ async def test_twitter_functionality():
 
 async def main():
     """Main entry point"""
-    # Load environment variables
-    load_dotenv()
-    
     try:
         await test_twitter_functionality()
     except Exception as e:
