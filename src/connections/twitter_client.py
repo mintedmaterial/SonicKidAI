@@ -18,17 +18,28 @@ class TwitterClient:
     
     def __init__(self):
         """Initialize the Twitter client"""
-        self.username = os.environ.get("TWITTER_USERNAME")
-        self.password = os.environ.get("TWITTER_PASSWORD")
-        self.email = os.environ.get("TWITTER_EMAIL")
-        self.auth_token = os.environ.get("TWITTER_AUTH_TOKEN")
+        # Get credentials from environment variables
+        self.username = os.environ.get("TWITTER_USERNAME", "MintedMaterial")
+        self.password = os.environ.get("TWITTER_PASSWORD", "Myrecovery@1")
+        self.email = os.environ.get("TWITTER_EMAIL", "MintedMaterial@gmail.com")
+        self.auth_token = os.environ.get("TWITTER_AUTH_TOKEN", "30a88ac3c27a5a2b88742e38d6cbe71cf3663cb3")
+        
+        # Set cookie string format (used for authentication)
+        self.cookie_str = os.environ.get("TWITTER_COOKIES", 
+            '[{"name":"auth_token","value":"30a88ac3c27a5a2b88742e38d6cbe71cf3663cb3","domain":".twitter.com",'
+            '"path":"/","expires":-1,"httpOnly":true,"secure":true}]'
+        )
+        
+        # Store authentication status
+        self.is_authenticated = False
         
         # Log available credentials (without exposing sensitive info)
         logger.info(
             f"Twitter credentials loaded. Username: {'YES' if self.username else 'NO'}, "
             f"Password: {'YES' if self.password else 'NO'}, "
             f"Email: {'YES' if self.email else 'NO'}, "
-            f"Auth Token: {'YES' if self.auth_token else 'NO'}"
+            f"Auth Token: {'YES' if self.auth_token else 'NO'}, "
+            f"Cookies: {'YES' if self.cookie_str else 'NO'}"
         )
         
     async def search_tweets(self, query: str, count: int = 10, mode: str = "Latest") -> List[Dict[str, Any]]:
@@ -44,6 +55,12 @@ class TwitterClient:
             List of tweet objects
         """
         logger.info(f"Searching for tweets with query '{query}', mode '{mode}'")
+        
+        # Try to login if not authenticated
+        if not self.is_authenticated:
+            auth_result = await self.login()
+            if not auth_result:
+                logger.warning("Search performed without authentication - results may be limited")
         
         script = self._create_search_script(query, count, mode)
         result = await self._run_node_script(script)
@@ -117,6 +134,12 @@ class TwitterClient:
         """
         logger.info(f"Getting tweets for user @{username}")
         
+        # Try to login if not authenticated
+        if not self.is_authenticated:
+            auth_result = await self.login()
+            if not auth_result:
+                logger.warning("User tweets retrieval performed without authentication - results may be limited")
+        
         script = self._create_user_tweets_script(username, count)
         result = await self._run_node_script(script)
         
@@ -154,6 +177,132 @@ class TwitterClient:
             logger.error(f"Error parsing user tweets: {e}")
             return []
     
+    async def login(self) -> bool:
+        """
+        Login to Twitter using the provided credentials or auth token
+        
+        Returns:
+            Boolean indicating if login was successful
+        """
+        logger.info("Logging in to Twitter...")
+        
+        # Try auth token first if available
+        if self.auth_token:
+            auth_success = await self._login_with_auth_token()
+            if auth_success:
+                self.is_authenticated = True
+                logger.info("Successfully authenticated with auth token")
+                return True
+                
+        # If auth token failed or not available, try credentials
+        if self.username and self.password:
+            auth_success = await self._login_with_credentials()
+            if auth_success:
+                self.is_authenticated = True
+                logger.info("Successfully authenticated with credentials")
+                return True
+                
+        logger.warning("Failed to authenticate with Twitter")
+        return False
+    
+    async def _login_with_auth_token(self) -> bool:
+        """
+        Login with auth token
+        
+        Returns:
+            Boolean indicating if login was successful
+        """
+        logger.info("Attempting to login with auth token...")
+        
+        script = self._create_login_with_token_script()
+        result = await self._run_node_script(script)
+        
+        if not result:
+            logger.warning("No result returned from login script")
+            return False
+            
+        try:
+            # Check for auth success marker
+            marker = "AUTH_RESULT:"
+            marker_pos = result.find(marker)
+            if marker_pos < 0:
+                logger.warning("Failed to find auth result marker in output")
+                return False
+                
+            # Extract JSON string
+            result_text = result[marker_pos + len(marker):].strip()
+            
+            # Find JSON boundaries
+            json_start = result_text.find('{')
+            json_end = result_text.rfind('}')
+            
+            if json_start < 0 or json_end < 0:
+                logger.warning("Failed to find JSON boundaries in auth result")
+                return False
+                
+            json_str = result_text[json_start:json_end + 1]
+            
+            # Parse JSON
+            auth_data = json.loads(json_str)
+            
+            return auth_data.get("success", False)
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to decode auth result JSON: {e}")
+            return False
+        except Exception as e:
+            logger.error(f"Error parsing auth result: {e}")
+            return False
+    
+    async def _login_with_credentials(self) -> bool:
+        """
+        Login with username and password
+        
+        Returns:
+            Boolean indicating if login was successful
+        """
+        logger.info("Attempting to login with credentials...")
+        
+        script = self._create_login_with_credentials_script()
+        result = await self._run_node_script(script)
+        
+        if not result:
+            logger.warning("No result returned from login script")
+            return False
+            
+        try:
+            # Check for auth success marker
+            marker = "AUTH_RESULT:"
+            marker_pos = result.find(marker)
+            if marker_pos < 0:
+                logger.warning("Failed to find auth result marker in output")
+                return False
+                
+            # Extract JSON string
+            result_text = result[marker_pos + len(marker):].strip()
+            
+            # Find JSON boundaries
+            json_start = result_text.find('{')
+            json_end = result_text.rfind('}')
+            
+            if json_start < 0 or json_end < 0:
+                logger.warning("Failed to find JSON boundaries in auth result")
+                return False
+                
+            json_str = result_text[json_start:json_end + 1]
+            
+            # Parse JSON
+            auth_data = json.loads(json_str)
+            
+            return auth_data.get("success", False)
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to decode auth result JSON: {e}")
+            return False
+        except Exception as e:
+            logger.error(f"Error parsing auth result: {e}")
+            return False
+    
     async def get_trends(self) -> List[Dict[str, Any]]:
         """
         Get current Twitter trends
@@ -162,6 +311,12 @@ class TwitterClient:
             List of trend objects
         """
         logger.info("Getting Twitter trends")
+        
+        # Try to login if not authenticated
+        if not self.is_authenticated:
+            auth_result = await self.login()
+            if not auth_result:
+                logger.warning("Trends retrieval performed without authentication - results may be limited")
         
         script = self._create_trends_script()
         result = await self._run_node_script(script)
@@ -243,6 +398,73 @@ class TwitterClient:
         }}
         
         getUserTweets();
+        """
+    
+    def _create_login_with_token_script(self) -> str:
+        """Create Node.js script for logging in with auth token"""
+        # Clean the auth token to ensure it's in the correct format
+        auth_token = self.auth_token.strip()
+        
+        # Escape any special characters in the cookie string
+        cookie_str = self.cookie_str.replace('"', '\\"')
+        
+        return f"""
+        const twitterClient = require('agent-twitter-client');
+        const TwitterClient = twitterClient.Client;
+        
+        async function loginWithToken() {{
+            try {{
+                console.log('Creating Twitter client...');
+                const client = new TwitterClient({{ debug: true }});
+                
+                // Set auth token and cookies
+                console.log('Setting auth token...');
+                
+                // Parse the cookie string into an object
+                const cookies = JSON.parse('{cookie_str}');
+                
+                // Set the cookies
+                console.log('Setting cookies...');
+                const result = await client.setCookies(cookies);
+                
+                // Return the result
+                console.log('AUTH_RESULT:', JSON.stringify({{ success: result }}));
+                console.log('Login operation completed');
+            }} catch (error) {{
+                console.error('Error message:', error.message);
+                console.log('AUTH_RESULT:', JSON.stringify({{ success: false, error: error.message }}));
+                process.exit(1);
+            }}
+        }}
+        
+        loginWithToken();
+        """
+        
+    def _create_login_with_credentials_script(self) -> str:
+        """Create Node.js script for logging in with username and password"""
+        return f"""
+        const twitterClient = require('agent-twitter-client');
+        const TwitterClient = twitterClient.Client;
+        
+        async function loginWithCredentials() {{
+            try {{
+                console.log('Creating Twitter client...');
+                const client = new TwitterClient({{ debug: true }});
+                
+                console.log('Logging in with credentials...');
+                const result = await client.login('{self.username}', '{self.password}', '{self.email}');
+                
+                // Return the result
+                console.log('AUTH_RESULT:', JSON.stringify({{ success: !!result, result }}));
+                console.log('Login operation completed');
+            }} catch (error) {{
+                console.error('Error message:', error.message);
+                console.log('AUTH_RESULT:', JSON.stringify({{ success: false, error: error.message }}));
+                process.exit(1);
+            }}
+        }}
+        
+        loginWithCredentials();
         """
     
     def _create_trends_script(self) -> str:
