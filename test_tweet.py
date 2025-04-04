@@ -55,29 +55,42 @@ logger.info(f"Twitter credentials loaded. Username: {TWITTER_USERNAME and 'YES' 
 
 def get_auth_code():
     """Generate authentication code based on available credentials"""
-    if TWITTER_COOKIES:
-        # We need to properly format the auth_token as a cookie object
+    # Try different authentication methods in order of preference
+    auth_token = os.getenv("TWITTER_AUTH_TOKEN")
+    
+    if TWITTER_COOKIES and TWITTER_COOKIES.strip():
+        # Use pre-formatted cookies if available
         logger.info("Using Twitter cookies for authentication")
-        auth_token = TWITTER_COOKIES
-        if "auth_token" in auth_token:
-            # If it's just a token value, format it properly
-            if not auth_token.startswith("[") and not auth_token.startswith("{"):
-                # It's just a raw token
-                return f"""
-                    await scraper.setCookies([{{
-                        name: "auth_token",
-                        value: "{auth_token}",
-                        domain: ".twitter.com",
-                        path: "/",
-                        expires: -1,
-                        httpOnly: true,
-                        secure: true
-                    }}]);
-                """
-        return f"await scraper.setCookies({TWITTER_COOKIES});"
+        
+        # Check if the cookies string is already properly formatted
+        if TWITTER_COOKIES.startswith('[') and ']' in TWITTER_COOKIES:
+            return f"await scraper.setCookies({TWITTER_COOKIES});"
+    
+    # If we have an auth token, format it as cookies
+    elif auth_token and auth_token.strip():
+        logger.info(f"Using Twitter auth token for authentication")
+        return f"""
+            await scraper.setCookies([{{
+                name: "auth_token",
+                value: "{auth_token}",
+                domain: ".twitter.com",
+                path: "/",
+                expires: -1,
+                httpOnly: true,
+                secure: true
+            }}]);
+        """
+    
+    # If no cookies or token, try username/password
     elif TWITTER_USERNAME and TWITTER_PASSWORD:
-        logger.info(f"Using Twitter username '{TWITTER_USERNAME}' and password for authentication")
-        return f"await scraper.login('{TWITTER_USERNAME}', '{TWITTER_PASSWORD}');"
+        if TWITTER_EMAIL:
+            logger.info(f"Using Twitter username '{TWITTER_USERNAME}', password, and email '{TWITTER_EMAIL}' for authentication")
+            return f"await scraper.login('{TWITTER_USERNAME}', '{TWITTER_PASSWORD}', '{TWITTER_EMAIL}');"
+        else:
+            logger.info(f"Using Twitter username '{TWITTER_USERNAME}' and password for authentication")
+            return f"await scraper.login('{TWITTER_USERNAME}', '{TWITTER_PASSWORD}');"
+    
+    # Fallback to no authentication
     else:
         logger.warning("No authentication credentials available")
         return "console.log('No authentication credentials available');"
@@ -95,17 +108,22 @@ async def run_twitter_operation(operation_code):
         "",
         "async function runTwitterOperation() {",
         "    try {",
-        "        // Initialize the scraper",
-        "        const scraper = new Scraper();",
+        "        // Initialize the scraper with debug option",
+        "        const scraper = new Scraper({ debug: true });",
         "        ",
+        "        console.log('Attempting authentication...');",
         "        // Setup authentication",
         f"        {auth_code}",
+        "        console.log('Authentication completed');",
         "        ",
+        "        console.log('Executing operation...');",
         "        // Perform the operation",
         f"        {operation_code}",
+        "        console.log('Operation completed successfully');",
         "        ",
         "    } catch (error) {",
-        "        console.error('Error:', error.message);",
+        "        console.error('Error:', JSON.stringify(error, null, 2));",
+        "        console.error('Error message:', error.message);",
         "        process.exit(1);",
         "    }",
         "}",
@@ -120,17 +138,32 @@ async def run_twitter_operation(operation_code):
     with open(temp_script_path, "w") as f:
         f.write(script)
     
+    logger.debug(f"Generated script:\n{script}")
+    
     try:
         # Run the Node.js script
+        logger.debug("Executing Node.js script...")
         result = subprocess.run(
             ["node", temp_script_path],
             capture_output=True,
             text=True,
-            check=True
+            check=False  # Don't raise exception on non-zero exit
         )
+        
+        # Log output regardless of success
+        if result.stdout:
+            logger.debug(f"Script stdout: {result.stdout}")
+        
+        # Check for errors
+        if result.returncode != 0:
+            logger.error(f"Script failed with exit code {result.returncode}")
+            if result.stderr:
+                logger.error(f"Script stderr: {result.stderr}")
+            return None
+        
         return result.stdout.strip()
-    except subprocess.CalledProcessError as e:
-        logger.error(f"Error running Twitter operation: {e.stderr}")
+    except Exception as e:
+        logger.error(f"Error running Twitter operation: {str(e)}", exc_info=True)
         return None
     finally:
         # Clean up temporary file
