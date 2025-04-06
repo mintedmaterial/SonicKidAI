@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install --no-frozen-lockfile",
+  "installCommand": "git submodule update --init --recursive && pnpm install --no-frozen-lockfile",
   "framework": "vite",
   "outputDirectory": "apps/dashboard/dist",
   "rewrites": [
@@ -33,7 +33,10 @@
       "use": "@vercel/vite",
       "config": {
         "includeFiles": [
-          "apps/dashboard/**"
+          "apps/dashboard/**",
+          "packages/core/**",
+          "packages/social-providers/**",
+          "packages/twitter-client/**"
         ]
       }
     }
