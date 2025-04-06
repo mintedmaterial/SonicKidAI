@@ -3,6 +3,9 @@
 # Make script exit on first error
 set -e
 
+echo "🔄 Initializing git submodules..."
+git submodule update --init --recursive
+
 echo "🧹 Cleaning up repository for Vercel deployment..."
 
 # Remove Replit specific files
@@ -26,7 +29,6 @@ echo "Removing unnecessary directories..."
 rm -rf apps/telegram-mini-app 2>/dev/null || true
 rm -rf packages/telegram-bot 2>/dev/null || true
 rm -rf packages/discord-bot 2>/dev/null || true
-rm -rf packages/twitter-client 2>/dev/null || true
 
 # Clean build artifacts
 echo "Cleaning build artifacts..."
