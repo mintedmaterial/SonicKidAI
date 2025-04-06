@@ -35,7 +35,7 @@ rm -rf node_modules 2>/dev/null || true
 
 # Install dependencies
 echo "Installing dependencies..."
-pnpm install
+pnpm install --no-frozen-lockfile
 
 # Build the dashboard app
 echo "Building dashboard app..."
