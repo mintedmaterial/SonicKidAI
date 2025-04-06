@@ -27,7 +27,6 @@
     "VITE_TELEGRAM_BOT_TOKEN": "",
     "VITE_TELEGRAM_BOT_USERNAME": ""
   },
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./apps/dashboard/",
   "builds": [
     {
       "src": "apps/dashboard/package.json",
