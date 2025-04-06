@@ -7,11 +7,11 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "pnpm --filter dashboard dev",
-    "build": "pnpm --filter dashboard build",
-    "preview": "pnpm --filter dashboard preview",
-    "lint": "pnpm --filter dashboard lint",
-    "test": "pnpm --filter dashboard test"
+    "dev": "pnpm --filter sonickid-dashboard dev",
+    "build": "pnpm --filter sonickid-dashboard build",
+    "preview": "pnpm --filter sonickid-dashboard preview",
+    "lint": "pnpm --filter sonickid-dashboard lint",
+    "test": "pnpm --filter sonickid-dashboard test"
   },
   "engines": {
     "node": ">=18.0.0",
