@@ -1,5 +1,0 @@
-run = ["python", "run_sonic_price_updater.py"]
-language = "python3"
-onBoot = false
-persistent = true
-hidden = false

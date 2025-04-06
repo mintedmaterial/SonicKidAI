@@ -1,4 +1,0 @@
-run = ["python3", "run_discord_tweet_handler.py"]
-language = "python3"
-entrypoint = "run_discord_tweet_handler.py"
-hidden = false

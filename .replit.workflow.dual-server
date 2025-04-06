@@ -1,3 +1,0 @@
-run = "node start-dual-servers.js"
-language = "nodejs"
-onBoot = "null"

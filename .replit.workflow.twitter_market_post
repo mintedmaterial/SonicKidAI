@@ -1,3 +1,0 @@
-run = "python market_tweet_test.py"
-language = "python3"
-onBoot = ""

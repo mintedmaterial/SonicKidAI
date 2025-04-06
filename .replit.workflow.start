@@ -1,4 +1,0 @@
-run = "node bare-server.js"
-language = "nodejs"
-onBoot = "startup"
-compileCommand = ""

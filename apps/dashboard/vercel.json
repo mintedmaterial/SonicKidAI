@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install",
+  "framework": "vite",
+  "outputDirectory": "apps/dashboard/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOW-FROM https://web.telegram.org/"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "VITE_SUBGRAPH_ENDPOINT": "",
+    "VITE_THIRDWEB_CLIENT_ID": "",
+    "VITE_TELEGRAM_BOT_TOKEN": "",
+    "VITE_TELEGRAM_BOT_USERNAME": ""
+  },
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./apps/dashboard/",
+  "builds": [
+    {
+      "src": "apps/dashboard/package.json",
+      "use": "@vercel/vite",
+      "config": {
+        "includeFiles": [
+          "apps/dashboard/**"
+        ]
+      }
+    }
+  ]
+}

@@ -1,3 +1,0 @@
-run = "python standalone_twitter_test.py"
-language = "python3"
-onBoot = ""
